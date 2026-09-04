@@ -212,7 +212,7 @@ export function App() {
       />
 
       {/* Main Container */}
-      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full pb-24 md:pb-12">
+      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 w-full pb-24 lg:pb-12">
         
         {activeTab === 'explore' && (
           <>
@@ -353,26 +353,30 @@ export function App() {
         }}
       />
 
-      <RecipeDetailModal
-        recipe={detailRecipe}
-        onClose={() => setDetailRecipe(null)}
-        match={detailRecipe ? evaluateRecipeMatch(detailRecipe, pantryNames) : undefined}
-        isFavorite={detailRecipe ? favorites.includes(detailRecipe.id) : false}
-        onToggleFavorite={(id) => handleToggleFavorite(id)}
-        onStartCooking={(r) => {
-          setDetailRecipe(null);
-          setCookingRecipe(r);
-        }}
-        onAddMissingToShopping={handleAddMissingToShopping}
-        onMarkAsCooked={handleMarkAsCooked}
-      />
+      {detailRecipe && (
+        <RecipeDetailModal
+          recipe={detailRecipe}
+          onClose={() => setDetailRecipe(null)}
+          match={evaluateRecipeMatch(detailRecipe, pantryNames)}
+          isFavorite={favorites.includes(detailRecipe.id)}
+          onToggleFavorite={(id) => handleToggleFavorite(id)}
+          onStartCooking={(r) => {
+            setDetailRecipe(null);
+            setCookingRecipe(r);
+          }}
+          onAddMissingToShopping={handleAddMissingToShopping}
+          onMarkAsCooked={handleMarkAsCooked}
+        />
+      )}
 
-      <CookingModeModal
-        recipe={cookingRecipe}
-        isOpen={Boolean(cookingRecipe)}
-        onClose={() => setCookingRecipe(null)}
-        onMarkAsCooked={handleMarkAsCooked}
-      />
+      {cookingRecipe && (
+        <CookingModeModal
+          recipe={cookingRecipe}
+          isOpen={true}
+          onClose={() => setCookingRecipe(null)}
+          onMarkAsCooked={handleMarkAsCooked}
+        />
+      )}
 
       <AddRecipeModal
         isOpen={isAddRecipeOpen}

@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { UtensilsCrossed, Dices, CalendarDays, ShoppingCart, Heart } from 'lucide-react';
 
 interface BottomNavProps {
@@ -17,7 +17,7 @@ export const BottomNav: React.FC<BottomNavProps> = ({
   onOpenRoulette
 }) => {
   return (
-    <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-slate-900/95 dark:bg-slate-950/95 backdrop-blur-lg border-t border-slate-800 px-2 py-1.5 flex items-center justify-around shadow-2xl">
+    <div className="lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-slate-900/95 dark:bg-slate-950/95 backdrop-blur-lg border-t border-slate-800 px-2 py-1.5 flex items-center justify-around shadow-2xl">
       
       <button
         onClick={() => setActiveTab('explore')}

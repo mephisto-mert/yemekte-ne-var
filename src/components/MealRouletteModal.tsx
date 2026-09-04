@@ -12,6 +12,7 @@ import {
 import confetti from 'canvas-confetti';
 import { Recipe, MatchResult } from '../types';
 import { prepareRouletteCandidates, spinRoulette, RouletteMood, RouletteOption } from '../services/rouletteService';
+import { useEscapeKey } from '../hooks/useEscapeKey';
 
 interface MealRouletteModalProps {
   isOpen: boolean;
@@ -32,6 +33,8 @@ export const MealRouletteModal: React.FC<MealRouletteModalProps> = ({
   favorites,
   onStartCooking
 }) => {
+  useEscapeKey(onClose, isOpen);
+
   const [mood, setMood] = useState<RouletteMood>('anything');
   const [isSpinning, setIsSpinning] = useState(false);
   const [currentEmoji, setCurrentEmoji] = useState('🎲');

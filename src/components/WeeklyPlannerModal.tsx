@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import { DailyMealPlan, Recipe, DayOfWeek } from '../types';
 import { PlannerService } from '../services/plannerService';
+import { useEscapeKey } from '../hooks/useEscapeKey';
 
 interface WeeklyPlannerModalProps {
   isOpen: boolean;
@@ -30,6 +31,8 @@ export const WeeklyPlannerModal: React.FC<WeeklyPlannerModalProps> = ({
   onUpdatePlan,
   onSelectRecipe
 }) => {
+  useEscapeKey(onClose, isOpen);
+
   if (!isOpen) return null;
 
   const handleAutoFill = () => {

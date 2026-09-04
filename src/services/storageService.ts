@@ -31,7 +31,7 @@ export const StorageService = {
       }
       const parsed = JSON.parse(data);
       if (!Array.isArray(parsed)) return [];
-      return parsed.filter(item => item && typeof item.id === 'string' && typeof item.name === 'string');
+      return parsed.filter(item => item && typeof item === 'object' && typeof item.id === 'string' && typeof item.name === 'string' && item.name.trim().length > 0);
     } catch {
       return [];
     }
@@ -123,13 +123,16 @@ export const StorageService = {
 
   addCookedRecipe(recipeId: string, recipeTitle: string, rating: number = 5, notes?: string): CookedHistoryEntry[] {
     const history = this.getCookedHistory();
+    const clampedRating = typeof rating === 'number' && !isNaN(rating)
+      ? Math.max(1, Math.min(5, Math.round(rating)))
+      : 5;
     const entry: CookedHistoryEntry = {
       id: Date.now().toString(),
-      recipeId,
-      recipeTitle,
+      recipeId: typeof recipeId === 'string' ? recipeId : '',
+      recipeTitle: (recipeTitle || 'İsimsiz Tarif').trim(),
       cookedAt: new Date().toISOString(),
-      rating,
-      notes
+      rating: clampedRating,
+      notes: notes ? notes.trim() : undefined
     };
     const updated = [entry, ...history];
     try {
@@ -149,13 +152,16 @@ export const StorageService = {
       const data = localStorage.getItem(KEYS.CUSTOM_RECIPES);
       if (!data) return [];
       const parsed = JSON.parse(data);
-      return Array.isArray(parsed) ? parsed.filter(r => r && typeof r.id === 'string' && typeof r.title === 'string') : [];
+      return Array.isArray(parsed) ? parsed.filter(r => r && typeof r.id === 'string' && typeof r.title === 'string' && r.title.trim().length > 0) : [];
     } catch {
       return [];
     }
   },
 
   saveCustomRecipe(recipe: Recipe): Recipe[] {
+    if (!recipe || typeof recipe.id !== 'string' || !recipe.title?.trim()) {
+      return this.getCustomRecipes();
+    }
     const current = this.getCustomRecipes();
     const updated = [recipe, ...current.filter(r => r.id !== recipe.id)];
     try {
@@ -167,14 +173,16 @@ export const StorageService = {
   // GAMIFICATION (XP & Streak)
   getXP(): number {
     try {
-      return parseInt(localStorage.getItem(KEYS.CHEF_XP) || '150', 10);
+      const parsed = parseInt(localStorage.getItem(KEYS.CHEF_XP) || '150', 10);
+      return isNaN(parsed) || parsed < 0 ? 150 : parsed;
     } catch {
       return 150;
     }
   },
 
   incrementXP(amount: number): number {
-    const current = this.getXP() + amount;
+    const validAmount = typeof amount === 'number' && !isNaN(amount) && amount > 0 ? Math.round(amount) : 0;
+    const current = this.getXP() + validAmount;
     try {
       localStorage.setItem(KEYS.CHEF_XP, current.toString());
     } catch {}
@@ -184,7 +192,9 @@ export const StorageService = {
   getStreak(): number {
     try {
       const val = localStorage.getItem(KEYS.CHEF_STREAK);
-      return val !== null ? parseInt(val, 10) || 0 : 2;
+      if (val === null) return 2;
+      const parsed = parseInt(val, 10);
+      return isNaN(parsed) || parsed < 0 ? 0 : parsed;
     } catch {
       return 2;
     }

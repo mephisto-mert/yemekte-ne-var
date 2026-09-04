@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { 
   CheckCircle2, 
   AlertCircle, 
@@ -9,6 +9,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { Recipe, MatchResult, MatchTier } from '../types';
+import { normalizeText } from '../services/matchingService';
 import { RecipeCard } from './RecipeCard';
 
 interface MealResultsSectionProps {
@@ -59,9 +60,9 @@ export const MealResultsSection: React.FC<MealResultsSectionProps> = ({
 
     // Text search query
     if (searchFilter.trim()) {
-      const q = searchFilter.toLowerCase();
-      const matchTitle = r.title.toLowerCase().includes(q);
-      const matchIng = r.ingredients.some(i => i.name.toLowerCase().includes(q));
+      const q = normalizeText(searchFilter);
+      const matchTitle = normalizeText(r.title).includes(q);
+      const matchIng = r.ingredients.some(i => normalizeText(i.name).includes(q));
       if (!matchTitle && !matchIng) return false;
     }
 

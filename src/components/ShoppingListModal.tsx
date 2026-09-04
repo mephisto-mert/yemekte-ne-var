@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import { ShoppingItem } from '../types';
 import { ShoppingService } from '../services/shoppingService';
+import { useEscapeKey } from '../hooks/useEscapeKey';
 
 interface ShoppingListModalProps {
   isOpen: boolean;
@@ -33,6 +34,8 @@ export const ShoppingListModal: React.FC<ShoppingListModalProps> = ({
   onClearChecked,
   onClearAll
 }) => {
+  useEscapeKey(onClose, isOpen);
+
   const [nameInput, setNameInput] = useState('');
   const [amountInput, setAmountInput] = useState('');
 

@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Synthesizes a pleasant dual-tone kitchen timer alarm chime using Web Audio API
  */
 export function playTimerAlarm(): void {
@@ -29,6 +29,11 @@ export function playTimerAlarm(): void {
       osc.start(now + delay);
       osc.stop(now + delay + 0.6);
     });
+
+    // Clean up AudioContext to prevent memory/resource leaks across repeated alarms
+    setTimeout(() => {
+      ctx.close().catch(() => {});
+    }, 1500);
   } catch (err) {
     console.warn('Audio chime failed:', err);
   }

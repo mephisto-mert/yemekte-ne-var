@@ -288,4 +288,62 @@ describe('Zero-Trust SaaS Certification Suite', () => {
     });
   });
 
+  describe('7. Adversarial Round 2 Hardening & Stress Tests', () => {
+    it('MUST NOT match dry spices (pul biber, karabiber) to fresh produce (biber, yeşil biber)', () => {
+      expect(isIngredientMatch('Pul Biber', 'biber')).toBe(false);
+      expect(isIngredientMatch('pul biber', 'yeşil biber')).toBe(false);
+      expect(isIngredientMatch('Karabiber', 'biber')).toBe(false);
+      expect(isIngredientMatch('biber', 'pul biber')).toBe(false);
+      expect(isIngredientMatch('yeşil biber', 'karabiber')).toBe(false);
+    });
+
+    it('CORRECTLY matches fresh peppers among themselves', () => {
+      expect(isIngredientMatch('Yeşil Biber', 'biber')).toBe(true);
+      expect(isIngredientMatch('Sivri Biber', 'biber')).toBe(true);
+      expect(isIngredientMatch('Kapya Biber', 'biber')).toBe(true);
+      expect(isIngredientMatch('Biber', 'çarliston biber')).toBe(true);
+    });
+
+    it('CORRECTLY matches spice variants among themselves', () => {
+      expect(isIngredientMatch('Pul Biber', 'pulbiber')).toBe(true);
+      expect(isIngredientMatch('Karabiber', 'kara biber')).toBe(true);
+    });
+
+    it('safely handles corrupted/hostile LocalStorage for XP and streak', () => {
+      localStorage.setItem('chef_xp_v2', 'not_a_number');
+      expect(StorageService.getXP()).toBe(150);
+
+      localStorage.setItem('chef_xp_v2', '-500');
+      expect(StorageService.getXP()).toBe(150);
+
+      localStorage.setItem('chef_streak_v2', 'corrupt_streak');
+      expect(StorageService.getStreak()).toBe(0);
+
+      localStorage.setItem('chef_streak_v2', '-10');
+      expect(StorageService.getStreak()).toBe(0);
+    });
+
+    it('clamps cooked recipe ratings between 1 and 5', () => {
+      localStorage.removeItem('cooked_history_v2');
+      StorageService.addCookedRecipe('test-1', 'Test Yemek', -5);
+      const history = StorageService.getCookedHistory();
+      expect(history[0].rating).toBe(1);
+
+      StorageService.addCookedRecipe('test-2', 'Test Yemek 2', 99);
+      const history2 = StorageService.getCookedHistory();
+      expect(history2[0].rating).toBe(5);
+    });
+
+    it('rejects invalid or empty custom recipes', () => {
+      localStorage.removeItem('custom_recipes_v2');
+      const badRecipe1 = { id: '', title: '' } as any;
+      const res1 = StorageService.saveCustomRecipe(badRecipe1);
+      expect(res1.length).toBe(0);
+
+      const badRecipe2 = { id: 'r-1', title: '   ' } as any;
+      const res2 = StorageService.saveCustomRecipe(badRecipe2);
+      expect(res2.length).toBe(0);
+    });
+  });
+
 });

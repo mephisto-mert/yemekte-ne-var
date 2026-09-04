@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { 
   UtensilsCrossed, 
   Dices, 
@@ -62,7 +62,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden lg:flex items-center gap-1">
           <button
             onClick={() => setActiveTab('explore')}
             className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-all flex items-center gap-1.5 ${

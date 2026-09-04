@@ -1,6 +1,7 @@
 import React from 'react';
 import { X, Trophy, Flame, CheckCircle2, Award, Calendar } from 'lucide-react';
 import { CookedHistoryEntry, ChefBadge } from '../types';
+import { useEscapeKey } from '../hooks/useEscapeKey';
 
 interface UserHistoryModalProps {
   isOpen: boolean;
@@ -25,6 +26,8 @@ export const UserHistoryModal: React.FC<UserHistoryModalProps> = ({
   streak,
   xp
 }) => {
+  useEscapeKey(onClose, isOpen);
+
   if (!isOpen) return null;
 
   // Compute most cooked meal

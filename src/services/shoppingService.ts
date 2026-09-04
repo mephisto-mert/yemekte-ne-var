@@ -1,4 +1,4 @@
-﻿import { ShoppingItem, RecipeIngredient } from '../types';
+import { ShoppingItem, RecipeIngredient } from '../types';
 
 export const ShoppingService = {
   /**
@@ -61,6 +61,7 @@ export const ShoppingService = {
    * Opens WhatsApp with the list
    */
   shareViaWhatsApp(items: ShoppingItem[]): void {
+    if (!items || items.length === 0) return;
     const text = encodeURIComponent(this.formatShareText(items));
     window.open(`https://wa.me/?text=${text}`, '_blank');
   },
@@ -69,6 +70,7 @@ export const ShoppingService = {
    * Opens SMS with the list
    */
   shareViaSMS(items: ShoppingItem[]): void {
+    if (!items || items.length === 0) return;
     const text = encodeURIComponent(this.formatShareText(items));
     window.open(`sms:?body=${text}`, '_blank');
   }

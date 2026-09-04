@@ -16,6 +16,7 @@ import {
 import confetti from 'canvas-confetti';
 import { Recipe } from '../types';
 import { playTimerAlarm } from '../utils/timerSound';
+import { useEscapeKey } from '../hooks/useEscapeKey';
 
 interface CookingModeModalProps {
   recipe: Recipe | null;
@@ -30,7 +31,7 @@ export const CookingModeModal: React.FC<CookingModeModalProps> = ({
   onClose,
   onMarkAsCooked
 }) => {
-  if (!isOpen || !recipe) return null;
+  useEscapeKey(onClose, isOpen && !!recipe);
 
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [showIngredientsDrawer, setShowIngredientsDrawer] = useState(false);
@@ -44,11 +45,12 @@ export const CookingModeModal: React.FC<CookingModeModalProps> = ({
 
   const timerIntervalRef = useRef<number | null>(null);
 
-  const totalSteps = recipe.instructions.length;
-  const currentStepText = recipe.instructions[currentStepIndex] || '';
+  const totalSteps = recipe?.instructions?.length || 0;
+  const currentStepText = recipe?.instructions?.[currentStepIndex] || '';
 
   // Screen wakelock request to prevent phone sleeping
   useEffect(() => {
+    if (!isOpen) return;
     let wakeLock: any = null;
     const requestWakeLock = async () => {
       try {
@@ -64,10 +66,11 @@ export const CookingModeModal: React.FC<CookingModeModalProps> = ({
         wakeLock.release().catch(() => {});
       }
     };
-  }, []);
+  }, [isOpen]);
 
   // Parse time from current step string
   useEffect(() => {
+    if (!isOpen || !recipe) return;
     // Reset any running timer
     if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
     setIsTimerRunning(false);
@@ -89,10 +92,11 @@ export const CookingModeModal: React.FC<CookingModeModalProps> = ({
       setTimerSeconds(null);
       setTimerInitial(null);
     }
-  }, [currentStepIndex, currentStepText]);
+  }, [isOpen, recipe?.id, currentStepIndex, currentStepText]);
 
   // Handle timer tick
   useEffect(() => {
+    if (!isOpen) return;
     if (isTimerRunning && timerSeconds !== null && timerSeconds > 0) {
       timerIntervalRef.current = window.setInterval(() => {
         setTimerSeconds(prev => {
@@ -110,7 +114,9 @@ export const CookingModeModal: React.FC<CookingModeModalProps> = ({
     return () => {
       if (timerIntervalRef.current) clearInterval(timerIntervalRef.current);
     };
-  }, [isTimerRunning, timerSeconds]);
+  }, [isOpen, isTimerRunning, timerSeconds]);
+
+  if (!isOpen || !recipe) return null;
 
   const handleNext = () => {
     if (currentStepIndex < totalSteps - 1) {

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   X, 
   Clock, 
@@ -18,6 +18,7 @@ import {
 import { Recipe, RecipeIngredient, MatchResult } from '../types';
 import { calculatePortions } from '../utils/portionCalculator';
 import { ALLERGEN_DATABASE, SUBSTITUTES_DATABASE } from '../data/substitutesData';
+import { useEscapeKey } from '../hooks/useEscapeKey';
 
 interface RecipeDetailModalProps {
   recipe: Recipe | null;
@@ -40,13 +41,25 @@ export const RecipeDetailModal: React.FC<RecipeDetailModalProps> = ({
   onAddMissingToShopping,
   onMarkAsCooked
 }) => {
-  if (!recipe) return null;
+  useEscapeKey(onClose, !!recipe);
 
-  const [servings, setServings] = useState<number>(recipe.servings || 4);
+  const [servings, setServings] = useState<number>(recipe?.servings || 4);
   const [selectedSubIng, setSelectedSubIng] = useState<string | null>(null);
   const [copiedLink, setCopiedLink] = useState(false);
   const [isCookedDone, setIsCookedDone] = useState(false);
   const [isShoppingAdded, setIsShoppingAdded] = useState(false);
+
+  useEffect(() => {
+    if (recipe) {
+      setServings(recipe.servings || 4);
+      setSelectedSubIng(null);
+      setCopiedLink(false);
+      setIsCookedDone(false);
+      setIsShoppingAdded(false);
+    }
+  }, [recipe?.id]);
+
+  if (!recipe) return null;
 
   // Scaled ingredients
   const scaledIngredients = calculatePortions(recipe.ingredients, recipe.servings || 4, servings);
@@ -78,9 +91,13 @@ export const RecipeDetailModal: React.FC<RecipeDetailModalProps> = ({
     }
     
     // Fallback: Copy to clipboard
-    navigator.clipboard.writeText(shareText);
-    setCopiedLink(true);
-    setTimeout(() => setCopiedLink(false), 2000);
+    try {
+      if (navigator.clipboard?.writeText) {
+        await navigator.clipboard.writeText(shareText);
+        setCopiedLink(true);
+        setTimeout(() => setCopiedLink(false), 2000);
+      }
+    } catch {}
   };
 
   const handleCookedClick = () => {

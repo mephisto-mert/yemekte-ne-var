@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, Plus, Trash2, ChefHat, Sparkles } from 'lucide-react';
 import { Recipe, RecipeIngredient, RecipeDifficulty } from '../types';
+import { useEscapeKey } from '../hooks/useEscapeKey';
 
 interface AddRecipeModalProps {
   isOpen: boolean;
@@ -13,6 +14,8 @@ export const AddRecipeModal: React.FC<AddRecipeModalProps> = ({
   onClose,
   onSaveRecipe
 }) => {
+  useEscapeKey(onClose, isOpen);
+
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [cookingTime, setCookingTime] = useState('30 dk');

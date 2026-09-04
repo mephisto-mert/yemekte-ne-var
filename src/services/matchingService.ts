@@ -39,6 +39,13 @@ export function tokensMatch(a: string, b: string): boolean {
   const bSingular = stripPlural(b);
   if (aSingular === bSingular) return true;
 
+  // Strict separation between spices (pul biber, karabiber) and fresh vegetable peppers (biber, yeşil biber)
+  const isSpicePepper = (s: string) => /\b(pul\s*biber|karabiber|kara\s*biber)\b/i.test(s);
+  const isProducePepper = (s: string) => /\b(biber|yesil\s*biber|sivri\s*biber|kapya\s*biber|carliston\s*biber)\b/i.test(s) && !isSpicePepper(s);
+  if ((isSpicePepper(a) && isProducePepper(b)) || (isSpicePepper(b) && isProducePepper(a))) {
+    return false;
+  }
+
   // Token word boundary check (prevents sub-word collisions like "su" in "gogsu" or "et" in "patates")
   const escapeRegex = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
