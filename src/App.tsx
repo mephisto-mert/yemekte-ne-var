@@ -36,7 +36,7 @@ export function App() {
 
   // UI state
   const [activeTab, setActiveTab] = useState<string>('explore');
-  const [isDark, setIsDark] = useState<boolean>(true);
+  const [isDark, setIsDark] = useState<boolean>(() => StorageService.getTheme());
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   // Modals
@@ -45,8 +45,9 @@ export function App() {
   const [cookingRecipe, setCookingRecipe] = useState<Recipe | null>(null);
   const [isAddRecipeOpen, setIsAddRecipeOpen] = useState(false);
 
-  // Sync Dark mode
+  // Sync and persist Dark mode
   useEffect(() => {
+    StorageService.saveTheme(isDark);
     if (isDark) {
       document.documentElement.classList.add('dark');
     } else {

@@ -1,4 +1,4 @@
-﻿import { Recipe, RecipeIngredient, MatchResult, MatchTier } from '../types';
+import { Recipe, RecipeIngredient, MatchResult, MatchTier } from '../types';
 import { INGREDIENTS_DATABASE } from '../data/ingredientsData';
 
 /**
@@ -7,20 +7,48 @@ import { INGREDIENTS_DATABASE } from '../data/ingredientsData';
 export function normalizeText(text: string): string {
   if (!text) return '';
   return text
+    .replaceAll('İ', 'i')
+    .replaceAll('I', 'ı')
     .toLowerCase()
     .trim()
+    .replaceAll('\u0307', '') // Strip combining dot above
     .replaceAll('ı', 'i')
     .replaceAll('ğ', 'g')
     .replaceAll('ü', 'u')
     .replaceAll('ş', 's')
     .replaceAll('ö', 'o')
-    .replaceAll('ç', 'c')
-    .replaceAll('İ', 'i')
-    .replaceAll('Ğ', 'g')
-    .replaceAll('Ü', 'u')
-    .replaceAll('Ş', 's')
-    .replaceAll('Ö', 'o')
-    .replaceAll('Ç', 'c');
+    .replaceAll('ç', 'c');
+}
+
+/**
+ * Checks if two normalized tokens/phrases match semantically without substring collisions.
+ * Prevents "su" from matching "tavuk gogsu", "et" from matching "patates", or "bal" from matching "balik".
+ */
+export function tokensMatch(a: string, b: string): boolean {
+  if (!a || !b) return false;
+  if (a === b) return true;
+
+  // Space-insensitive match for compounds (e.g. "zeytinyagi" vs "zeytin yagi", "pulbiber" vs "pul biber")
+  const aNoSpace = a.replace(/\s+/g, '');
+  const bNoSpace = b.replace(/\s+/g, '');
+  if (aNoSpace === bNoSpace && aNoSpace.length >= 4) return true;
+
+  // Plural suffix strip (Turkish -ler, -lar for words >= 5 chars)
+  const stripPlural = (s: string) => (s.endsWith('ler') || s.endsWith('lar')) && s.length > 5 ? s.slice(0, -3) : s;
+  const aSingular = stripPlural(a);
+  const bSingular = stripPlural(b);
+  if (aSingular === bSingular) return true;
+
+  // Token word boundary check (prevents sub-word collisions like "su" in "gogsu" or "et" in "patates")
+  const escapeRegex = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+
+  const bRegex = new RegExp(`(^|\\s)${escapeRegex(b)}(\\s|$)`, 'i');
+  if (bRegex.test(a)) return true;
+
+  const aRegex = new RegExp(`(^|\\s)${escapeRegex(a)}(\\s|$)`, 'i');
+  if (aRegex.test(b)) return true;
+
+  return false;
 }
 
 /**
@@ -32,16 +60,16 @@ export function isIngredientMatch(recipeIngName: string, userPantryItem: string)
 
   if (!normRecipe || !normUser) return false;
 
-  // Direct exact or word match
-  if (normRecipe === normUser || normRecipe.includes(normUser) || normUser.includes(normRecipe)) {
+  // Direct exact or word boundary match
+  if (tokensMatch(normRecipe, normUser)) {
     return true;
   }
 
   // Look up aliases in the INGREDIENTS_DATABASE
   for (const entry of INGREDIENTS_DATABASE) {
     const allAliases = [entry.name, ...entry.aliases].map(normalizeText);
-    const userMatchesEntry = allAliases.some(alias => alias === normUser || alias.includes(normUser) || normUser.includes(alias));
-    const recipeMatchesEntry = allAliases.some(alias => alias === normRecipe || alias.includes(normRecipe) || normRecipe.includes(alias));
+    const userMatchesEntry = allAliases.some(alias => tokensMatch(alias, normUser));
+    const recipeMatchesEntry = allAliases.some(alias => tokensMatch(alias, normRecipe));
 
     if (userMatchesEntry && recipeMatchesEntry) {
       return true;

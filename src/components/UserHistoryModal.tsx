@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { X, Trophy, Flame, CheckCircle2, Award, Calendar } from 'lucide-react';
 import { CookedHistoryEntry, ChefBadge } from '../types';
 
@@ -45,7 +45,10 @@ export const UserHistoryModal: React.FC<UserHistoryModalProps> = ({
   const level = Math.floor(xp / 100) + 1;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in">
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in"
+      onClick={onClose}
+    >
       <div 
         className="relative w-full max-w-xl bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}

@@ -1,4 +1,4 @@
-﻿import { PantryItem, ShoppingItem, DailyMealPlan, CookedHistoryEntry, Recipe, ChefBadge } from '../types';
+import { PantryItem, ShoppingItem, DailyMealPlan, CookedHistoryEntry, Recipe, ChefBadge } from '../types';
 
 const KEYS = {
   PANTRY: 'pantry_items_v2',
@@ -29,23 +29,29 @@ export const StorageService = {
         this.savePantry(initial);
         return initial;
       }
-      return JSON.parse(data);
+      const parsed = JSON.parse(data);
+      if (!Array.isArray(parsed)) return [];
+      return parsed.filter(item => item && typeof item.id === 'string' && typeof item.name === 'string');
     } catch {
       return [];
     }
   },
 
   savePantry(items: PantryItem[]): void {
-    localStorage.setItem(KEYS.PANTRY, JSON.stringify(items));
+    try {
+      localStorage.setItem(KEYS.PANTRY, JSON.stringify(items));
+    } catch {}
   },
 
   // FAVORITES
   getFavorites(): string[] {
     try {
       const data = localStorage.getItem(KEYS.FAVORITES);
-      return data ? JSON.parse(data) : ['1', '5']; // Default Tavuk Sote & Menemen
+      if (!data) return ['1', '5']; // Default Tavuk Sote & Menemen
+      const parsed = JSON.parse(data);
+      return Array.isArray(parsed) ? parsed.filter(id => typeof id === 'string') : ['1', '5'];
     } catch {
-      return [];
+      return ['1', '5'];
     }
   },
 
@@ -58,7 +64,9 @@ export const StorageService = {
     } else {
       updated = [...favs, recipeId];
     }
-    localStorage.setItem(KEYS.FAVORITES, JSON.stringify(updated));
+    try {
+      localStorage.setItem(KEYS.FAVORITES, JSON.stringify(updated));
+    } catch {}
     return updated;
   },
 
@@ -66,39 +74,48 @@ export const StorageService = {
   getShoppingList(): ShoppingItem[] {
     try {
       const data = localStorage.getItem(KEYS.SHOPPING);
-      return data ? JSON.parse(data) : [];
+      if (!data) return [];
+      const parsed = JSON.parse(data);
+      return Array.isArray(parsed) ? parsed.filter(i => i && typeof i.id === 'string' && typeof i.name === 'string') : [];
     } catch {
       return [];
     }
   },
 
   saveShoppingList(items: ShoppingItem[]): void {
-    localStorage.setItem(KEYS.SHOPPING, JSON.stringify(items));
+    try {
+      localStorage.setItem(KEYS.SHOPPING, JSON.stringify(items));
+    } catch {}
   },
 
   // WEEKLY MEAL PLAN
   getMealPlan(): DailyMealPlan[] {
-    try {
-      const data = localStorage.getItem(KEYS.MEAL_PLAN);
-      if (data) return JSON.parse(data);
-    } catch {}
-    
-    // Default 7 days
     const days: ('Pazartesi' | 'Salı' | 'Çarşamba' | 'Perşembe' | 'Cuma' | 'Cumartesi' | 'Pazar')[] = [
       'Pazartesi', 'Salı', 'Çarşamba', 'Perşembe', 'Cuma', 'Cumartesi', 'Pazar'
     ];
+    try {
+      const data = localStorage.getItem(KEYS.MEAL_PLAN);
+      if (data) {
+        const parsed = JSON.parse(data);
+        if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+      }
+    } catch {}
     return days.map(day => ({ day }));
   },
 
   saveMealPlan(plan: DailyMealPlan[]): void {
-    localStorage.setItem(KEYS.MEAL_PLAN, JSON.stringify(plan));
+    try {
+      localStorage.setItem(KEYS.MEAL_PLAN, JSON.stringify(plan));
+    } catch {}
   },
 
   // COOKED HISTORY
   getCookedHistory(): CookedHistoryEntry[] {
     try {
       const data = localStorage.getItem(KEYS.COOKED_HISTORY);
-      return data ? JSON.parse(data) : [];
+      if (!data) return [];
+      const parsed = JSON.parse(data);
+      return Array.isArray(parsed) ? parsed.filter(h => h && typeof h.id === 'string') : [];
     } catch {
       return [];
     }
@@ -115,7 +132,9 @@ export const StorageService = {
       notes
     };
     const updated = [entry, ...history];
-    localStorage.setItem(KEYS.COOKED_HISTORY, JSON.stringify(updated));
+    try {
+      localStorage.setItem(KEYS.COOKED_HISTORY, JSON.stringify(updated));
+    } catch {}
 
     // Update streak and XP
     this.incrementXP(50);
@@ -128,7 +147,9 @@ export const StorageService = {
   getCustomRecipes(): Recipe[] {
     try {
       const data = localStorage.getItem(KEYS.CUSTOM_RECIPES);
-      return data ? JSON.parse(data) : [];
+      if (!data) return [];
+      const parsed = JSON.parse(data);
+      return Array.isArray(parsed) ? parsed.filter(r => r && typeof r.id === 'string' && typeof r.title === 'string') : [];
     } catch {
       return [];
     }
@@ -137,43 +158,82 @@ export const StorageService = {
   saveCustomRecipe(recipe: Recipe): Recipe[] {
     const current = this.getCustomRecipes();
     const updated = [recipe, ...current.filter(r => r.id !== recipe.id)];
-    localStorage.setItem(KEYS.CUSTOM_RECIPES, JSON.stringify(updated));
+    try {
+      localStorage.setItem(KEYS.CUSTOM_RECIPES, JSON.stringify(updated));
+    } catch {}
     return updated;
   },
 
   // GAMIFICATION (XP & Streak)
   getXP(): number {
-    return parseInt(localStorage.getItem(KEYS.CHEF_XP) || '150', 10);
+    try {
+      return parseInt(localStorage.getItem(KEYS.CHEF_XP) || '150', 10);
+    } catch {
+      return 150;
+    }
   },
 
   incrementXP(amount: number): number {
     const current = this.getXP() + amount;
-    localStorage.setItem(KEYS.CHEF_XP, current.toString());
+    try {
+      localStorage.setItem(KEYS.CHEF_XP, current.toString());
+    } catch {}
     return current;
   },
 
   getStreak(): number {
-    return parseInt(localStorage.getItem(KEYS.CHEF_STREAK) || '2', 10);
+    try {
+      const val = localStorage.getItem(KEYS.CHEF_STREAK);
+      return val !== null ? parseInt(val, 10) || 0 : 2;
+    } catch {
+      return 2;
+    }
   },
 
   updateStreak(): number {
-    const lastCook = localStorage.getItem(KEYS.LAST_COOK_DATE);
-    const today = new Date().toDateString();
-    let streak = this.getStreak();
+    try {
+      const lastCook = localStorage.getItem(KEYS.LAST_COOK_DATE);
+      const today = new Date().toDateString();
+      let streak = this.getStreak();
 
-    if (lastCook) {
-      const yesterday = new Date(Date.now() - 86400000).toDateString();
-      if (lastCook === yesterday) {
-        streak += 1;
-      } else if (lastCook !== today) {
+      if (lastCook) {
+        const yesterday = new Date(Date.now() - 86400000).toDateString();
+        if (lastCook === today) {
+          // Already cooked today: idempotent, don't increment multiple times on same day
+          return streak;
+        } else if (lastCook === yesterday) {
+          // Cooked yesterday: increment consecutive streak
+          streak += 1;
+        } else {
+          // Missed at least one day: streak resets to 1
+          streak = 1;
+        }
+      } else {
+        // First cook ever or no record: set streak to 1
         streak = 1;
       }
-    } else {
-      streak = 1;
-    }
 
-    localStorage.setItem(KEYS.CHEF_STREAK, streak.toString());
-    localStorage.setItem(KEYS.LAST_COOK_DATE, today);
-    return streak;
+      localStorage.setItem(KEYS.CHEF_STREAK, streak.toString());
+      localStorage.setItem(KEYS.LAST_COOK_DATE, today);
+      return streak;
+    } catch {
+      return 1;
+    }
+  },
+
+  // THEME
+  getTheme(): boolean {
+    try {
+      const theme = localStorage.getItem(KEYS.THEME);
+      return theme === 'light' ? false : true; // default dark
+    } catch {
+      return true;
+    }
+  },
+
+  saveTheme(isDark: boolean): void {
+    try {
+      localStorage.setItem(KEYS.THEME, isDark ? 'dark' : 'light');
+    } catch {}
   }
 };

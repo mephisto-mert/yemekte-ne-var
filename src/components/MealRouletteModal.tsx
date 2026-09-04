@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   X, 
   Dices, 
@@ -45,11 +45,11 @@ export const MealRouletteModal: React.FC<MealRouletteModalProps> = ({
     }
   }, [isOpen]);
 
-  const handleSpin = () => {
+  const handleSpin = (targetMood: RouletteMood = mood) => {
     setIsSpinning(true);
     setWinner(null);
 
-    const candidates = prepareRouletteCandidates(recipes, pantryItems, favorites, mood);
+    const candidates = prepareRouletteCandidates(recipes, pantryItems, favorites, targetMood);
     const selected = spinRoulette(candidates);
 
     let counter = 0;
@@ -135,7 +135,10 @@ export const MealRouletteModal: React.FC<MealRouletteModalProps> = ({
           ].map(m => (
             <button
               key={m.id}
-              onClick={() => { setMood(m.id as RouletteMood); if (!isSpinning) handleSpin(); }}
+              onClick={() => { 
+                setMood(m.id as RouletteMood); 
+                if (!isSpinning) handleSpin(m.id as RouletteMood); 
+              }}
               className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                 mood === m.id
                   ? 'bg-amber-500 text-slate-950 font-black shadow-md shadow-amber-500/20'
@@ -235,7 +238,7 @@ export const MealRouletteModal: React.FC<MealRouletteModalProps> = ({
               </button>
 
               <button
-                onClick={handleSpin}
+                onClick={() => handleSpin(mood)}
                 className="py-3.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 font-bold text-sm flex items-center gap-2 transition-all active:scale-[0.98]"
                 title="Başka bir yemek seç"
               >
@@ -243,6 +246,28 @@ export const MealRouletteModal: React.FC<MealRouletteModalProps> = ({
                 <span>Tekrar Çevir</span>
               </button>
             </div>
+          </div>
+        )}
+
+        {/* Empty State Fallback */}
+        {!isSpinning && !winner && (
+          <div className="py-8 px-4 text-center bg-slate-950/40 border border-slate-800/80 rounded-2xl animate-in fade-in">
+            <div className="w-12 h-12 rounded-2xl bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-2xl mx-auto mb-3">
+              🍽️
+            </div>
+            <p className="text-sm font-bold text-white mb-1">Bu filtreye uygun yemek bulunamadı</p>
+            <p className="text-xs text-slate-400 mb-4 max-w-xs mx-auto">
+              Seçtiğin kriterlere uygun tarif bulunamadı. Filtreyi gevşeterek tüm tarifler arasından şansını deneyebilirsin.
+            </p>
+            <button
+              onClick={() => {
+                setMood('anything');
+                handleSpin('anything');
+              }}
+              className="px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-black text-xs transition-all shadow-md shadow-amber-500/20"
+            >
+              Tüm Tarifler Arasından Çevir 🎲
+            </button>
           </div>
         )}
 

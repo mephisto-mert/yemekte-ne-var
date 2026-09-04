@@ -1,5 +1,5 @@
-﻿import { Recipe, MatchResult } from '../types';
-import { evaluateRecipeMatch } from './matchingService';
+import { Recipe, MatchResult } from '../types';
+import { evaluateRecipeMatch, tokensMatch, normalizeText } from './matchingService';
 
 export type RouletteMood = 
   | 'anything' 
@@ -16,6 +16,22 @@ export interface RouletteOption {
   weight: number;
 }
 
+const isMeatIngredient = (ingName: string): boolean => {
+  const norm = normalizeText(ingName);
+  const meatKeywords = ['tavuk', 'kiyma', 'balik', 'sucuk', 'sosis', 'kavurma', 'pastirma', 'hindi', 'kuzu', 'dana'];
+  if (meatKeywords.some(kw => tokensMatch(norm, kw))) return true;
+  // Explicit word check for 'et' to avoid colliding with 'patates'
+  if (/\b(et|eti|dana eti|kuzu eti|kusbasi et|kirmizi et)\b/i.test(norm)) return true;
+  return false;
+};
+
+const isHighProteinIngredient = (ingName: string): boolean => {
+  if (isMeatIngredient(ingName)) return true;
+  const norm = normalizeText(ingName);
+  const proteinKeywords = ['yumurta', 'mercimek', 'nohut', 'kuru fasulye', 'peynir', 'lor', 'kasar', 'sut', 'yogurt', 'ton baligi'];
+  return proteinKeywords.some(kw => tokensMatch(norm, kw));
+};
+
 /**
  * Filters and weights recipes for the Meal Roulette spin.
  */
@@ -29,14 +45,15 @@ export function prepareRouletteCandidates(
     .filter(recipe => {
       if (mood === 'under_25' && recipe.timeMinutes > 25) return false;
       if (mood === 'easy' && recipe.difficulty !== 'Kolay') return false;
-      if (mood === 'vegetarian' && recipe.category !== 'vegetarian' && recipe.category !== 'salad' && recipe.category !== 'olive_oil') {
-        const hasMeat = recipe.ingredients.some(i => ['tavuk', 'et', 'kıyma', 'balık', 'sucuk'].some(m => i.name.toLowerCase().includes(m)));
+      if (mood === 'vegetarian') {
+        const hasMeat = recipe.ingredients.some(i => isMeatIngredient(i.name));
         if (hasMeat) return false;
       }
       if (mood === 'healthy' && recipe.calories > 450) return false;
-      if (mood === 'high_protein' && (!recipe.macros || recipe.macros.protein < 20)) {
-        const hasProtein = recipe.ingredients.some(i => ['tavuk', 'et', 'kıyma', 'yumurta', 'mercimek', 'nohut'].some(p => i.name.toLowerCase().includes(p)));
-        if (!hasProtein) return false;
+      if (mood === 'high_protein') {
+        const meetsMacro = recipe.macros && recipe.macros.protein >= 20;
+        const hasProtein = recipe.ingredients.some(i => isHighProteinIngredient(i.name));
+        if (!meetsMacro && !hasProtein) return false;
       }
       return true;
     })
