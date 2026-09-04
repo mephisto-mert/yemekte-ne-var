@@ -1,0 +1,2824 @@
+{
+  "version": "13.0.0",
+  "lastUpdated": "2026-02-05",
+  "totalRecipes": 1000,
+  "categories": [
+    {
+      "id": "main_dish",
+      "name": "Ana Yemek",
+      "emoji": "🥩",
+      "count": 156
+    },
+    {
+      "id": "breakfast",
+      "name": "Kahvaltı",
+      "emoji": "🍳",
+      "count": 72
+    },
+    {
+      "id": "meze",
+      "name": "Meze",
+      "emoji": "🫒",
+      "count": 69
+    },
+    {
+      "id": "olive_oil",
+      "name": "Zeytinyağlı",
+      "emoji": "🫒",
+      "count": 63
+    },
+    {
+      "id": "soup",
+      "name": "Çorba",
+      "emoji": "🍲",
+      "count": 62
+    },
+    {
+      "id": "vegetarian",
+      "name": "Vejetaryen",
+      "emoji": "🥬",
+      "count": 60
+    },
+    {
+      "id": "dessert",
+      "name": "Tatlı",
+      "emoji": "🍰",
+      "count": 59
+    },
+    {
+      "id": "side_dish",
+      "name": "Yan Yemek",
+      "emoji": "🍚",
+      "count": 57
+    },
+    {
+      "id": "pastry",
+      "name": "Hamur İşi",
+      "emoji": "🥟",
+      "count": 47
+    },
+    {
+      "id": "fast_food",
+      "name": "Fast Food",
+      "emoji": "🍔",
+      "count": 46
+    },
+    {
+      "id": "salad",
+      "name": "Salata",
+      "emoji": "🥗",
+      "count": 45
+    },
+    {
+      "id": "drink",
+      "name": "İçecek",
+      "emoji": "🥤",
+      "count": 44
+    },
+    {
+      "id": "sauce",
+      "name": "Sos",
+      "emoji": "🥫",
+      "count": 40
+    },
+    {
+      "id": "snack",
+      "name": "Aperatif",
+      "emoji": "🥪",
+      "count": 40
+    },
+    {
+      "id": "regional",
+      "name": "Bölgesel",
+      "emoji": "🏔️",
+      "count": 30
+    },
+    {
+      "id": "world",
+      "name": "Dünya Mutfağı",
+      "emoji": "🌍",
+      "count": 30
+    },
+    {
+      "id": "diet",
+      "name": "Diyet",
+      "emoji": "💪",
+      "count": 20
+    },
+    {
+      "id": "preserve",
+      "name": "Konserve",
+      "emoji": "🫙",
+      "count": 20
+    },
+    {
+      "id": "baby",
+      "name": "Bebek Yemeği",
+      "emoji": "🍼",
+      "count": 20
+    },
+    {
+      "id": "ramadan",
+      "name": "Ramazan",
+      "emoji": "🌙",
+      "count": 20
+    }
+  ],
+  "recipes": [
+    {
+      "id": 1,
+      "name": "Tavuk Sote",
+      "category": "main_dish",
+      "difficulty": "Kolay",
+      "time": "30 dk",
+      "calories": 350,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Tavuk göğsü",
+          "amount": "500g"
+        },
+        {
+          "item": "Soğan",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Biber",
+          "amount": "3 adet"
+        },
+        {
+          "item": "Domates",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Zeytinyağı",
+          "amount": "3 yemek kaşığı"
+        },
+        {
+          "item": "Tuz",
+          "amount": "1 tatlı kaşığı"
+        }
+      ],
+      "steps": [
+        "Tavuğu kuşbaşı doğrayın",
+        "Soğanları ay şeklinde kesin",
+        "Zeytinyağında tavuğu soteleyin",
+        "Sebzeleri ekleyip pişirin",
+        "Tuz ve baharatlarla tatlandırın"
+      ],
+      "rating": 4.6,
+      "reviewCount": 328,
+      "servings": 2,
+      "timeMinutes": 30,
+      "videoId": "h8Q5cY0Hkzg",
+      "isPremium": true,
+      "isFeatured": true,
+      "tags": [
+        "ana yemek",
+        "akşam yemeği",
+        "kolay",
+        "hızlı"
+      ],
+      "chef": {
+        "name": "Şef Ahmet",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Tavuk%20Sote"
+    },
+    {
+      "id": 2,
+      "name": "Karnıyarık",
+      "category": "main_dish",
+      "difficulty": "Orta",
+      "time": "45 dk",
+      "calories": 420,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Patlıcan",
+          "amount": "4 adet"
+        },
+        {
+          "item": "Kıyma",
+          "amount": "300g"
+        },
+        {
+          "item": "Soğan",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Domates",
+          "amount": "3 adet"
+        },
+        {
+          "item": "Biber",
+          "amount": "2 adet"
+        }
+      ],
+      "steps": [
+        "Patlıcanları alacalı soyun",
+        "Kızgın yağda kızartın",
+        "İç harcı hazırlayın",
+        "Patlıcanları yarın ve doldurun",
+        "Fırında pişirin"
+      ],
+      "rating": 4.4,
+      "reviewCount": 328,
+      "servings": 5,
+      "timeMinutes": 45,
+      "videoId": "rL46R1R0G4c",
+      "isPremium": true,
+      "isFeatured": true,
+      "tags": [
+        "ana yemek",
+        "akşam yemeği",
+        "orta"
+      ],
+      "chef": {
+        "name": "Şef Ahmet",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Karn%C4%B1yar%C4%B1k"
+    },
+    {
+      "id": 3,
+      "name": "İzmir Köfte",
+      "category": "main_dish",
+      "difficulty": "Orta",
+      "time": "50 dk",
+      "calories": 480,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Dana kıyma",
+          "amount": "500g"
+        },
+        {
+          "item": "Patates",
+          "amount": "3 adet"
+        },
+        {
+          "item": "Domates",
+          "amount": "4 adet"
+        },
+        {
+          "item": "Biber",
+          "amount": "3 adet"
+        },
+        {
+          "item": "Soğan",
+          "amount": "1 adet"
+        }
+      ],
+      "steps": [
+        "Köfte harcını hazırlayın",
+        "Yuvarlak köfteler yapın",
+        "Patatesleri dilimleyin",
+        "Tepsiye dizin",
+        "Sos döküp fırında pişirin"
+      ],
+      "rating": 4.1,
+      "reviewCount": 220,
+      "servings": 4,
+      "timeMinutes": 50,
+      "videoId": "7wM9n2X1Y00",
+      "isPremium": true,
+      "isFeatured": true,
+      "tags": [
+        "ana yemek",
+        "akşam yemeği",
+        "orta"
+      ],
+      "chef": {
+        "name": "Şef Elif",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=%C4%B0zmir%20K%C3%B6fte"
+    },
+    {
+      "id": 4,
+      "name": "Mercimek Çorbası",
+      "category": "soup",
+      "difficulty": "Kolay",
+      "time": "30 dk",
+      "calories": 180,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Kırmızı mercimek",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Soğan",
+          "amount": "1 adet"
+        },
+        {
+          "item": "Havuç",
+          "amount": "1 adet"
+        },
+        {
+          "item": "Patates",
+          "amount": "1 adet"
+        },
+        {
+          "item": "Tereyağı",
+          "amount": "2 yemek kaşığı"
+        }
+      ],
+      "steps": [
+        "Mercimekleri yıkayın",
+        "Sebzelerle haşlayın",
+        "Blenderdan geçirin",
+        "Tereyağlı sos ekleyin",
+        "Limonla servis edin"
+      ],
+      "rating": 4.7,
+      "reviewCount": 140,
+      "servings": 2,
+      "timeMinutes": 30,
+      "videoId": "U_51Z-W3W2E",
+      "isPremium": true,
+      "isFeatured": true,
+      "tags": [
+        "çorba",
+        "sıcak",
+        "kolay",
+        "hızlı",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Mustafa",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Mercimek%20%C3%87orbas%C4%B1"
+    },
+    {
+      "id": 5,
+      "name": "Menemen",
+      "category": "breakfast",
+      "difficulty": "Kolay",
+      "time": "15 dk",
+      "calories": 250,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Yumurta",
+          "amount": "4 adet"
+        },
+        {
+          "item": "Domates",
+          "amount": "3 adet"
+        },
+        {
+          "item": "Biber",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Tereyağı",
+          "amount": "2 yemek kaşığı"
+        },
+        {
+          "item": "Tuz",
+          "amount": "1 çay kaşığı"
+        }
+      ],
+      "steps": [
+        "Sebzeleri doğrayın",
+        "Tereyağında kavurun",
+        "Yumurtaları kırın",
+        "Karıştırarak pişirin",
+        "Sıcak servis edin"
+      ],
+      "rating": 4.5,
+      "reviewCount": 59,
+      "servings": 3,
+      "timeMinutes": 15,
+      "videoId": "N0mN5Z2J4S0",
+      "isPremium": true,
+      "isFeatured": true,
+      "tags": [
+        "kahvaltı",
+        "sabah",
+        "kolay",
+        "çok hızlı"
+      ],
+      "chef": {
+        "name": "Şef Ali",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Menemen"
+    },
+    {
+      "id": 6,
+      "name": "Baklava",
+      "category": "dessert",
+      "difficulty": "Zor",
+      "time": "120 dk",
+      "calories": 350,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Yufka",
+          "amount": "500g"
+        },
+        {
+          "item": "Ceviz",
+          "amount": "300g"
+        },
+        {
+          "item": "Tereyağı",
+          "amount": "250g"
+        },
+        {
+          "item": "Şeker",
+          "amount": "3 su bardağı"
+        },
+        {
+          "item": "Su",
+          "amount": "2.5 su bardağı"
+        }
+      ],
+      "steps": [
+        "Yufkaları tepsiye serin",
+        "Her kata tereyağı sürün",
+        "Ceviz serpin",
+        "Dilimleyip fırında pişirin",
+        "Şerbeti döküp bekletin"
+      ],
+      "rating": 4.9,
+      "reviewCount": 256,
+      "servings": 4,
+      "timeMinutes": 120,
+      "videoId": "AYMEYo5KQ68",
+      "isPremium": true,
+      "isFeatured": false,
+      "tags": [
+        "tatlı",
+        "şeker",
+        "zor",
+        "özel gün"
+      ],
+      "chef": {
+        "name": "Şef Elif",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Baklava"
+    },
+    {
+      "id": 7,
+      "name": "Yaprak Sarma",
+      "category": "olive_oil",
+      "difficulty": "Zor",
+      "time": "90 dk",
+      "calories": 180,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Asma yaprağı",
+          "amount": "50 adet"
+        },
+        {
+          "item": "Pirinç",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Soğan",
+          "amount": "3 adet"
+        },
+        {
+          "item": "Zeytinyağı",
+          "amount": "1 çay bardağı"
+        },
+        {
+          "item": "Nane",
+          "amount": "1 yemek kaşığı"
+        }
+      ],
+      "steps": [
+        "İç harcı hazırlayın",
+        "Yaprakları haşlayın",
+        "Sarın",
+        "Tencereye dizin",
+        "Kısık ateşte pişirin"
+      ],
+      "rating": 4.8,
+      "reviewCount": 286,
+      "servings": 2,
+      "timeMinutes": 90,
+      "videoId": "dKZG2dwndqA",
+      "isPremium": true,
+      "isFeatured": false,
+      "tags": [
+        "zeytinyağlı",
+        "hafif",
+        "zor",
+        "özel gün",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Ahmet",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Yaprak%20Sarma"
+    },
+    {
+      "id": 8,
+      "name": "Humus",
+      "category": "meze",
+      "difficulty": "Kolay",
+      "time": "20 dk",
+      "calories": 160,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Nohut",
+          "amount": "400g"
+        },
+        {
+          "item": "Tahin",
+          "amount": "3 yemek kaşığı"
+        },
+        {
+          "item": "Limon",
+          "amount": "1 adet"
+        },
+        {
+          "item": "Sarımsak",
+          "amount": "2 diş"
+        },
+        {
+          "item": "Zeytinyağı",
+          "amount": "2 yemek kaşığı"
+        }
+      ],
+      "steps": [
+        "Nohutu haşlayın",
+        "Tüm malzemeleri robota alın",
+        "Pürüzsüz olana kadar çekin",
+        "Zeytinyağı ile servis edin"
+      ],
+      "rating": 4.9,
+      "reviewCount": 265,
+      "servings": 3,
+      "timeMinutes": 20,
+      "videoId": "6wJ0n1P2Q00",
+      "isPremium": true,
+      "isFeatured": false,
+      "tags": [
+        "meze",
+        "ordövr",
+        "kolay",
+        "hızlı",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Kemal",
+        "verified": true
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Humus"
+    },
+    {
+      "id": 9,
+      "name": "Falafel",
+      "category": "vegetarian",
+      "difficulty": "Orta",
+      "time": "40 dk",
+      "calories": 200,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Nohut",
+          "amount": "400g"
+        },
+        {
+          "item": "Maydanoz",
+          "amount": "1 demet"
+        },
+        {
+          "item": "Soğan",
+          "amount": "1 adet"
+        },
+        {
+          "item": "Sarımsak",
+          "amount": "3 diş"
+        },
+        {
+          "item": "Kimyon",
+          "amount": "1 tatlı kaşığı"
+        }
+      ],
+      "steps": [
+        "Nohutu bir gece ıslatın",
+        "Tüm malzemeleri çekin",
+        "Köfteler şekillendirin",
+        "Kızgın yağda kızartın"
+      ],
+      "rating": 4.1,
+      "reviewCount": 445,
+      "servings": 3,
+      "timeMinutes": 40,
+      "videoId": "b9_K8y95-9g",
+      "isPremium": true,
+      "isFeatured": true,
+      "tags": [
+        "vejetaryen",
+        "sebze",
+        "orta"
+      ],
+      "chef": {
+        "name": "Şef Ahmet",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Falafel"
+    },
+    {
+      "id": 10,
+      "name": "Çoban Salatası",
+      "category": "salad",
+      "difficulty": "Kolay",
+      "time": "10 dk",
+      "calories": 80,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Domates",
+          "amount": "3 adet"
+        },
+        {
+          "item": "Salatalık",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Biber",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Soğan",
+          "amount": "1 adet"
+        },
+        {
+          "item": "Zeytinyağı",
+          "amount": "3 yemek kaşığı"
+        }
+      ],
+      "steps": [
+        "Sebzeleri küp küp doğrayın",
+        "Bir kaseye alın",
+        "Zeytinyağı ve limon ekleyin",
+        "Tuzlayıp karıştırın"
+      ],
+      "rating": 4.3,
+      "reviewCount": 449,
+      "servings": 3,
+      "timeMinutes": 10,
+      "videoId": "4MsMIbMKgWg",
+      "isPremium": true,
+      "isFeatured": false,
+      "tags": [
+        "salata",
+        "hafif",
+        "kolay",
+        "çok hızlı",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Derya",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=%C3%87oban%20Salatas%C4%B1"
+    },
+    {
+      "id": 11,
+      "name": "Lahmacun",
+      "category": "fast_food",
+      "difficulty": "Orta",
+      "time": "45 dk",
+      "calories": 280,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Un",
+          "amount": "500g"
+        },
+        {
+          "item": "Kıyma",
+          "amount": "300g"
+        },
+        {
+          "item": "Domates",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Biber",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Maydanoz",
+          "amount": "1 demet"
+        }
+      ],
+      "steps": [
+        "Hamuru yoğurun",
+        "İç harcı hazırlayın",
+        "Hamuru açın",
+        "Harcı sürün",
+        "Fırında pişirin"
+      ],
+      "rating": 4.5,
+      "reviewCount": 350,
+      "servings": 3,
+      "timeMinutes": 45,
+      "videoId": "8dGwbRd5jLo",
+      "isPremium": true,
+      "isFeatured": false,
+      "tags": [
+        "fast food",
+        "hızlı",
+        "orta"
+      ],
+      "chef": {
+        "name": "Şef Zeynep",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Lahmacun"
+    },
+    {
+      "id": 12,
+      "name": "Ayran",
+      "category": "drink",
+      "difficulty": "Kolay",
+      "time": "5 dk",
+      "calories": 60,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Yoğurt",
+          "amount": "2 su bardağı"
+        },
+        {
+          "item": "Su",
+          "amount": "2 su bardağı"
+        },
+        {
+          "item": "Tuz",
+          "amount": "1 çay kaşığı"
+        }
+      ],
+      "steps": [
+        "Yoğurdu kaseye alın",
+        "Su ekleyin",
+        "Tuzlayın",
+        "İyice çırpın",
+        "Soğuk servis edin"
+      ],
+      "rating": 4.8,
+      "reviewCount": 91,
+      "servings": 1,
+      "timeMinutes": 5,
+      "videoId": "VwiXIBW8toM",
+      "isPremium": true,
+      "isFeatured": false,
+      "tags": [
+        "içecek",
+        "serinletici",
+        "kolay",
+        "çok hızlı",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Mustafa",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Ayran"
+    },
+    {
+      "id": 13,
+      "name": "Bulgur Pilavı",
+      "category": "side_dish",
+      "difficulty": "Kolay",
+      "time": "25 dk",
+      "calories": 220,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Bulgur",
+          "amount": "2 su bardağı"
+        },
+        {
+          "item": "Domates salçası",
+          "amount": "1 yemek kaşığı"
+        },
+        {
+          "item": "Tereyağı",
+          "amount": "2 yemek kaşığı"
+        },
+        {
+          "item": "Su",
+          "amount": "3 su bardağı"
+        },
+        {
+          "item": "Tuz",
+          "amount": "1 tatlı kaşığı"
+        }
+      ],
+      "steps": [
+        "Tereyağını eritin",
+        "Salçayı kavurun",
+        "Bulguru ekleyin",
+        "Su ekleyip pişirin",
+        "Demlendirin"
+      ],
+      "rating": 4.4,
+      "reviewCount": 53,
+      "servings": 2,
+      "timeMinutes": 25,
+      "videoId": "4wZ9m1P2Q00",
+      "isPremium": true,
+      "isFeatured": false,
+      "tags": [
+        "kolay",
+        "hızlı"
+      ],
+      "chef": {
+        "name": "Şef Elif",
+        "verified": true
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Bulgur%20Pilav%C4%B1"
+    },
+    {
+      "id": 14,
+      "name": "Peynirli Su Böreği",
+      "category": "pastry",
+      "difficulty": "Orta",
+      "time": "60 dk",
+      "calories": 380,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Yufka",
+          "amount": "6 adet"
+        },
+        {
+          "item": "Beyaz peynir",
+          "amount": "400g"
+        },
+        {
+          "item": "Yumurta",
+          "amount": "3 adet"
+        },
+        {
+          "item": "Süt",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Tereyağı",
+          "amount": "100g"
+        }
+      ],
+      "steps": [
+        "Yufkaları haşlayın",
+        "Peynir harcını hazırlayın",
+        "Tepsiye serin",
+        "Her kata harç koyun",
+        "Fırında pişirin"
+      ],
+      "rating": 4.4,
+      "reviewCount": 175,
+      "servings": 2,
+      "timeMinutes": 60,
+      "videoId": "search_Peynirli%20Su%20B%C3%B6re%C4%9Fi",
+      "isPremium": true,
+      "isFeatured": false,
+      "tags": [
+        "hamur işi",
+        "fırın",
+        "orta",
+        "özel gün"
+      ],
+      "chef": {
+        "name": "Şef Elif",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Peynirli%20Su%20B%C3%B6re%C4%9Fi"
+    },
+    {
+      "id": 15,
+      "name": "Domates Sosu",
+      "category": "sauce",
+      "difficulty": "Kolay",
+      "time": "20 dk",
+      "calories": 80,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Domates",
+          "amount": "500g"
+        },
+        {
+          "item": "Sarımsak",
+          "amount": "3 diş"
+        },
+        {
+          "item": "Zeytinyağı",
+          "amount": "3 yemek kaşığı"
+        },
+        {
+          "item": "Fesleğen",
+          "amount": "1 demet"
+        },
+        {
+          "item": "Tuz",
+          "amount": "1 tatlı kaşığı"
+        }
+      ],
+      "steps": [
+        "Domatesleri rendeleyin",
+        "Sarımsakları kavurun",
+        "Domatesi ekleyin",
+        "Kısık ateşte pişirin",
+        "Fesleğen ekleyin"
+      ],
+      "rating": 4.3,
+      "reviewCount": 362,
+      "servings": 1,
+      "timeMinutes": 20,
+      "videoId": "search_Domates%20Sosu",
+      "isPremium": true,
+      "isFeatured": false,
+      "tags": [
+        "kolay",
+        "hızlı",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Fatma",
+        "verified": true
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Domates%20Sosu"
+    },
+    {
+      "id": 16,
+      "name": "Peynir Tabağı",
+      "category": "snack",
+      "difficulty": "Kolay",
+      "time": "10 dk",
+      "calories": 280,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Beyaz peynir",
+          "amount": "100g"
+        },
+        {
+          "item": "Kaşar peyniri",
+          "amount": "100g"
+        },
+        {
+          "item": "Zeytin",
+          "amount": "50g"
+        },
+        {
+          "item": "Domates",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Salatalık",
+          "amount": "1 adet"
+        }
+      ],
+      "steps": [
+        "Peynirleri dilimleyin",
+        "Tabağa yerleştirin",
+        "Zeytinleri ekleyin",
+        "Sebzelerle süsleyin"
+      ],
+      "rating": 4.5,
+      "reviewCount": 193,
+      "servings": 4,
+      "timeMinutes": 10,
+      "videoId": "search_Peynir%20Taba%C4%9F%C4%B1",
+      "isPremium": true,
+      "isFeatured": false,
+      "tags": [
+        "kolay",
+        "çok hızlı"
+      ],
+      "chef": {
+        "name": "Şef Mustafa",
+        "verified": true
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Peynir%20Taba%C4%9F%C4%B1"
+    },
+    {
+      "id": 17,
+      "name": "Muhlama",
+      "category": "regional",
+      "difficulty": "Kolay",
+      "time": "20 dk",
+      "calories": 380,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Mısır unu",
+          "amount": "3 yemek kaşığı"
+        },
+        {
+          "item": "Tereyağı",
+          "amount": "100g"
+        },
+        {
+          "item": "Kaşar peyniri",
+          "amount": "200g"
+        },
+        {
+          "item": "Su",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Tuz",
+          "amount": "1 çay kaşığı"
+        }
+      ],
+      "steps": [
+        "Tereyağını eritin",
+        "Mısır unu ekleyip kavurun",
+        "Su ekleyip karıştırın",
+        "Peyniri ekleyin",
+        "Uzayana kadar pişirin"
+      ],
+      "rating": 4.5,
+      "reviewCount": 58,
+      "servings": 4,
+      "timeMinutes": 20,
+      "videoId": "search_Muhlama",
+      "isPremium": true,
+      "isFeatured": false,
+      "tags": [
+        "bölgesel",
+        "yerel",
+        "kolay",
+        "hızlı"
+      ],
+      "chef": {
+        "name": "Şef Elif",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Muhlama"
+    },
+    {
+      "id": 18,
+      "name": "Pizza Margherita",
+      "category": "world",
+      "difficulty": "Orta",
+      "time": "40 dk",
+      "calories": 320,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Pizza hamuru",
+          "amount": "1 adet"
+        },
+        {
+          "item": "Domates sosu",
+          "amount": "100g"
+        },
+        {
+          "item": "Mozzarella",
+          "amount": "200g"
+        },
+        {
+          "item": "Fesleğen",
+          "amount": "1 demet"
+        },
+        {
+          "item": "Zeytinyağı",
+          "amount": "2 yemek kaşığı"
+        }
+      ],
+      "steps": [
+        "Hamuru açın",
+        "Sosu sürün",
+        "Peyniri dağıtın",
+        "Fırında pişirin",
+        "Fesleğen ekleyin"
+      ],
+      "rating": 4.5,
+      "reviewCount": 502,
+      "servings": 3,
+      "timeMinutes": 40,
+      "videoId": "search_Pizza%20Margherita",
+      "isPremium": true,
+      "isFeatured": false,
+      "tags": [
+        "orta"
+      ],
+      "chef": {
+        "name": "Şef Elif",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Pizza%20Margherita"
+    },
+    {
+      "id": 19,
+      "name": "Protein Smoothie",
+      "category": "diet",
+      "difficulty": "Kolay",
+      "time": "5 dk",
+      "calories": 200,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Süt",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Muz",
+          "amount": "1 adet"
+        },
+        {
+          "item": "Fıstık ezmesi",
+          "amount": "1 yemek kaşığı"
+        },
+        {
+          "item": "Yulaf",
+          "amount": "2 yemek kaşığı"
+        },
+        {
+          "item": "Bal",
+          "amount": "1 tatlı kaşığı"
+        }
+      ],
+      "steps": [
+        "Tüm malzemeleri blendere alın",
+        "Pürüzsüz olana kadar çekin",
+        "Hemen servis edin"
+      ],
+      "rating": 4.6,
+      "reviewCount": 342,
+      "servings": 3,
+      "timeMinutes": 5,
+      "videoId": "search_Protein%20Smoothie",
+      "isPremium": true,
+      "isFeatured": false,
+      "tags": [
+        "diyet",
+        "sağlıklı",
+        "kolay",
+        "çok hızlı"
+      ],
+      "chef": {
+        "name": "Mutfak Kurtarıcı AI",
+        "verified": true
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Protein%20Smoothie"
+    },
+    {
+      "id": 20,
+      "name": "Domates Salçası Yapımı",
+      "category": "preserve",
+      "difficulty": "Kolay",
+      "time": "120 dk",
+      "calories": 30,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Domates",
+          "amount": "5 kg"
+        },
+        {
+          "item": "Tuz",
+          "amount": "3 yemek kaşığı"
+        }
+      ],
+      "steps": [
+        "Domatesleri yıkayın",
+        "Robottan geçirin",
+        "Güneşte kurutun",
+        "Kavanozlara doldurun"
+      ],
+      "rating": 4.9,
+      "reviewCount": 250,
+      "servings": 3,
+      "timeMinutes": 120,
+      "videoId": "search_Domates%20Sal%C3%A7as%C4%B1%20Yap%C4%B1m%C4%B1",
+      "isPremium": true,
+      "isFeatured": true,
+      "tags": [
+        "kolay",
+        "özel gün",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Mehmet",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Domates%20Sal%C3%A7as%C4%B1%20Yap%C4%B1m%C4%B1"
+    },
+    {
+      "id": 21,
+      "name": "Sebze Püresi",
+      "category": "baby",
+      "difficulty": "Kolay",
+      "time": "25 dk",
+      "calories": 80,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Havuç",
+          "amount": "1 adet"
+        },
+        {
+          "item": "Patates",
+          "amount": "1 adet"
+        },
+        {
+          "item": "Kabak",
+          "amount": "1 adet"
+        },
+        {
+          "item": "Su",
+          "amount": "1 su bardağı"
+        }
+      ],
+      "steps": [
+        "Sebzeleri haşlayın",
+        "Blenderdan geçirin",
+        "Pürüzsüz hale getirin",
+        "Ilık servis edin"
+      ],
+      "rating": 4.9,
+      "reviewCount": 224,
+      "servings": 3,
+      "timeMinutes": 25,
+      "videoId": "search_Sebze%20P%C3%BCresi",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "kolay",
+        "hızlı",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Elif",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Sebze%20P%C3%BCresi"
+    },
+    {
+      "id": 22,
+      "name": "Güllaç",
+      "category": "ramadan",
+      "difficulty": "Kolay",
+      "time": "30 dk",
+      "calories": 280,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Güllaç yaprağı",
+          "amount": "10 adet"
+        },
+        {
+          "item": "Süt",
+          "amount": "1 litre"
+        },
+        {
+          "item": "Şeker",
+          "amount": "1.5 su bardağı"
+        },
+        {
+          "item": "Gül suyu",
+          "amount": "1 yemek kaşığı"
+        },
+        {
+          "item": "Ceviz",
+          "amount": "100g"
+        }
+      ],
+      "steps": [
+        "Sütü şekerle kaynatın",
+        "Güllaç yapraklarını ıslatın",
+        "Tepsiye dizin",
+        "Ceviz serpin",
+        "Soğuk servis edin"
+      ],
+      "rating": 4.3,
+      "reviewCount": 295,
+      "servings": 4,
+      "timeMinutes": 30,
+      "videoId": "search_G%C3%BClla%C3%A7",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "kolay",
+        "hızlı"
+      ],
+      "chef": {
+        "name": "Şef Elif",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=G%C3%BClla%C3%A7"
+    },
+    {
+      "id": 23,
+      "name": "Taze Fasulye",
+      "category": "olive_oil",
+      "difficulty": "Kolay",
+      "time": "40 dk",
+      "calories": 150,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Taze fasulye",
+          "amount": "500g"
+        },
+        {
+          "item": "Domates",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Soğan",
+          "amount": "1 adet"
+        },
+        {
+          "item": "Zeytinyağı",
+          "amount": "4 yemek kaşığı"
+        },
+        {
+          "item": "Tuz",
+          "amount": "1 tatlı kaşığı"
+        }
+      ],
+      "steps": [
+        "Fasulyeleri ayıklayın",
+        "Soğanı kavurun",
+        "Domatesi ekleyin",
+        "Fasulyelerle pişirin",
+        "Soğuk veya ılık servis edin"
+      ],
+      "rating": 4.6,
+      "reviewCount": 537,
+      "servings": 3,
+      "timeMinutes": 40,
+      "videoId": "search_Taze%20Fasulye",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "zeytinyağlı",
+        "hafif",
+        "kolay",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Selin",
+        "verified": true
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Taze%20Fasulye"
+    },
+    {
+      "id": 24,
+      "name": "Patates Kızartması",
+      "category": "side_dish",
+      "difficulty": "Kolay",
+      "time": "20 dk",
+      "calories": 300,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Patates",
+          "amount": "4 adet"
+        },
+        {
+          "item": "Ayçiçek yağı",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Tuz",
+          "amount": "1 tatlı kaşığı"
+        }
+      ],
+      "steps": [
+        "Patatesleri soyun",
+        "Çubuk şeklinde kesin",
+        "Kızgın yağda kızartın",
+        "Tuzlayıp servis edin"
+      ],
+      "rating": 4.7,
+      "reviewCount": 212,
+      "servings": 3,
+      "timeMinutes": 20,
+      "videoId": "search_Patates%20K%C4%B1zartmas%C4%B1",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "kolay",
+        "hızlı"
+      ],
+      "chef": {
+        "name": "Şef Kemal",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Patates%20K%C4%B1zartmas%C4%B1"
+    },
+    {
+      "id": 25,
+      "name": "Sütlaç",
+      "category": "dessert",
+      "difficulty": "Kolay",
+      "time": "40 dk",
+      "calories": 220,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Pirinç",
+          "amount": "0.5 su bardağı"
+        },
+        {
+          "item": "Süt",
+          "amount": "1 litre"
+        },
+        {
+          "item": "Şeker",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Nişasta",
+          "amount": "1 yemek kaşığı"
+        },
+        {
+          "item": "Vanilya",
+          "amount": "1 paket"
+        }
+      ],
+      "steps": [
+        "Pirinci haşlayın",
+        "Sütü ekleyin",
+        "Şeker ve nişasta ekleyin",
+        "Koyulaşana kadar pişirin",
+        "Kaplara döküp soğutun"
+      ],
+      "rating": 4.4,
+      "reviewCount": 144,
+      "servings": 4,
+      "timeMinutes": 40,
+      "videoId": "search_S%C3%BCtla%C3%A7",
+      "isPremium": true,
+      "isFeatured": false,
+      "tags": [
+        "tatlı",
+        "şeker",
+        "kolay"
+      ],
+      "chef": {
+        "name": "Şef Fatma",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=S%C3%BCtla%C3%A7"
+    },
+    {
+      "id": 26,
+      "name": "Kısır",
+      "category": "meze",
+      "difficulty": "Kolay",
+      "time": "25 dk",
+      "calories": 180,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "İnce bulgur",
+          "amount": "2 su bardağı"
+        },
+        {
+          "item": "Domates salçası",
+          "amount": "2 yemek kaşığı"
+        },
+        {
+          "item": "Nar ekşisi",
+          "amount": "2 yemek kaşığı"
+        },
+        {
+          "item": "Maydanoz",
+          "amount": "1 demet"
+        },
+        {
+          "item": "Yeşil soğan",
+          "amount": "4 adet"
+        }
+      ],
+      "steps": [
+        "Bulguru kaynar suyla ıslatın",
+        "Salça ve nar ekşisi ekleyin",
+        "Doğranmış yeşillikleri katın",
+        "İyice yoğurun",
+        "Marul yapraklarıyla servis edin"
+      ],
+      "rating": 4.9,
+      "reviewCount": 296,
+      "servings": 2,
+      "timeMinutes": 25,
+      "videoId": "search_K%C4%B1s%C4%B1r",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "meze",
+        "ordövr",
+        "kolay",
+        "hızlı",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Ali",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=K%C4%B1s%C4%B1r"
+    },
+    {
+      "id": 27,
+      "name": "Ezogelin Çorbası",
+      "category": "soup",
+      "difficulty": "Kolay",
+      "time": "35 dk",
+      "calories": 160,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Kırmızı mercimek",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Bulgur",
+          "amount": "0.5 su bardağı"
+        },
+        {
+          "item": "Pirinç",
+          "amount": "2 yemek kaşığı"
+        },
+        {
+          "item": "Domates salçası",
+          "amount": "1 yemek kaşığı"
+        },
+        {
+          "item": "Nane",
+          "amount": "1 tatlı kaşığı"
+        }
+      ],
+      "steps": [
+        "Mercimekleri haşlayın",
+        "Bulgur ve pirinç ekleyin",
+        "Salça ekleyip pişirin",
+        "Nane ile servis edin"
+      ],
+      "rating": 4.9,
+      "reviewCount": 357,
+      "servings": 4,
+      "timeMinutes": 35,
+      "videoId": "6wA1n2P3Q00",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "çorba",
+        "sıcak",
+        "kolay",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Ali",
+        "verified": true
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Ezogelin%20%C3%87orbas%C4%B1"
+    },
+    {
+      "id": 28,
+      "name": "Dürüm",
+      "category": "fast_food",
+      "difficulty": "Kolay",
+      "time": "15 dk",
+      "calories": 450,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Lavaş",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Tavuk göğsü",
+          "amount": "200g"
+        },
+        {
+          "item": "Marul",
+          "amount": "4 yaprak"
+        },
+        {
+          "item": "Domates",
+          "amount": "1 adet"
+        },
+        {
+          "item": "Mayonez",
+          "amount": "2 yemek kaşığı"
+        }
+      ],
+      "steps": [
+        "Tavuğu ızgara yapın",
+        "Lavaşı yayın",
+        "Malzemeleri dizin",
+        "Sıkıca sarın",
+        "Dilimleyip servis edin"
+      ],
+      "rating": 4.6,
+      "reviewCount": 236,
+      "servings": 4,
+      "timeMinutes": 15,
+      "videoId": "search_D%C3%BCr%C3%BCm",
+      "isPremium": true,
+      "isFeatured": false,
+      "tags": [
+        "fast food",
+        "hızlı",
+        "kolay",
+        "çok hızlı"
+      ],
+      "chef": {
+        "name": "Şef Ali",
+        "verified": true
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=D%C3%BCr%C3%BCm"
+    },
+    {
+      "id": 29,
+      "name": "Türk Kahvesi",
+      "category": "drink",
+      "difficulty": "Kolay",
+      "time": "10 dk",
+      "calories": 5,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Türk kahvesi",
+          "amount": "2 çay kaşığı"
+        },
+        {
+          "item": "Su",
+          "amount": "1 fincan"
+        },
+        {
+          "item": "Şeker",
+          "amount": "isteğe göre"
+        }
+      ],
+      "steps": [
+        "Cezveye su koyun",
+        "Kahve ve şeker ekleyin",
+        "Kısık ateşte pişirin",
+        "Köpüğü fincana alın",
+        "Kaynatıp servis edin"
+      ],
+      "rating": 4.7,
+      "reviewCount": 455,
+      "servings": 1,
+      "timeMinutes": 10,
+      "videoId": "search_T%C3%BCrk%20Kahvesi",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "içecek",
+        "serinletici",
+        "kolay",
+        "çok hızlı",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Mustafa",
+        "verified": true
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=T%C3%BCrk%20Kahvesi"
+    },
+    {
+      "id": 30,
+      "name": "Sigara Böreği",
+      "category": "pastry",
+      "difficulty": "Kolay",
+      "time": "30 dk",
+      "calories": 150,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Yufka",
+          "amount": "4 adet"
+        },
+        {
+          "item": "Beyaz peynir",
+          "amount": "200g"
+        },
+        {
+          "item": "Maydanoz",
+          "amount": "0.5 demet"
+        },
+        {
+          "item": "Yumurta",
+          "amount": "1 adet"
+        },
+        {
+          "item": "Ayçiçek yağı",
+          "amount": "kızartmak için"
+        }
+      ],
+      "steps": [
+        "Yufkayı üçgen kesin",
+        "Peynir harcını koyun",
+        "Sigara şeklinde sarın",
+        "Yağda kızartın"
+      ],
+      "rating": 4.3,
+      "reviewCount": 148,
+      "servings": 2,
+      "timeMinutes": 30,
+      "videoId": "6wZ7n8P9Q00",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "hamur işi",
+        "fırın",
+        "kolay",
+        "hızlı",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Fatma",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Sigara%20B%C3%B6re%C4%9Fi"
+    },
+    {
+      "id": 31,
+      "name": "Ali Nazik",
+      "category": "regional",
+      "difficulty": "Orta",
+      "time": "45 dk",
+      "calories": 400,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Patlıcan",
+          "amount": "3 adet"
+        },
+        {
+          "item": "Yoğurt",
+          "amount": "2 su bardağı"
+        },
+        {
+          "item": "Sarımsak",
+          "amount": "3 diş"
+        },
+        {
+          "item": "Kuşbaşı et",
+          "amount": "300g"
+        },
+        {
+          "item": "Tereyağı",
+          "amount": "2 yemek kaşığı"
+        }
+      ],
+      "steps": [
+        "Patlıcanları közleyin",
+        "Yoğurt ve sarımsakla ezin",
+        "Eti kavurun",
+        "Patlıcanın üzerine koyun",
+        "Tereyağı döküp servis edin"
+      ],
+      "rating": 4.3,
+      "reviewCount": 257,
+      "servings": 4,
+      "timeMinutes": 45,
+      "videoId": "search_Ali%20Nazik",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "bölgesel",
+        "yerel",
+        "orta"
+      ],
+      "chef": {
+        "name": "Şef Elif",
+        "verified": true
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Ali%20Nazik"
+    },
+    {
+      "id": 32,
+      "name": "Pad Thai",
+      "category": "world",
+      "difficulty": "Orta",
+      "time": "30 dk",
+      "calories": 380,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Pirinç eriştesi",
+          "amount": "200g"
+        },
+        {
+          "item": "Karides",
+          "amount": "200g"
+        },
+        {
+          "item": "Yumurta",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Fıstık",
+          "amount": "50g"
+        },
+        {
+          "item": "Soya sosu",
+          "amount": "3 yemek kaşığı"
+        }
+      ],
+      "steps": [
+        "Erişteleri haşlayın",
+        "Karidesleri soteleyin",
+        "Yumurtayı ekleyin",
+        "Erişte ve sosları karıştırın",
+        "Fıstık serpin"
+      ],
+      "rating": 4.5,
+      "reviewCount": 455,
+      "servings": 4,
+      "timeMinutes": 30,
+      "videoId": "search_Pad%20Thai",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "orta",
+        "hızlı"
+      ],
+      "chef": {
+        "name": "Şef Ahmet",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Pad%20Thai"
+    },
+    {
+      "id": 33,
+      "name": "Kinoa Salatası",
+      "category": "diet",
+      "difficulty": "Kolay",
+      "time": "25 dk",
+      "calories": 220,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Kinoa",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Domates",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Salatalık",
+          "amount": "1 adet"
+        },
+        {
+          "item": "Maydanoz",
+          "amount": "0.5 demet"
+        },
+        {
+          "item": "Zeytinyağı",
+          "amount": "2 yemek kaşığı"
+        }
+      ],
+      "steps": [
+        "Kinoayı haşlayın",
+        "Sebzeleri doğrayın",
+        "Tümünü karıştırın",
+        "Zeytinyağı ve limon ekleyin"
+      ],
+      "rating": 4.5,
+      "reviewCount": 285,
+      "servings": 3,
+      "timeMinutes": 25,
+      "videoId": "search_Kinoa%20Salatas%C4%B1",
+      "isPremium": true,
+      "isFeatured": false,
+      "tags": [
+        "diyet",
+        "sağlıklı",
+        "kolay",
+        "hızlı"
+      ],
+      "chef": {
+        "name": "Şef Elif",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Kinoa%20Salatas%C4%B1"
+    },
+    {
+      "id": 34,
+      "name": "Biber Turşusu",
+      "category": "preserve",
+      "difficulty": "Kolay",
+      "time": "20 dk",
+      "calories": 20,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Biber",
+          "amount": "1 kg"
+        },
+        {
+          "item": "Sirke",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Su",
+          "amount": "3 su bardağı"
+        },
+        {
+          "item": "Tuz",
+          "amount": "3 yemek kaşığı"
+        },
+        {
+          "item": "Sarımsak",
+          "amount": "4 diş"
+        }
+      ],
+      "steps": [
+        "Biberleri yıkayın",
+        "Kavanoza dizin",
+        "Salamura hazırlayın",
+        "Kavanoza dökün",
+        "1 hafta bekletin"
+      ],
+      "rating": 4.6,
+      "reviewCount": 125,
+      "servings": 2,
+      "timeMinutes": 20,
+      "videoId": "search_Biber%20Tur%C5%9Fusu",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "kolay",
+        "hızlı",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Ayşe",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Biber%20Tur%C5%9Fusu"
+    },
+    {
+      "id": 35,
+      "name": "Elma Püresi",
+      "category": "baby",
+      "difficulty": "Kolay",
+      "time": "15 dk",
+      "calories": 50,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Elma",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Su",
+          "amount": "0.5 su bardağı"
+        }
+      ],
+      "steps": [
+        "Elmaları soyun",
+        "Haşlayın",
+        "Püre yapın",
+        "Ilık servis edin"
+      ],
+      "rating": 4.6,
+      "reviewCount": 172,
+      "servings": 4,
+      "timeMinutes": 15,
+      "videoId": "search_Elma%20P%C3%BCresi",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "kolay",
+        "çok hızlı",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Selin",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Elma%20P%C3%BCresi"
+    },
+    {
+      "id": 36,
+      "name": "Hurma Tatlısı",
+      "category": "ramadan",
+      "difficulty": "Orta",
+      "time": "40 dk",
+      "calories": 320,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Hurma",
+          "amount": "500g"
+        },
+        {
+          "item": "Tereyağı",
+          "amount": "100g"
+        },
+        {
+          "item": "Ceviz",
+          "amount": "100g"
+        },
+        {
+          "item": "Şeker",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Su",
+          "amount": "1 su bardağı"
+        }
+      ],
+      "steps": [
+        "Hurmaları çekirdeksiz yayın",
+        "Tereyağıyla kavurun",
+        "Şerbeti hazırlayın",
+        "Cevizle süsleyin"
+      ],
+      "rating": 4.3,
+      "reviewCount": 150,
+      "servings": 4,
+      "timeMinutes": 40,
+      "videoId": "search_Hurma%20Tatl%C4%B1s%C4%B1",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "orta"
+      ],
+      "chef": {
+        "name": "Şef Selin",
+        "verified": true
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Hurma%20Tatl%C4%B1s%C4%B1"
+    },
+    {
+      "id": 37,
+      "name": "Poğaça",
+      "category": "pastry",
+      "difficulty": "Orta",
+      "time": "50 dk",
+      "calories": 180,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Un",
+          "amount": "4 su bardağı"
+        },
+        {
+          "item": "Yoğurt",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Margarin",
+          "amount": "1 paket"
+        },
+        {
+          "item": "Maya",
+          "amount": "1 paket"
+        },
+        {
+          "item": "Peynir",
+          "amount": "200g"
+        }
+      ],
+      "steps": [
+        "Hamuru yoğurun",
+        "Mayalandırın",
+        "Parçalara bölün",
+        "İçine peynir koyun",
+        "Fırında pişirin"
+      ],
+      "rating": 4.5,
+      "reviewCount": 351,
+      "servings": 3,
+      "timeMinutes": 50,
+      "videoId": "search_Po%C4%9Fa%C3%A7a",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "hamur işi",
+        "fırın",
+        "orta",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Mehmet",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Po%C4%9Fa%C3%A7a"
+    },
+    {
+      "id": 38,
+      "name": "Şalgam Suyu",
+      "category": "drink",
+      "difficulty": "Zor",
+      "time": "168 saat",
+      "calories": 15,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Şalgam",
+          "amount": "2 kg"
+        },
+        {
+          "item": "Havuç",
+          "amount": "500g"
+        },
+        {
+          "item": "Bulgur",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Tuz",
+          "amount": "4 yemek kaşığı"
+        },
+        {
+          "item": "Su",
+          "amount": "5 litre"
+        }
+      ],
+      "steps": [
+        "Şalgamları rendeleyin",
+        "Tuzlu suya yatırın",
+        "1 hafta fermente edin",
+        "Süzüp şişeleyin"
+      ],
+      "rating": 5,
+      "reviewCount": 224,
+      "servings": 1,
+      "timeMinutes": 168,
+      "videoId": "search_%C5%9Ealgam%20Suyu",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "içecek",
+        "serinletici",
+        "zor",
+        "özel gün",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Ahmet",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=%C5%9Ealgam%20Suyu"
+    },
+    {
+      "id": 39,
+      "name": "Kabak Mücver",
+      "category": "vegetarian",
+      "difficulty": "Kolay",
+      "time": "25 dk",
+      "calories": 200,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Kabak",
+          "amount": "3 adet"
+        },
+        {
+          "item": "Un",
+          "amount": "3 yemek kaşığı"
+        },
+        {
+          "item": "Yumurta",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Dereotu",
+          "amount": "0.5 demet"
+        },
+        {
+          "item": "Tuz",
+          "amount": "1 tatlı kaşığı"
+        }
+      ],
+      "steps": [
+        "Kabakları rendeleyin",
+        "Tuzlayıp suyunu sıkın",
+        "Malzemeleri karıştırın",
+        "Kaşıkla kızartın"
+      ],
+      "rating": 4.7,
+      "reviewCount": 447,
+      "servings": 4,
+      "timeMinutes": 25,
+      "videoId": "search_Kabak%20M%C3%BCcver",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "vejetaryen",
+        "sebze",
+        "kolay",
+        "hızlı"
+      ],
+      "chef": {
+        "name": "Şef Ali",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Kabak%20M%C3%BCcver"
+    },
+    {
+      "id": 40,
+      "name": "Semizotu Salatası",
+      "category": "salad",
+      "difficulty": "Kolay",
+      "time": "10 dk",
+      "calories": 90,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Semizotu",
+          "amount": "2 demet"
+        },
+        {
+          "item": "Yoğurt",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Sarımsak",
+          "amount": "2 diş"
+        },
+        {
+          "item": "Zeytinyağı",
+          "amount": "2 yemek kaşığı"
+        },
+        {
+          "item": "Tuz",
+          "amount": "1 çay kaşığı"
+        }
+      ],
+      "steps": [
+        "Semizotunu ayıklayın",
+        "Yoğurt-sarımsak karışımı yapın",
+        "Üzerine dökün",
+        "Zeytinyağı gezdirin"
+      ],
+      "rating": 4.7,
+      "reviewCount": 465,
+      "servings": 3,
+      "timeMinutes": 10,
+      "videoId": "search_Semizotu%20Salatas%C4%B1",
+      "isPremium": true,
+      "isFeatured": true,
+      "tags": [
+        "salata",
+        "hafif",
+        "kolay",
+        "çok hızlı",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Burak",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Semizotu%20Salatas%C4%B1"
+    },
+    {
+      "id": 41,
+      "name": "Çiğ Köfte",
+      "category": "meze",
+      "difficulty": "Orta",
+      "time": "45 dk",
+      "calories": 180,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "İnce bulgur",
+          "amount": "2 su bardağı"
+        },
+        {
+          "item": "Biber salçası",
+          "amount": "3 yemek kaşığı"
+        },
+        {
+          "item": "Soğan",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Maydanoz",
+          "amount": "1 demet"
+        },
+        {
+          "item": "İsot",
+          "amount": "1 yemek kaşığı"
+        }
+      ],
+      "steps": [
+        "Bulguru ıslatın",
+        "Salça ve soğanla yoğurun",
+        "30 dakika yoğurmaya devam edin",
+        "Maydanozu ekleyin",
+        "Marul ile servis edin"
+      ],
+      "rating": 4,
+      "reviewCount": 53,
+      "servings": 4,
+      "timeMinutes": 45,
+      "videoId": "search_%C3%87i%C4%9F%20K%C3%B6fte",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "meze",
+        "ordövr",
+        "orta",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Ayşe",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=%C3%87i%C4%9F%20K%C3%B6fte"
+    },
+    {
+      "id": 42,
+      "name": "Tarhana Çorbası",
+      "category": "soup",
+      "difficulty": "Kolay",
+      "time": "25 dk",
+      "calories": 150,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Tarhana",
+          "amount": "4 yemek kaşığı"
+        },
+        {
+          "item": "Su",
+          "amount": "6 su bardağı"
+        },
+        {
+          "item": "Tereyağı",
+          "amount": "2 yemek kaşığı"
+        },
+        {
+          "item": "Nane",
+          "amount": "1 tatlı kaşığı"
+        },
+        {
+          "item": "Tuz",
+          "amount": "1 tatlı kaşığı"
+        }
+      ],
+      "steps": [
+        "Tarhananı suyla açın",
+        "Kaynatın",
+        "Tereyağlı sos ekleyin",
+        "Nane ile servis edin"
+      ],
+      "rating": 4.9,
+      "reviewCount": 442,
+      "servings": 4,
+      "timeMinutes": 25,
+      "videoId": "1wC3n4P5Q00",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "çorba",
+        "sıcak",
+        "kolay",
+        "hızlı",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Ali",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Tarhana%20%C3%87orbas%C4%B1"
+    },
+    {
+      "id": 43,
+      "name": "Tantuni",
+      "category": "fast_food",
+      "difficulty": "Kolay",
+      "time": "20 dk",
+      "calories": 380,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Dana eti",
+          "amount": "300g"
+        },
+        {
+          "item": "Lavaş",
+          "amount": "4 adet"
+        },
+        {
+          "item": "Domates",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Maydanoz",
+          "amount": "1 demet"
+        },
+        {
+          "item": "Limon",
+          "amount": "1 adet"
+        }
+      ],
+      "steps": [
+        "Eti ince kıyın",
+        "Sacda kavurun",
+        "Lavaşa sarın",
+        "Yeşillikle servis edin"
+      ],
+      "rating": 4.3,
+      "reviewCount": 264,
+      "servings": 2,
+      "timeMinutes": 20,
+      "videoId": "search_Tantuni",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "fast food",
+        "hızlı",
+        "kolay",
+        "hızlı"
+      ],
+      "chef": {
+        "name": "Şef Selin",
+        "verified": true
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Tantuni"
+    },
+    {
+      "id": 44,
+      "name": "Sarımsaklı Yoğurt",
+      "category": "sauce",
+      "difficulty": "Kolay",
+      "time": "5 dk",
+      "calories": 60,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Yoğurt",
+          "amount": "2 su bardağı"
+        },
+        {
+          "item": "Sarımsak",
+          "amount": "3 diş"
+        },
+        {
+          "item": "Tuz",
+          "amount": "1 çay kaşığı"
+        },
+        {
+          "item": "Nane",
+          "amount": "1 tatlı kaşığı"
+        }
+      ],
+      "steps": [
+        "Sarımsakları ezin",
+        "Yoğurda karıştırın",
+        "Tuzlayın",
+        "Nane serpin"
+      ],
+      "rating": 4.5,
+      "reviewCount": 390,
+      "servings": 1,
+      "timeMinutes": 5,
+      "videoId": "search_Sar%C4%B1msakl%C4%B1%20Yo%C4%9Furt",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "kolay",
+        "çok hızlı",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Zeynep",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Sar%C4%B1msakl%C4%B1%20Yo%C4%9Furt"
+    },
+    {
+      "id": 45,
+      "name": "Acılı Ezme",
+      "category": "snack",
+      "difficulty": "Kolay",
+      "time": "15 dk",
+      "calories": 120,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Domates",
+          "amount": "3 adet"
+        },
+        {
+          "item": "Biber",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Ceviz",
+          "amount": "0.5 su bardağı"
+        },
+        {
+          "item": "Nar ekşisi",
+          "amount": "2 yemek kaşığı"
+        },
+        {
+          "item": "İsot",
+          "amount": "1 yemek kaşığı"
+        }
+      ],
+      "steps": [
+        "Tüm malzemeleri doğrayın",
+        "Satırla ezin",
+        "Nar ekşisi ekleyin",
+        "Zeytinyağı gezdirin"
+      ],
+      "rating": 4.7,
+      "reviewCount": 470,
+      "servings": 5,
+      "timeMinutes": 15,
+      "videoId": "search_Ac%C4%B1l%C4%B1%20Ezme",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "kolay",
+        "çok hızlı",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Fatma",
+        "verified": true
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Ac%C4%B1l%C4%B1%20Ezme"
+    },
+    {
+      "id": 46,
+      "name": "Hamsi Tava",
+      "category": "regional",
+      "difficulty": "Orta",
+      "time": "25 dk",
+      "calories": 280,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Hamsi",
+          "amount": "500g"
+        },
+        {
+          "item": "Mısır unu",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Tuz",
+          "amount": "1 tatlı kaşığı"
+        },
+        {
+          "item": "Ayçiçek yağı",
+          "amount": "kızartmak için"
+        }
+      ],
+      "steps": [
+        "Hamsileri temizleyin",
+        "Mısır ununa bulayın",
+        "Kızgın yağda kızartın",
+        "Limonla servis edin"
+      ],
+      "rating": 4.2,
+      "reviewCount": 51,
+      "servings": 3,
+      "timeMinutes": 25,
+      "videoId": "search_Hamsi%20Tava",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "bölgesel",
+        "yerel",
+        "orta",
+        "hızlı"
+      ],
+      "chef": {
+        "name": "Şef Ahmet",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Hamsi%20Tava"
+    },
+    {
+      "id": 47,
+      "name": "Spaghetti Carbonara",
+      "category": "world",
+      "difficulty": "Orta",
+      "time": "25 dk",
+      "calories": 450,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Spagetti",
+          "amount": "400g"
+        },
+        {
+          "item": "Pastırma",
+          "amount": "150g"
+        },
+        {
+          "item": "Yumurta",
+          "amount": "3 adet"
+        },
+        {
+          "item": "Parmesan",
+          "amount": "100g"
+        },
+        {
+          "item": "Karabiber",
+          "amount": "1 tatlı kaşığı"
+        }
+      ],
+      "steps": [
+        "Makarnayı haşlayın",
+        "Pastırmayı kavurun",
+        "Yumurta-peynir sosunu hazırlayın",
+        "Makarnaya karıştırın"
+      ],
+      "rating": 4.6,
+      "reviewCount": 220,
+      "servings": 5,
+      "timeMinutes": 25,
+      "videoId": "search_Spaghetti%20Carbonara",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "orta",
+        "hızlı"
+      ],
+      "chef": {
+        "name": "Şef Selin",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Spaghetti%20Carbonara"
+    },
+    {
+      "id": 48,
+      "name": "Avokado Toast",
+      "category": "diet",
+      "difficulty": "Kolay",
+      "time": "10 dk",
+      "calories": 250,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Tam buğday ekmeği",
+          "amount": "2 dilim"
+        },
+        {
+          "item": "Avokado",
+          "amount": "1 adet"
+        },
+        {
+          "item": "Limon",
+          "amount": "0.5 adet"
+        },
+        {
+          "item": "Tuz",
+          "amount": "1 çay kaşığı"
+        },
+        {
+          "item": "Pul biber",
+          "amount": "1 çay kaşığı"
+        }
+      ],
+      "steps": [
+        "Ekmeği kızartın",
+        "Avokadoyu ezin",
+        "Limon ve tuz ekleyin",
+        "Ekmeğe sürün"
+      ],
+      "rating": 4.4,
+      "reviewCount": 73,
+      "servings": 3,
+      "timeMinutes": 10,
+      "videoId": "search_Avokado%20Toast",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "diyet",
+        "sağlıklı",
+        "kolay",
+        "çok hızlı"
+      ],
+      "chef": {
+        "name": "Şef Derya",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Avokado%20Toast"
+    },
+    {
+      "id": 49,
+      "name": "Reçel Yapımı",
+      "category": "preserve",
+      "difficulty": "Kolay",
+      "time": "60 dk",
+      "calories": 50,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Çilek",
+          "amount": "1 kg"
+        },
+        {
+          "item": "Şeker",
+          "amount": "750g"
+        },
+        {
+          "item": "Limon",
+          "amount": "1 adet"
+        }
+      ],
+      "steps": [
+        "Çilekleri yıkayın",
+        "Şekerle karıştırın",
+        "Kaynatın",
+        "Kavanozlara doldurun"
+      ],
+      "rating": 4.4,
+      "reviewCount": 478,
+      "servings": 3,
+      "timeMinutes": 60,
+      "videoId": "search_Re%C3%A7el%20Yap%C4%B1m%C4%B1",
+      "isPremium": false,
+      "isFeatured": false,
+      "tags": [
+        "kolay",
+        "özel gün",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Elif",
+        "verified": true
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Re%C3%A7el%20Yap%C4%B1m%C4%B1"
+    },
+    {
+      "id": 50,
+      "name": "Muz Püresi",
+      "category": "baby",
+      "difficulty": "Kolay",
+      "time": "5 dk",
+      "calories": 90,
+      "image": "",
+      "ingredients": [
+        {
+          "item": "Muz",
+          "amount": "1 adet"
+        }
+      ],
+      "steps": [
+        "Muzu soyun",
+        "Çatalla ezin",
+        "Hemen servis edin"
+      ],
+      "rating": 4.3,
+      "reviewCount": 495,
+      "servings": 3,
+      "timeMinutes": 5,
+      "videoId": "search_Muz%20P%C3%BCresi",
+      "isPremium": true,
+      "isFeatured": false,
+      "tags": [
+        "kolay",
+        "çok hızlı",
+        "düşük kalori"
+      ],
+      "chef": {
+        "name": "Şef Zeynep",
+        "verified": false
+      },
+      "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Muz%20P%C3%BCresi"
+    }
+  ],
+  "schema": {
+    "version": 2,
+    "fields": [
+      "id",
+      "name",
+      "category",
+      "difficulty",
+      "time",
+      "timeMinutes",
+      "calories",
+      "rating",
+      "reviewCount",
+      "servings",
+      "image",
+      "imageUrl",
+      "ingredients",
+      "steps",
+      "videoId",
+      "isPremium",
+      "isFeatured",
+      "tags",
+      "chef"
+    ]
+  }
+}
