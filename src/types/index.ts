@@ -124,3 +124,17 @@ export interface ChefBadge {
   category: 'cooking' | 'streak' | 'explore';
   unlockedAt?: string;
 }
+
+export type SubscriptionTier = 'free' | 'pro' | 'enterprise';
+
+export interface UserProfile {
+  id: string;
+  email: string;
+  displayName: string;
+  avatarUrl?: string;
+  dietaryPreference: string;
+  allergens: string[];
+  subscriptionTier: SubscriptionTier;
+  subscriptionStatus: string;
+  createdAt?: string;
+}

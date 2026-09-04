@@ -1,8 +1,14 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="tr" class="dark">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍳</text></svg>" />
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍳</text></svg>" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Cookly" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     
     <!-- Primary Meta Tags -->
@@ -10,7 +16,7 @@
     <meta name="title" content="Cookly & Mutfak Kurtarıcı — Evdeki Malzemelerle Ne Pişirebilirim?" />
     <meta name="description" content="Elinizdeki malzemeleri seçin, hemen yapabileceğiniz lezzetli yemekleri keşfedin. Meal Roulette ile ne yiyeceğinize anında karar verin, eksik malzemelerle akıllı alışveriş listesi oluşturun." />
     <meta name="keywords" content="yemek tarifleri, evdeki malzemelerle yemek, ne pişirsem, meal roulette, akıllı mutfak, pratik yemekler, tarif bulucu, kiler yönetimi" />
-    <meta name="theme-color" content="#f98006" />
+    <meta name="theme-color" content="#10b981" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -52,5 +58,14 @@
   <body class="bg-slate-950 text-slate-100 font-['Plus_Jakarta_Sans',sans-serif] antialiased selection:bg-orange-500 selection:text-white min-h-screen">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      if ('serviceWorker' in navigator && window.location.protocol.startsWith('http')) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('./sw.js').catch(function(err) {
+            console.warn('SW registration skipped or failed:', err);
+          });
+        });
+      }
+    </script>
   </body>
 </html>

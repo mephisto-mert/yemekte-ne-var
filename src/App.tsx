@@ -11,6 +11,12 @@ import { ShoppingListModal } from './components/ShoppingListModal';
 import { WeeklyPlannerModal } from './components/WeeklyPlannerModal';
 import { AddRecipeModal } from './components/AddRecipeModal';
 import { UserHistoryModal } from './components/UserHistoryModal';
+import { AuthModal } from './components/AuthModal';
+import { UserProfileModal } from './components/UserProfileModal';
+import { SubscriptionModal } from './components/SubscriptionModal';
+import { useAuth } from './context/AuthContext';
+import { cloudSync } from './services/cloudSyncService';
+import { StripeService } from './services/stripeService';
 
 import { Recipe, PantryItem, ShoppingItem, DailyMealPlan, CookedHistoryEntry, RecipeIngredient } from './types';
 import { RECIPES_DATABASE } from './data/recipesData';
@@ -20,6 +26,8 @@ import { ShoppingService } from './services/shoppingService';
 import { Heart, PlusCircle, Sparkles, CheckCircle2 } from 'lucide-react';
 
 export function App() {
+  const { user, isPro, openSubscriptionModal } = useAuth();
+
   // State
   const [recipes, setRecipes] = useState<Recipe[]>(() => {
     const custom = StorageService.getCustomRecipes();
@@ -33,6 +41,21 @@ export function App() {
   const [cookedHistory, setCookedHistory] = useState<CookedHistoryEntry[]>(() => StorageService.getCookedHistory());
   const [streak, setStreak] = useState<number>(() => StorageService.getStreak());
   const [xp, setXp] = useState<number>(() => StorageService.getXP());
+
+  // Cloud Synchronization: Reconcile guest local data with cloud upon login
+  useEffect(() => {
+    if (user?.id) {
+      cloudSync.reconcileOnLogin(user.id).then((merged) => {
+        setPantryItems(merged.pantry);
+        setFavorites(merged.favorites);
+        setShoppingList(merged.shopping);
+        setMealPlan(merged.mealPlan);
+        setRecipes([...merged.customRecipes, ...RECIPES_DATABASE]);
+        setStreak(StorageService.getStreak());
+        setXp(StorageService.getXP());
+      });
+    }
+  }, [user?.id]);
 
   // UI state
   const [activeTab, setActiveTab] = useState<string>('explore');
@@ -93,13 +116,20 @@ export function App() {
     const updated = [newItem, ...pantryItems];
     setPantryItems(updated);
     StorageService.savePantry(updated);
+    if (user?.id) {
+      cloudSync.syncPantryChange(user.id, name.trim(), 'add');
+    }
     showToast(`"${name}" mutfağına eklendi! ✨`);
   };
 
   const handleRemoveIngredient = (id: string) => {
+    const itemToRemove = pantryItems.find(p => p.id === id);
     const updated = pantryItems.filter(p => p.id !== id);
     setPantryItems(updated);
     StorageService.savePantry(updated);
+    if (user?.id && itemToRemove) {
+      cloudSync.syncPantryChange(user.id, itemToRemove.name, 'remove');
+    }
   };
 
   const handleClearPantry = () => {
@@ -116,6 +146,9 @@ export function App() {
     const updated = StorageService.toggleFavorite(id);
     setFavorites(updated);
     const isNowFav = updated.includes(id);
+    if (user?.id) {
+      cloudSync.syncFavoriteChange(user.id, id, isNowFav);
+    }
     showToast(isNowFav ? '❤️ Tarif defterine eklendi!' : '💔 Defterden çıkarıldı.');
   };
 
@@ -175,11 +208,25 @@ export function App() {
     showToast(`Tebrikler! "${recipe.title}" pişirildi (+50 XP) 🏆`);
   };
 
-  // Custom recipe save
+  // Custom recipe save with tier limits & cloud sync
   const handleSaveCustomRecipe = (recipe: Recipe) => {
     const updated = StorageService.saveCustomRecipe(recipe);
     setRecipes([...updated, ...RECIPES_DATABASE]);
+    if (user?.id) {
+      cloudSync.syncCustomRecipe(user.id, recipe, 'save');
+    }
     showToast(`"${recipe.title}" özel tariflerin arasına kaydedildi! 👨‍🍳`);
+  };
+
+  const handleOpenAddRecipe = () => {
+    const customCount = recipes.filter(r => r.isCustom).length;
+    const { allowed, limit } = StripeService.canCreateCustomRecipe(customCount, isPro);
+    if (!allowed) {
+      showToast(`Ücretsiz planda en fazla ${limit} özel tarif ekleyebilirsiniz. Sınırsız tarif için PRO'ya geçin! ✨`);
+      openSubscriptionModal();
+      return;
+    }
+    setIsAddRecipeOpen(true);
   };
 
   // Favorite recipes list
@@ -207,7 +254,7 @@ export function App() {
         streak={streak}
         isDark={isDark}
         setIsDark={setIsDark}
-        onOpenAddRecipe={() => setIsAddRecipeOpen(true)}
+        onOpenAddRecipe={handleOpenAddRecipe}
         onOpenRoulette={() => setIsRouletteOpen(true)}
       />
 
@@ -392,6 +439,11 @@ export function App() {
         favoritesCount={favorites.length}
         onOpenRoulette={() => setIsRouletteOpen(true)}
       />
+
+      {/* Commercial SaaS Modals */}
+      <AuthModal />
+      <UserProfileModal />
+      <SubscriptionModal />
 
     </div>
   );

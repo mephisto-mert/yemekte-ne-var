@@ -8,8 +8,12 @@ import {
   Trophy, 
   PlusCircle, 
   Sun, 
-  Moon 
+  Moon,
+  User,
+  Crown,
+  LogIn
 } from 'lucide-react';
+import { useAuth } from '../context/AuthContext';
 
 interface NavbarProps {
   activeTab: string;
@@ -34,6 +38,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenAddRecipe,
   onOpenRoulette
 }) => {
+  const { user, profile, isPro, openAuthModal, openProfileModal, openSubscriptionModal } = useAuth();
+
   return (
     <header className="sticky top-0 z-40 bg-slate-900/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-800 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
@@ -51,9 +57,21 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span className="text-xl font-extrabold tracking-tight bg-gradient-to-r from-orange-400 via-amber-300 to-yellow-200 bg-clip-text text-transparent font-['Space_Grotesk',sans-serif]">
                 Cookly
               </span>
-              <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-orange-500/20 text-orange-400 border border-orange-500/30">
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  openSubscriptionModal();
+                }}
+                className={`text-[10px] font-bold px-1.5 py-0.5 rounded transition-all cursor-pointer ${
+                  isPro
+                    ? 'bg-amber-500 text-stone-950 font-extrabold shadow-sm'
+                    : 'bg-orange-500/20 text-orange-400 border border-orange-500/30 hover:bg-orange-500/30'
+                }`}
+                title="Abonelik Planları"
+              >
                 PRO
-              </span>
+              </button>
             </div>
             <p className="text-[11px] text-slate-400 font-medium leading-none hidden sm:block">
               Mutfak Kurtarıcı
@@ -147,6 +165,17 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Right Actions */}
         <div className="flex items-center gap-2">
+          {/* Pro Upgrade Trigger Pill (visible to non-pro on desktop) */}
+          {!isPro && (
+            <button
+              onClick={openSubscriptionModal}
+              className="hidden md:inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-bold bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 border border-amber-500/30 transition-all cursor-pointer"
+            >
+              <Crown className="w-3 h-3" />
+              <span>Pro'ya Geç</span>
+            </button>
+          )}
+
           {/* Add Custom Recipe Button */}
           <button
             onClick={onOpenAddRecipe}
@@ -155,6 +184,29 @@ export const Navbar: React.FC<NavbarProps> = ({
             <PlusCircle className="w-3.5 h-3.5 text-orange-400" />
             Tarif Ekle
           </button>
+
+          {/* User Account / Auth Trigger */}
+          {user ? (
+            <button
+              onClick={openProfileModal}
+              className="flex items-center gap-2 px-2.5 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-all text-xs font-semibold shadow-sm cursor-pointer"
+              title="Profil & Ayarlar"
+            >
+              <div className="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-[10px] flex items-center justify-center border border-emerald-500/30">
+                {profile?.displayName?.charAt(0).toUpperCase() || 'U'}
+              </div>
+              <span className="hidden md:inline max-w-[80px] truncate">{profile?.displayName || 'Şef'}</span>
+              {isPro && <Crown className="w-3 h-3 text-amber-400 fill-amber-400 shrink-0" />}
+            </button>
+          ) : (
+            <button
+              onClick={() => openAuthModal('signin')}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs transition-all shadow-md hover:shadow-emerald-500/20 cursor-pointer"
+            >
+              <LogIn className="w-3.5 h-3.5" />
+              <span className="hidden xs:inline">Giriş</span>
+            </button>
+          )}
 
           {/* Theme Toggle */}
           <button
