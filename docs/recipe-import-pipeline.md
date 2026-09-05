@@ -1,4 +1,4 @@
-﻿# Scalable Recipe Import Pipeline
+# Scalable Recipe Import Pipeline
 
 **Versiyon:** 1.0.0  
 **Tarih:** 5 Eylül 2026  
@@ -101,4 +101,28 @@ npm run recipe:import:dry-run
 
 # Güvenlik Kilitli CLI Arayüzü
 npm run recipe:import
+
+# TheMealDB Canlı İçe Aktarım & Staging Testi (Maksimum 10 tarif, izole staging çıktısı)
+npm run recipe:themealdb:test
 ```
+
+---
+
+## 9. TheMealDB Staging İçe Aktarımı & Doğrulama (PART 11)
+
+### 9.1. Mimari Prensipler
+1. **İzole Staging Deposu (`StagingRecipeRepository`):**
+   - Canlı TheMealDB API verileri asla `src/data/raw_recipes.json` veya `src/data/recipesData.ts` içine yazılmaz.
+   - Tüm çıktılar `test-output/recipe-import/` dizini altına kaydedilir:
+     - `manifest.json`: Toplu içe aktarım özeti, süre, lisans ve istatistikler.
+     - `recipes.json`: Normalleştirilmiş ve kalite kapısından geçmiş staged tarifler.
+     - `report.json`: Detaylı karar dökümü ve kalite puanları.
+2. **Dil ve Başlık Koruma Politikası:**
+   - TheMealDB'den gelen İngilizce tarifler ("Chicken Curry", "Teriyaki Chicken Casserole") otomatik olarak Türkçe'ye çevrilmez.
+   - Orijinal başlık `sourceTitle` ve `displayTitle` olarak korunur.
+   - Mutfak bilgisine göre dil etiketi atanır (`strArea === 'Turkish' ? 'tr' : 'en'`).
+3. **Görsel ve Video İşleme Politikası:**
+   - **Görseller:** TheMealDB görselleri (`strMealThumb`) kullanıcı katkılı içerik olduğundan lisans durumu kesinleşene kadar `needs_review` olarak işaretlenir. Sıfır görsel indirilir (`imagesDownloaded: 0`).
+   - **Videolar:** `strYoutube` bağlantısından 11 haneli YouTube ID ayrıştırılır ve `youtube-nocookie.com/embed/` linki oluşturulur. Video veya küçük resim dosyası indirilmez (`videosDownloaded: 0`).
+4. **İdempotentlik:**
+   - `themealdb:id` bileşik anahtarı ile aynı tarifin iki kez çekilmesi durumunda mükerrerlik engellenir ve staging veri seti temiz tutulur.

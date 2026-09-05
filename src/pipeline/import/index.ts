@@ -10,4 +10,4 @@ export * from './scalableDuplicateDetector';
 export * from './batchEngine';
 export * from './videoProvider';
 export * from './repository';
-
+export * from './stagingRepository';
