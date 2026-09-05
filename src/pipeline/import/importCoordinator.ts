@@ -3,6 +3,7 @@ import { RawRecipe, NormalizedRecipe } from '../types';
 import { normalizeRecipe } from '../normalizer';
 import { validateRecipe } from '../validator';
 import { detectDuplicates } from '../duplicateDetector';
+import { evaluateSourcePolicy } from './policy';
 
 export interface ImportOptions {
   existingRecipes?: NormalizedRecipe[];
@@ -10,18 +11,20 @@ export interface ImportOptions {
 
 /**
  * Coordinates the import process for a given RecipeSourceAdapter:
- * SOURCE -> RawRecipe[] -> Normalization -> Validation -> Duplicate Detection -> Staging Decision
+ * SOURCE -> Permission Policy -> RawRecipe[] -> Normalization -> Validation -> Duplicate Detection -> Staging Decision
  * 
  * GUARANTEES:
- * 1. NEVER modifies the production database.
- * 2. NEVER invents fake rating, chef, calories, or reviews.
- * 3. Categorizes candidates into: 'importable' | 'needs_review' | 'rejected'.
+ * 1. Evaluates SourcePermissionPolicy (ALLOWED, REVIEW_REQUIRED, UNKNOWN, PROHIBITED).
+ * 2. NEVER modifies the production database.
+ * 3. NEVER invents fake rating, chef, calories, or reviews.
+ * 4. Categorizes candidates into: 'importable' | 'needs_review' | 'rejected'.
  */
 export async function coordinateImport(
   adapter: RecipeSourceAdapter,
   options?: ImportOptions
 ): Promise<ImportReport> {
   const startedAt = new Date().toISOString();
+  const policyEvaluation = evaluateSourcePolicy(adapter?.metadata);
   const rawRecipes = await Promise.resolve(adapter.fetchRawRecipes());
   const existingRecipes = options?.existingRecipes || [];
 
@@ -77,10 +80,16 @@ export async function coordinateImport(
       candidate.duplicateMatches = matches;
     }
 
-    // 3. Staging Decision Logic
-    if (candidate.validationStatus === 'INVALID') {
+    // 3. Staging Decision Logic (Integrated with SourcePermissionPolicy)
+    if (policyEvaluation.policy === 'prohibited') {
+      candidate.decision = 'rejected';
+      candidate.decisionReason = `Yasaklanmış kaynak (PROHIBITED): ${policyEvaluation.reason}`;
+    } else if (candidate.validationStatus === 'INVALID') {
       candidate.decision = 'rejected';
       candidate.decisionReason = `Geçersiz veri: ${candidate.errors.join(', ')}`;
+    } else if (policyEvaluation.policy === 'review_required' || policyEvaluation.policy === 'unknown') {
+      candidate.decision = 'needs_review';
+      candidate.decisionReason = `Kaynak izin politikası (${policyEvaluation.policy.toUpperCase()}): ${policyEvaluation.reason}`;
     } else if (duplicateSourceIds.has(candidate.sourceId)) {
       candidate.duplicateStatus = 'duplicate_candidate';
       candidate.decision = 'needs_review';
@@ -122,8 +131,9 @@ export async function coordinateImport(
   const completedAt = new Date().toISOString();
 
   return {
-    source: adapter.name,
-    sourceType: adapter.metadata.sourceType,
+    source: adapter?.name || 'unknown_source',
+    sourceType: adapter?.metadata?.sourceType || 'external',
+    permissionPolicy: policyEvaluation.policy,
     fetched: rawRecipes.length,
     valid: validCount,
     warnings: warningCount,

@@ -4,6 +4,8 @@ export type SourceType = 'mock' | 'json' | 'csv' | 'api' | 'external';
 
 export type ContentPermissionStatus = 'authorized' | 'public_domain' | 'pending_review' | 'unknown';
 
+export type SourcePermissionPolicy = 'allowed' | 'review_required' | 'prohibited' | 'unknown';
+
 /**
  * Metadata associated with an external recipe data source.
  * Note: Missing info must remain null/unknown. Never fabricate licenses.
@@ -16,6 +18,7 @@ export interface SourceMetadata {
   attribution?: string | null;
   license?: string | null;
   contentPermissionStatus: ContentPermissionStatus;
+  permissionPolicy?: SourcePermissionPolicy;
 }
 
 /**
@@ -53,6 +56,7 @@ export interface ImportCandidate {
 export interface ImportReport {
   source: string;
   sourceType: SourceType;
+  permissionPolicy: SourcePermissionPolicy;
   fetched: number;
   valid: number;
   warnings: number;
