@@ -9,3 +9,8 @@ export * from './queryBuilder';
 export * from './candidateRanking';
 export * from './downloadManager';
 export * from './acquisitionEngine';
+export * from './urlSecurity';
+export * from './binaryValidator';
+export * from './checksum';
+export * from './atomicWriter';
+export * from './assetMetadata';
