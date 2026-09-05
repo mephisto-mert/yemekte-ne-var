@@ -15,7 +15,9 @@
     "image:pexels:dry-run": "node scripts/image_pexels_dry_run.cjs",
     "image:pexels:test": "node scripts/image_pexels_integration_test.cjs",
     "image:download:dry-run": "node scripts/image_download_dry_run.cjs",
-    "image:download:test": "node scripts/image_download_test.cjs"
+    "image:download:test": "node scripts/image_download_test.cjs",
+    "recipe:import:dry-run": "node scripts/recipe_import_dry_run.cjs",
+    "recipe:import": "node scripts/recipe_import_cli.cjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.115.0",

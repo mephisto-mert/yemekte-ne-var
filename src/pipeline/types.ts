@@ -29,10 +29,13 @@ export interface RawRecipe {
   time?: string | number;
   cookingTime?: string;
   prepTime?: string;
+  cookTime?: string;
+  totalTime?: string;
   timeMinutes?: number;
   calories?: number | string;
-  image?: string;
-  imageUrl?: string;
+  image?: string | null;
+  imageUrl?: string | null;
+  imageCandidates?: string[];
   ingredients?: (RawIngredient | string)[];
   steps?: string[];
   instructions?: string[];
@@ -43,11 +46,19 @@ export interface RawRecipe {
   rating?: any;
   reviewCount?: any;
   tips?: string[];
-  videoId?: string;
+  videoId?: string | null;
   videoTitle?: string;
   videoAuthor?: string;
   videoLanguage?: string;
+  videoCandidates?: string[];
+  source?: string;
+  sourceId?: string;
   sourceUrl?: string;
+  externalId?: string;
+  license?: string | null;
+  attribution?: string | null;
+  language?: string;
+  metadata?: Record<string, any>;
 }
 
 // ==========================================
