@@ -4,3 +4,8 @@ export * from './validator';
 export * from './fallback';
 export * from './pipeline';
 export * from './mockImageSources';
+export * from './providers';
+export * from './queryBuilder';
+export * from './candidateRanking';
+export * from './downloadManager';
+export * from './acquisitionEngine';

@@ -10,7 +10,8 @@
     "test": "vitest run",
     "pipeline:dry-run": "node scripts/pipeline_dry_run.cjs",
     "import:dry-run": "node scripts/import_dry_run.cjs",
-    "image:dry-run": "node scripts/image_dry_run.cjs"
+    "image:dry-run": "node scripts/image_dry_run.cjs",
+    "image:acquisition:dry-run": "node scripts/image_acquisition_dry_run.cjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.115.0",

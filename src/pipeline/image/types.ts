@@ -1,6 +1,17 @@
 import { SourcePermissionPolicy } from '../import/types';
 
-export type ImageSourceType = 'local' | 'generated' | 'user_uploaded' | 'api' | 'external' | 'unknown';
+export type ImageSourceType =
+  | 'local'
+  | 'generated'
+  | 'user_uploaded'
+  | 'api'
+  | 'external'
+  | 'unsplash'
+  | 'pexels'
+  | 'open_licensed'
+  | 'authorized_api'
+  | 'mock'
+  | 'unknown';
 
 export type ImageQualityStatus = 'VALID' | 'WARNING' | 'INVALID';
 
