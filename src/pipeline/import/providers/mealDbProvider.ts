@@ -147,7 +147,7 @@ export class TheMealDbRecipeProvider implements RecipeProvider {
         .map(m => this.mapMealToRawRecipe(m));
 
       const page = options.page || 1;
-      const pageSize = Math.min(options.pageSize || 10, 50);
+      const pageSize = Math.min(Math.max(options.pageSize || 10, 1), 100);
       const start = (page - 1) * pageSize;
       const paged = allMapped.slice(start, start + pageSize);
 
@@ -193,10 +193,18 @@ export class TheMealDbRecipeProvider implements RecipeProvider {
   }
 
   async fetchBatch(options?: RecipeBatchOptions): Promise<RecipeProviderBatchResult> {
+    const limit = options?.limit ?? options?.pageSize ?? 10;
+    if (limit <= 0) {
+      throw new Error(`Geçersiz batch boyutu: Batch boyutu 1 ile 100 arasında pozitif bir sayı olmalıdır (İstenen: ${limit}).`);
+    }
+    if (limit > 100) {
+      throw new Error(`İstek limiti aşıldı: Maksimum batch boyutu 100 tariftir (İstenen: ${limit}).`);
+    }
+
     const searchOptions: RecipeSearchOptions = {
       query: options?.category || 'chicken',
       page: options?.page || 1,
-      pageSize: options?.pageSize || 10
+      pageSize: limit
     };
     return this.search(searchOptions);
   }

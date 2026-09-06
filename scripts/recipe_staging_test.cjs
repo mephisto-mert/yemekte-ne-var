@@ -15,14 +15,42 @@ var path = require('path');
 
 async function runStagingTest() {
   console.log('\n=====================================================');
-  console.log('       STAWING CATALOG BUILDER - INTEGRATION TESU   ');
-  console.log('====================================================');
+  console.log('       STAGING CATALOG BUILDER - THEMEALDB INGESTION ');
+  console.log('=====================================================');
 
   var stagingDir = path.join(__dirname, '../test-output/recipe-import');
   fs.mkdirSync(stagingDir, { recursive: true });
 
+  // Parse command line arguments: e.g. --limit 20 or --query pasta
+  var args = process.argv.slice(2);
+  var requestedLimit = 10;
+  var searchQuery = 'chicken';
+
+  for (var a = 0; a < args.length; a++) {
+    if (args[a] === '--limit' && args[a + 1]) {
+      requestedLimit = parseInt(args[a + 1], 10);
+    } else if (args[a].startsWith('--limit=')) {
+      requestedLimit = parseInt(args[a].split('=')[1], 10);
+    } else if (args[a] === '--query' && args[a + 1]) {
+      searchQuery = args[a + 1];
+    } else if (args[a].startsWith('--query=')) {
+      searchQuery = args[a].split('=')[1];
+    }
+  }
+
+  if (isNaN(requestedLimit) || requestedLimit <= 0) {
+    console.error('HATA: Gecersiz batch limiti (' + requestedLimit + '). Limit 1 ile 100 arasinda olmalidir.');
+    process.exit(1);
+  }
+
+  if (requestedLimit > 100) {
+    console.error('HATA: Istek limiti asildi. Maksimum batch boyutu 100 tariftir (Istenen: ' + requestedLimit + ').');
+    process.exit(1);
+  }
+
   console.log('Target Provider       : TheMealDB (Approved Open Source)');
-  console.log('Max Ingestion Batch   : 10 recipes (Hard Limit: 100)');
+  console.log('Max Ingestion Batch   : ' + requestedLimit + ' recipes (Hard Limit: 100)');
+  console.log('Search Query          : ' + searchQuery);
   console.log('Pipeline Version      : 13.0.0');
   console.log('Mode                  : Staging Isolated Ingestion');
   console.log('----------------------------------------------------');
@@ -32,7 +60,7 @@ async function runStagingTest() {
     console.log('Fetching live batch from TheMealDB API...');
     var controller = new AbortController();
     var timeoutId = setTimeout(function() { controller.abort(); }, 8000);
-    var res = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=chicken', {
+    var res = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=' + encodeURIComponent(searchQuery), {
       method: 'GET',
       headers: { 'User-Agent': 'CooklyStagingIngestion/1.0' },
       signal: controller.signal
@@ -41,7 +69,7 @@ async function runStagingTest() {
     if (res.ok) {
       var data = await res.json();
       if (data && Array.isArray(data.meals)) {
-        rawMeals = data.meals.slice(0, 10);
+        rawMeals = data.meals.slice(0, requestedLimit);
       }
     }
   } catch (netErr) {
@@ -253,7 +281,7 @@ async function runStagingTest() {
     durationMs: Date.now() - startTime,
     pipelineVersion: '13.0.0',
     provider: 'themealdb',
-    requested: 10,
+    requested: requestedLimit,
     fetched: rawMeals.length,
     normalized: rawMeals.length,
     valid: stagedRecipes.length,

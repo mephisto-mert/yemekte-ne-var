@@ -107,7 +107,18 @@ export interface StagedRecipe {
 
 | Komut | Açıklama |
 | :--- | :--- |
-| `npm run recipe:staging:dry-run` | 10 tariflik simüle edilmiş staging dry-run provası çalıştırır. |
-| `npm run recipe:staging:test` | Canlı TheMealDB API'sinden maksimum 10 tarif çeker ve staging hattında işler (Ağ yoksa güvenli fallback). |
-| `npm run recipe:staging:export` | Staging kataloğu ve manifesti `artifacts/staging/` klasörüne kopyalar. |
-| `npm test` | 18 test paketinde 428 birim testini offline çalıştırır. |
+| `npm run recipe:staging:dry-run` | Simüle edilmiş staging dry-run provası çalıştırır (`--limit <n>` destekler). |
+| `npm run recipe:staging:test` | Canlı TheMealDB API'sinden kontrollü batch çeker ve staging hattında işler (`--limit <n>`, `--query <q>` destekler). |
+| `npm run recipe:staging:export` | Staging kataloğu ve manifesti `artifacts/staging/` klasörüne aktarır. |
+| `npm test` | Tüm birim ve entegrasyon testlerini offline çalıştırır. |
+
+---
+
+## 6. TheMealDB Kontrollü Genişleme Akışı (PART 14.1)
+
+1. **API Erişimi**: Sadece resmi TheMealDB endpointleri (`search.php`, `lookup.php`) ve `SafeHttpClient` (zaman aşımı, hız sınırı, hata toleransı) kullanılır.
+2. **Batch Denetimi**: Varsayılan 10 tarif (`DEFAULT_STAGING_BATCH_SIZE`), maksimum 100 tarif (`MAX_STAGING_BATCH_SIZE`). 100'ü aşan veya 0 ve altındaki limitler açık hata fırlatır.
+3. **Şema Doğrulama**: `validateMealDbMeal` ile eksik veya bozuk API kayıtları izole edilir; tekil kayıt hataları tüm batch'i durdurmaz (`failedRecipes` kuyruğuna alınır).
+4. **Bileşik Anahtar ve Güncelleme**: `themealdb:<idMeal>` formatı ile mükerrer eklemeler önlenir ve mevcut staging kaydı güncellenir.
+5. **İzolasyon**: Üretim veri seti (`src/data/`) ve Supabase veritabanına kesinlikle sıfır mutasyon yapılır.
+

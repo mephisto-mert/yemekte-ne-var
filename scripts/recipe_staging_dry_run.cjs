@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Staging Catalog Builder & Controlled Expansion — Dry Run Script
  * 
  * Simulates complete end-to-end orchestration on 10 recipes in read-only staging mode.
@@ -24,6 +24,26 @@ async function runStagingDryRun() {
   const stagingDir = path.join(__dirname, '../test-output/recipe-import');
   fs.mkdirSync(stagingDir, { recursive: true });
 
+  const args = process.argv.slice(2);
+  let requestedLimit = 10;
+  for (let a = 0; a < args.length; a++) {
+    if (args[a] === '--limit' && args[a + 1]) {
+      requestedLimit = parseInt(args[a + 1], 10);
+    } else if (args[a].startsWith('--limit=')) {
+      requestedLimit = parseInt(args[a].split('=')[1], 10);
+    }
+  }
+
+  if (isNaN(requestedLimit) || requestedLimit <= 0) {
+    console.error('HATA: Geçersiz batch limiti (' + requestedLimit + '). Limit 1 ile 100 arasında olmalıdır.');
+    process.exit(1);
+  }
+
+  if (requestedLimit > 100) {
+    console.error('HATA: İstek limiti aşıldı. Maksimum batch boyutu 100 tariftir (İstenen: ' + requestedLimit + ').');
+    process.exit(1);
+  }
+
   const rawDatasetPath = path.join(__dirname, '../src/data/raw_recipes.json');
   let existingRecipes = [];
   try {
@@ -39,17 +59,17 @@ async function runStagingDryRun() {
   const stagedPath = path.join(stagingDir, 'recipes.json');
   if (fs.existsSync(stagedPath)) {
     try {
-      sampleBatch = JSON.parse(fs.readFileSync(stagedPath, 'utf8')).slice(0, 10);
+      sampleBatch = JSON.parse(fs.readFileSync(stagedPath, 'utf8')).slice(0, requestedLimit);
     } catch {
       sampleBatch = [];
     }
   }
 
-  if (sampleBatch.length < 10) {
-    sampleBatch = existingRecipes.slice(0, 10);
+  if (sampleBatch.length < requestedLimit) {
+    sampleBatch = existingRecipes.slice(0, requestedLimit);
   }
 
-  const limit = Math.min(sampleBatch.length, 10);
+  const limit = Math.min(sampleBatch.length, requestedLimit);
   const targetRecipes = sampleBatch.slice(0, limit);
 
   console.log('Target Batch Size     : ' + targetRecipes.length + ' recipes (Safety Limit: Max 100)');

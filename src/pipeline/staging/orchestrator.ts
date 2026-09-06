@@ -54,13 +54,19 @@ export class StagingOrchestrator {
     const requestedLimit = options?.limit ?? DEFAULT_STAGING_BATCH_SIZE;
 
     // Hard Safety Limit Enforcement
+    if (requestedLimit <= 0) {
+      throw new Error(
+        `Geçersiz batch boyutu: Batch boyutu 1 ile ${MAX_STAGING_BATCH_SIZE} arasında pozitif bir sayı olmalıdır (İstenen: ${requestedLimit}).`
+      );
+    }
+
     if (requestedLimit > MAX_STAGING_BATCH_SIZE) {
       throw new Error(
         `İstek limiti aşıldı: Maksimum batch boyutu 100 tariftir (İstenen: ${requestedLimit}).`
       );
     }
 
-    const safeLimit = Math.max(requestedLimit, 1);
+    const safeLimit = requestedLimit;
 
     // 1. Fetch from Provider
     let batchResult;
