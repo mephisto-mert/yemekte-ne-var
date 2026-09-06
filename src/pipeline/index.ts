@@ -6,3 +6,4 @@ export * from './pipeline';
 export * from './import';
 export * from './image';
 export * from './enrichment';
+export * from './staging';
