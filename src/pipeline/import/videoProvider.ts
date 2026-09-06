@@ -1,4 +1,4 @@
-﻿export interface RecipeVideoCandidate {
+export interface RecipeVideoCandidate {
   videoId: string;
   provider: 'youtube' | 'curated' | 'external';
   url: string;
@@ -121,3 +121,89 @@ export class CuratedRecipeVideoProvider implements RecipeVideoProvider {
     };
   }
 }
+
+/**
+ * Live YouTube Data API v3 Provider (Network & API Key Enabled).
+ * Gracefully handles missing credentials, rate limits (403/429), and network errors without throwing.
+ */
+export class LiveYouTubeVideoProvider implements RecipeVideoProvider {
+  readonly id = 'youtube_api_provider';
+  readonly name = 'YouTube Data API v3 Provider';
+
+  private apiKey?: string;
+
+  constructor(options?: { apiKey?: string }) {
+    this.apiKey = options?.apiKey || (typeof process !== 'undefined' && process.env ? process.env.YOUTUBE_API_KEY : undefined);
+  }
+
+  async searchVideos(options: VideoSearchOptions): Promise<VideoProviderResult> {
+    if (!this.apiKey || this.apiKey.trim().length === 0) {
+      return {
+        candidates: [],
+        totalFound: 0,
+        provider: this.id
+      };
+    }
+
+    try {
+      const q = encodeURIComponent(`${options.recipeTitle} recipe cooking tutorial`);
+      const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=video&q=${q}&maxResults=5&key=${this.apiKey}`;
+      
+      const res = await fetch(url, { signal: AbortSignal.timeout(5000) });
+      if (!res.ok) {
+        return { candidates: [], totalFound: 0, provider: this.id };
+      }
+
+      const data = await res.json();
+      const items = data.items || [];
+      const candidates: RecipeVideoCandidate[] = [];
+
+      for (const item of items) {
+        const vidId = item.id?.videoId;
+        const cleanId = parseYouTubeVideoId(vidId);
+        if (cleanId) {
+          candidates.push({
+            videoId: cleanId,
+            provider: 'youtube',
+            url: `https://www.youtube.com/watch?v=${cleanId}`,
+            embedUrl: buildYouTubeEmbedUrl(cleanId),
+            title: item.snippet?.title || `${options.recipeTitle} Video`,
+            channelTitle: item.snippet?.channelTitle || 'YouTube Creator',
+            language: options.language || 'global',
+            permissionStatus: 'authorized_embed',
+            isOfficialRecipeVideo: true
+          });
+        }
+      }
+
+      return {
+        candidates,
+        totalFound: candidates.length,
+        provider: this.id
+      };
+    } catch {
+      // Safe fallback on any network or parse error
+      return {
+        candidates: [],
+        totalFound: 0,
+        provider: this.id
+      };
+    }
+  }
+
+  async getVideoById(videoId: string): Promise<RecipeVideoCandidate | null> {
+    const cleanId = parseYouTubeVideoId(videoId);
+    if (!cleanId) return null;
+
+    return {
+      videoId: cleanId,
+      provider: 'youtube',
+      url: `https://www.youtube.com/watch?v=${cleanId}`,
+      embedUrl: buildYouTubeEmbedUrl(cleanId),
+      language: 'global',
+      permissionStatus: 'authorized_embed',
+      isOfficialRecipeVideo: false
+    };
+  }
+}
+

@@ -22,7 +22,9 @@
     "recipe:enrich:dry-run": "node scripts/recipe_enrich_dry_run.cjs",
     "recipe:staging:dry-run": "node scripts/recipe_staging_dry_run.cjs",
     "recipe:staging:test": "node scripts/recipe_staging_test.cjs",
-    "recipe:staging:export": "node scripts/recipe_staging_export.cjs"
+    "recipe:staging:export": "node scripts/recipe_staging_export.cjs",
+    "recipe:expand:dry-run": "node scripts/recipe_expand_dry_run.cjs",
+    "recipe:expand": "node scripts/recipe_expand.cjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.115.0",

@@ -1,4 +1,4 @@
-﻿import { NormalizedRecipe } from '../types';
+import { NormalizedRecipe } from '../types';
 import { VideoMatchingResult, MediaReadinessStatus } from './types';
 import { parseYouTubeVideoId, RecipeVideoCandidate } from '../import/videoProvider';
 
@@ -22,11 +22,29 @@ export interface RecipeVideoSearchProvider {
 }
 
 /**
+ * Normalizes strings and Turkish characters for consistent keyword matching.
+ */
+function normalizeForMatching(str: string): string {
+  return (str || '')
+    .toLowerCase()
+    .replace(/ğ/g, 'g')
+    .replace(/ü/g, 'u')
+    .replace(/ş/g, 's')
+    .replace(/ı/g, 'i')
+    .replace(/ö/g, 'o')
+    .replace(/ç/g, 'c')
+    .trim();
+}
+
+/**
  * Validates whether a given video embed URL is strictly an authorized YouTube nocookie embed.
  * Prohibits arbitrary iframe injection, javascript: URLs, and data: URIs.
  */
 export function isValidSecureEmbedUrl(url?: string | null): boolean {
   if (!url || typeof url !== 'string') return false;
+
+  // URL must not contain any whitespace or newline characters
+  if (/\s/.test(url)) return false;
 
   const trimmed = url.trim().toLowerCase();
 
@@ -35,6 +53,8 @@ export function isValidSecureEmbedUrl(url?: string | null): boolean {
     trimmed.startsWith('javascript:') ||
     trimmed.startsWith('data:') ||
     trimmed.startsWith('vbscript:') ||
+    trimmed.startsWith('file:') ||
+    trimmed.startsWith('http:') ||
     trimmed.includes('<') ||
     trimmed.includes('>') ||
     trimmed.includes('"') ||
@@ -43,10 +63,142 @@ export function isValidSecureEmbedUrl(url?: string | null): boolean {
     return false;
   }
 
-  // Must strictly match official youtube-nocookie embed pattern
-  const secureEmbedPattern = /^https:\/\/www\.youtube-nocookie\.com\/embed\/[\w-]{11}$/;
+  // Must strictly match official youtube-nocookie or youtube embed pattern
+  const secureEmbedPattern = /^https:\/\/(?:www\.)?(?:youtube-nocookie\.com|youtube\.com)\/embed\/[\w-]{11}$/;
   return secureEmbedPattern.test(trimmed);
 }
+
+export interface SecureEmbedValidationResult {
+  valid: boolean;
+  videoId: string | null;
+  embedUrl: string | null;
+  error?: string;
+}
+
+/**
+ * Structured security validator for YouTube embed URLs.
+ */
+export function validateSecureYouTubeEmbedUrl(url?: string | null): SecureEmbedValidationResult {
+  if (!url || typeof url !== 'string') {
+    return { valid: false, videoId: null, embedUrl: null, error: 'URL boş veya tanımsız.' };
+  }
+
+  if (/\s/.test(url)) {
+    return { valid: false, videoId: null, embedUrl: null, error: 'URL boşluk veya geçersiz karakter içeriyor.' };
+  }
+
+  const trimmed = url.trim();
+
+  if (
+    trimmed.startsWith('javascript:') ||
+    trimmed.startsWith('data:') ||
+    trimmed.startsWith('vbscript:') ||
+    trimmed.startsWith('file:') ||
+    trimmed.includes('<') ||
+    trimmed.includes('>') ||
+    trimmed.includes('"') ||
+    trimmed.includes('\'')
+  ) {
+    return { valid: false, videoId: null, embedUrl: null, error: 'Güvensiz URL protokolü veya zararlı karakter tespit edildi.' };
+  }
+
+  if (!isValidSecureEmbedUrl(trimmed)) {
+    return { valid: false, videoId: null, embedUrl: null, error: 'URL geçerli bir YouTube embed formatına uymuyor.' };
+  }
+
+  const match = trimmed.match(/\/embed\/([\w-]{11})$/i);
+  const videoId = match ? match[1] : null;
+
+  return {
+    valid: true,
+    videoId,
+    embedUrl: videoId ? `https://www.youtube-nocookie.com/embed/${videoId}` : null
+  };
+}
+
+export interface VideoRelevanceEvaluation {
+  score: number;
+  reasons: string[];
+  isRelevant: boolean;
+  tokenOverlapRatio: number;
+}
+
+/**
+ * Deterministically evaluates video relevance against a recipe based on title token overlap,
+ * cuisine context, and culinary channel authority.
+ */
+export function calculateVideoRelevanceScore(
+  recipe: NormalizedRecipe,
+  candidate: RecipeVideoCandidate | { title?: string; channelTitle?: string; videoId?: string }
+): VideoRelevanceEvaluation {
+  const reasons: string[] = [];
+  let score = 0;
+
+  // 1. Valid YouTube 11-character ID (+40 pts)
+  if (candidate.videoId && parseYouTubeVideoId(candidate.videoId)) {
+    score += 40;
+    reasons.push('11 haneli doğrulanmış YouTube Video ID: +40 puan');
+  }
+
+  // 2. Keyword relevance (+30 pts)
+  const normTitle = normalizeForMatching(recipe.title);
+  const normCanonical = normalizeForMatching(recipe.canonicalTitle || '');
+  const recipeWords = Array.from(new Set(`${normTitle} ${normCanonical}`.split(/\s+/).filter(w => w.length > 2)));
+  const candTitle = normalizeForMatching(candidate.title || '');
+
+  let matchedTokens = 0;
+  for (const word of recipeWords) {
+    if (candTitle.includes(word)) {
+      matchedTokens++;
+    }
+  }
+  const tokenRatio = recipeWords.length > 0 ? matchedTokens / recipeWords.length : 0;
+  const tokenScore = Math.round(tokenRatio * 30);
+  score += tokenScore;
+  reasons.push(`Başlık ve anahtar kelime eşleşmesi (${matchedTokens}/${recipeWords.length}): +${tokenScore} puan`);
+
+  // 3. Culinary channel / Authority relevance (+20 pts)
+  const channel = normalizeForMatching(candidate.channelTitle || '');
+  if (
+    channel.includes('culinary') ||
+    channel.includes('kitchen') ||
+    channel.includes('recipe') ||
+    channel.includes('yemek') ||
+    channel.includes('mutfak') ||
+    channel.includes('chef') ||
+    channel.includes('gida')
+  ) {
+    score += 20;
+    reasons.push('Doğrulanmış yemek/mutfak kanalı: +20 puan');
+  } else {
+    score += 10;
+    reasons.push('Standart video kanalı: +10 puan');
+  }
+
+  // 4. Cuisine / Language Context (+10 pts)
+  const isTr = recipe.cuisine?.toLowerCase() === 'turkish';
+  if (isTr && (channel.includes('turk') || candTitle.includes('tarifi') || candTitle.includes('nasil'))) {
+    score += 10;
+    reasons.push('Türk mutfağı yerelleştirme bağlamı: +10 puan');
+  } else if (!isTr && (candTitle.includes('recipe') || candTitle.includes('how to') || candTitle.includes('cooking'))) {
+    score += 10;
+    reasons.push('Global yemek yapımı bağlamı: +10 puan');
+  } else {
+    score += 5;
+    reasons.push('Temel mutfak bağlamı: +5 puan');
+  }
+
+  const finalScore = Math.min(Math.max(score, 0), 100);
+  const isRelevant = finalScore >= 50;
+
+  return {
+    score: finalScore,
+    reasons,
+    isRelevant,
+    tokenOverlapRatio: tokenRatio
+  };
+}
+
 
 /**
  * Builds safe video search query metadata for a given recipe.
