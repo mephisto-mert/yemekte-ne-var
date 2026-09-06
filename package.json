@@ -18,7 +18,8 @@
     "image:download:test": "node scripts/image_download_test.cjs",
     "recipe:import:dry-run": "node scripts/recipe_import_dry_run.cjs",
     "recipe:import": "node scripts/recipe_import_cli.cjs",
-    "recipe:themealdb:test": "node scripts/recipe_themealdb_test.cjs"
+    "recipe:themealdb:test": "node scripts/recipe_themealdb_test.cjs",
+    "recipe:enrich:dry-run": "node scripts/recipe_enrich_dry_run.cjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.115.0",
