@@ -1,4 +1,4 @@
-﻿import { describe, it, expect } from 'vitest';
+import { describe, it, expect } from 'vitest';
 import fs from 'fs';
 import path from 'path';
 import {
@@ -560,7 +560,9 @@ describe('PART 12 — Recipe Enrichment, Localization & Media Matching Engine Su
 
     const rawContent = fs.readFileSync(rawPath, 'utf8');
     const parsed = JSON.parse(rawContent);
-
-    expect(parsed.recipes).toHaveLength(50);
+    expect(parsed.recipes).toBeDefined();
+    expect(parsed.recipes.length).toBeGreaterThanOrEqual(50);
+    expect(parsed.recipes[0].id).toBe(1);
+    expect(parsed.recipes[0].name).toBe('Tavuk Sote');
   });
 });

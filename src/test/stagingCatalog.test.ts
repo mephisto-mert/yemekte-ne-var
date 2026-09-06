@@ -953,7 +953,7 @@ describe('PART 13 — Staging Catalog Builder & Controlled Expansion Suite', () 
       const content = fs.readFileSync(prodPath, 'utf8');
       const parsed = JSON.parse(content);
       expect(Array.isArray(parsed.recipes)).toBe(true);
-      expect(parsed.recipes.length).toBe(50);
+      expect(parsed.recipes.length).toBeGreaterThanOrEqual(50);
       expect(parsed.recipes[0].id).toBe(1);
     });
 

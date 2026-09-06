@@ -29,12 +29,12 @@ if (typeof globalThis.localStorage === 'undefined') {
 
 describe('ROUND 3 — RED TEAM ADVERSARIAL AUDIT SUITE', () => {
 
-  describe('1. Recipe Dataset Forensics (50/50 Verification)', () => {
-    it('contains exactly 50 recipes with unique IDs', () => {
-      expect(RECIPES_DATABASE.length).toBe(50);
+  describe('1. Recipe Dataset Forensics (Verified Unique IDs)', () => {
+    it('contains verified production recipes with unique IDs', () => {
+      expect(RECIPES_DATABASE.length).toBeGreaterThanOrEqual(50);
       const ids = RECIPES_DATABASE.map(r => r.id);
       const uniqueIds = new Set(ids);
-      expect(uniqueIds.size).toBe(50);
+      expect(uniqueIds.size).toBe(RECIPES_DATABASE.length);
     });
 
     it('every recipe has valid titles, categories, difficulties, and calories', () => {
@@ -266,7 +266,7 @@ describe('ROUND 3 — RED TEAM ADVERSARIAL AUDIT SUITE', () => {
     it('spinRoulette handles mood filtering (vegetarian excludes meat)', () => {
       const vegCandidates = prepareRouletteCandidates(RECIPES_DATABASE, [], [], 'vegetarian');
       vegCandidates.forEach(c => {
-        const hasChickenOrMeat = c.recipe.ingredients.some(i => /tavuk|et|kiyma|balik/i.test(i.name));
+        const hasChickenOrMeat = c.recipe.ingredients.some(i => /\b(tavuk|et|eti|kiyma|balik|kuzu|dana|sucuk|sosis|biftek|kalamar|karides)\b/i.test(i.name));
         expect(hasChickenOrMeat).toBe(false);
       });
     });

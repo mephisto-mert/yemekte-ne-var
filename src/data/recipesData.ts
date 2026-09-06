@@ -85,9 +85,9 @@ export const RECIPES_DATABASE: Recipe[] = (rawData.recipes || []).map((r: any, i
         fat: Math.round(cal * 0.25 / 9)
       },
       videoId,
-      videoTitle: videoData?.videoTitle,
-      videoAuthor: videoData?.videoAuthor,
-      videoLanguage: videoData?.language,
+      videoTitle: videoData?.videoTitle || (videoId ? `${r.name} Nasıl Yapılır? | Yemek Tarifi` : undefined),
+      videoAuthor: videoData?.videoAuthor || (videoId ? (r.chef?.name || 'Cookly Mutfak Şefi') : undefined),
+      videoLanguage: videoData?.language || (videoId ? 'tr' : undefined),
       rating: r.rating ? Number(String(r.rating).replace(',', '.')) : 4.8,
       reviewCount: r.reviewCount || 150,
       chef: r.chef?.name || 'Mutfak Şefi',

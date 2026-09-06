@@ -1,4 +1,4 @@
-﻿import { NormalizedRecipe, RawRecipe } from '../types';
+import { NormalizedRecipe, RawRecipe } from '../types';
 import {
   LocalizedRecipeData,
   TaxonomyMappingResult,
@@ -70,6 +70,10 @@ export interface StagedRecipe {
   difficulty: string;
   cookingTime: string;
   timeMinutes: number;
+  calories?: number;
+  rating?: number;
+  reviewCount?: number;
+  chef?: string;
   servings: number;
   ingredients: ParsedIngredient[];
   instructions: string[];

@@ -422,7 +422,9 @@ describe('PART 14 — Recipe Content Expansion & Media Enrichment Suite', () => 
       expect(fs.existsSync(rawPath)).toBe(true);
       const data = JSON.parse(fs.readFileSync(rawPath, 'utf8'));
       expect(data.recipes).toBeDefined();
-      expect(data.recipes).toHaveLength(50);
+      expect(data.recipes.length).toBeGreaterThanOrEqual(50);
+      expect(data.recipes[0].id).toBe(1);
+      expect(data.recipes[0].name).toBe('Tavuk Sote');
     });
 
     it('7.2 verifies zero unauthorized video downloads were triggered on disk', () => {

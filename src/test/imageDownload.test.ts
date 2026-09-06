@@ -735,7 +735,7 @@ describe('Recipe Image Acquisition & Safe Download Pipeline Tests', () => {
     const parsed = JSON.parse(content);
 
     expect(parsed.recipes).toBeDefined();
-    expect(parsed.recipes.length).toBe(50);
+    expect(parsed.recipes.length).toBeGreaterThanOrEqual(50);
     expect(parsed.recipes[0].id).toBe(1);
     expect(parsed.recipes[0].name).toBe('Tavuk Sote');
   });

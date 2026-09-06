@@ -478,9 +478,9 @@ describe('PART 11 — TheMealDB Import & Staging Verification Suite', () => {
 
     const rawContent = fs.readFileSync(rawPath, 'utf8');
     const parsed = JSON.parse(rawContent);
-
-    // Production dataset must still have exactly 50 recipes
-    expect(parsed.recipes).toHaveLength(50);
+    // Production dataset must have at least the initial 50 recipes preserved
+    expect(parsed.recipes.length).toBeGreaterThanOrEqual(50);
+    expect(parsed.recipes[0].name).toBe('Tavuk Sote');
 
     // None of the production recipes should be from TheMealDB
     const hasTheMealDb = parsed.recipes.some((r: any) => String(r.id).startsWith('themealdb_'));

@@ -1,4 +1,4 @@
-﻿import { describe, it, expect, beforeEach, vi } from 'vitest';
+import { describe, it, expect, beforeEach, vi } from 'vitest';
 import path from 'path';
 import fs from 'fs';
 import {
@@ -631,7 +631,7 @@ describe('Scalable Recipe Import Pipeline Tests (PART 10)', () => {
     const parsed = JSON.parse(content);
 
     expect(parsed.recipes).toBeDefined();
-    expect(parsed.recipes.length).toBe(50);
+    expect(parsed.recipes.length).toBeGreaterThanOrEqual(50);
     expect(parsed.recipes[0].name).toBe('Tavuk Sote');
   });
 });

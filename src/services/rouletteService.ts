@@ -18,10 +18,14 @@ export interface RouletteOption {
 
 const isMeatIngredient = (ingName: string): boolean => {
   const norm = normalizeText(ingName);
-  const meatKeywords = ['tavuk', 'kiyma', 'balik', 'sucuk', 'sosis', 'kavurma', 'pastirma', 'hindi', 'kuzu', 'dana'];
+  const meatKeywords = [
+    'tavuk', 'kiyma', 'balik', 'sucuk', 'sosis', 'kavurma', 'pastirma', 'hindi',
+    'kuzu', 'dana', 'biftek', 'antrikot', 'kofte', 'karides', 'kalamar', 'somon',
+    'levrek', 'hamsi', 'gerdan', 'kusbasi', 'doner', 'ciger'
+  ];
   if (meatKeywords.some(kw => tokensMatch(norm, kw))) return true;
-  // Explicit word check for 'et' to avoid colliding with 'patates'
-  if (/\b(et|eti|dana eti|kuzu eti|kusbasi et|kirmizi et)\b/i.test(norm)) return true;
+  // Word boundary regex check for 'et' and derivatives avoiding 'patates'
+  if (/\b(et|eti|etin|etler|dana|kuzu|tavuk|balik|kiyma|kofte|kalamar|karides|somon|levrek|hamsi|biftek|antrikot|kusbasi|pastirma|sucuk|sosis|doner|gerdan)\b/i.test(norm)) return true;
   return false;
 };
 

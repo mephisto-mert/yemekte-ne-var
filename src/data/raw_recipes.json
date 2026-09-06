@@ -1,7 +1,7 @@
 {
-  "version": "13.0.0",
-  "lastUpdated": "2026-02-05",
-  "totalRecipes": 1000,
+  "version": "15.0.0",
+  "lastUpdated": "2026-09-06",
+  "totalRecipes": 100,
   "categories": [
     {
       "id": "main_dish",
@@ -2795,6 +2795,3444 @@
         "verified": false
       },
       "imageUrl": "https://placehold.co/400x300/1a1a2e/f98006?text=Muz%20P%C3%BCresi"
+    },
+    {
+      "id": 51,
+      "name": "Hünkar Beğendi",
+      "category": "main_dish",
+      "difficulty": "Zor",
+      "time": "60 dk",
+      "calories": 520,
+      "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Kuzu kuşbaşı",
+          "amount": "500g"
+        },
+        {
+          "item": "Patlıcan",
+          "amount": "4 adet közlenmiş"
+        },
+        {
+          "item": "Tereyağı",
+          "amount": "2 yemek kaşığı"
+        },
+        {
+          "item": "Un",
+          "amount": "2 yemek kaşığı"
+        },
+        {
+          "item": "Süt",
+          "amount": "1.5 su bardağı"
+        },
+        {
+          "item": "Kaşar peyniri",
+          "amount": "1 çay bardağı rendelenmiş"
+        },
+        {
+          "item": "Domates salçası",
+          "amount": "1 tatlı kaşığı"
+        },
+        {
+          "item": "Tuz ve Karabiber",
+          "amount": "1 çay kaşığı"
+        }
+      ],
+      "steps": [
+        "Kuzu etini suyunu salıp çekene kadar kısık ateşte pişirin.",
+        "Salça ve baharatları ekleyip yumuşayana kadar pişirmeye devam edin.",
+        "Beğendi için tereyağında unu kavurun, sütü azar azar ekleyip kıvam aldırın.",
+        "Közlenmiş ezilmiş patlıcanları ve kaşar peynirini ekleyip karıştırın.",
+        "Tabağa önce beğendiyi yayın, üzerine pişmiş etleri koyarak servis edin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 150,
+      "servings": 4,
+      "timeMinutes": 60,
+      "videoId": "q2KkZ1v8E0Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "ana yemekler",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "51",
+      "cuisine": "Türk Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "51",
+        "sourceUrl": "https://cookly.app/recipes/51",
+        "importedAt": "2026-09-06T01:44:32.498Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 52,
+      "name": "İskender Kebap",
+      "category": "main_dish",
+      "difficulty": "Orta",
+      "time": "40 dk",
+      "calories": 650,
+      "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Dana döner eti",
+          "amount": "400g ince dilimlenmiş"
+        },
+        {
+          "item": "Pide ekmeği",
+          "amount": "2 adet tırnak pide"
+        },
+        {
+          "item": "Tereyağı",
+          "amount": "3 yemek kaşığı eritilmiş"
+        },
+        {
+          "item": "Domates sosu",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Süzme yoğurt",
+          "amount": "4 yemek kaşığı"
+        },
+        {
+          "item": "Közlenmiş biber ve domates",
+          "amount": "2 adet"
+        }
+      ],
+      "steps": [
+        "Pideleri küp küp doğrayıp fırında hafifçe ısıtın.",
+        "Servis tabağına pideleri dizin, üzerine sıcak domates sosunu gezdirin.",
+        "Isıtılmış döner etlerini pidelerin üzerine yerleştirin.",
+        "Kenarına süzme yoğurt ve közlenmiş sebzeleri ekleyin.",
+        "Kızdırılmış tereyağını etlerin üzerine dökerek servis yapın."
+      ],
+      "rating": 4.8,
+      "reviewCount": 155,
+      "servings": 4,
+      "timeMinutes": 40,
+      "videoId": "WpL9q3rX5Yw",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "ana yemekler",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "52",
+      "cuisine": "Türk Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "52",
+        "sourceUrl": "https://cookly.app/recipes/52",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 53,
+      "name": "Alinazik Kebabı",
+      "category": "main_dish",
+      "difficulty": "Orta",
+      "time": "45 dk",
+      "calories": 480,
+      "image": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Kuşbaşı kuzu eti",
+          "amount": "400g"
+        },
+        {
+          "item": "Közlenmiş patlıcan",
+          "amount": "3 adet"
+        },
+        {
+          "item": "Sarımsaklı süzme yoğurt",
+          "amount": "1 kase"
+        },
+        {
+          "item": "Tereyağı",
+          "amount": "2 yemek kaşığı"
+        },
+        {
+          "item": "Pul biber ve Tuz",
+          "amount": "1 tatlı kaşığı"
+        }
+      ],
+      "steps": [
+        "Közlenmiş patlıcanları ince ince kıyın ve sarımsaklı yoğurtla karıştırıp tabağa yayın.",
+        "Etleri tereyağında kavurun, baharatları ekleyin.",
+        "Pişen sıcak eti yoğurtlu patlıcanın üzerine dökün.",
+        "Kızdırılmış tereyağı gezdirerek sıcak servis edin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 160,
+      "servings": 4,
+      "timeMinutes": 45,
+      "videoId": "M7v3L9p2X1Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "ana yemekler",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1544025162-d76694265947?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "53",
+      "cuisine": "Gaziantep Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "53",
+        "sourceUrl": "https://cookly.app/recipes/53",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 54,
+      "name": "Orman Kebabı",
+      "category": "main_dish",
+      "difficulty": "Kolay",
+      "time": "50 dk",
+      "calories": 410,
+      "image": "https://images.unsplash.com/photo-1529042410759-befb1204b468?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Kuşbaşı dana eti",
+          "amount": "500g"
+        },
+        {
+          "item": "Havuç",
+          "amount": "2 adet küp doğranmış"
+        },
+        {
+          "item": "Patates",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Bezelye",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Arpacık soğan",
+          "amount": "10 adet"
+        },
+        {
+          "item": "Kekik ve Zeytinyağı",
+          "amount": "1 tatlı kaşığı"
+        }
+      ],
+      "steps": [
+        "Etleri tencerede suyunu çekene kadar soteleyin.",
+        "Arpacık soğan ve havuçları ekleyip kavurmaya devam edin.",
+        "Patates ve bezelyeleri ilave edin, kekik ve tuz serpin.",
+        "Sıcak su ekleyip sebzeler ve etler yumuşayana kadar kısık ateşte pişirin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 165,
+      "servings": 4,
+      "timeMinutes": 50,
+      "videoId": "P9k2L3v1E4Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "ana yemekler",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1529042410759-befb1204b468?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "54",
+      "cuisine": "Bolu Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "54",
+        "sourceUrl": "https://cookly.app/recipes/54",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 55,
+      "name": "Çökertme Kebabı",
+      "category": "main_dish",
+      "difficulty": "Orta",
+      "time": "40 dk",
+      "calories": 560,
+      "image": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Biftek veya antrikot",
+          "amount": "400g jülyen doğranmış"
+        },
+        {
+          "item": "Patates",
+          "amount": "3 adet kibrit çöpü doğranmış"
+        },
+        {
+          "item": "Sarımsaklı yoğurt",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Tereyağı ve Domates sosu",
+          "amount": "2 yemek kaşığı"
+        }
+      ],
+      "steps": [
+        "Kibrit çöpü doğranmış patatesleri bol kızgın yağda çıtır çıtır kızartın.",
+        "Jülyen etleri yüksek ateşte tereyağında soteleyin.",
+        "Tabağa çıtır patatesleri yayın, üzerine sarımsaklı yoğurt dökün.",
+        "Etleri ve domates sosunu ekleyip sıcak servis edin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 170,
+      "servings": 4,
+      "timeMinutes": 40,
+      "videoId": "R3k9L1v2X7Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "ana yemekler",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "55",
+      "cuisine": "Bodrum / Ege Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "55",
+        "sourceUrl": "https://cookly.app/recipes/55",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 56,
+      "name": "Kuzu Güveç",
+      "category": "main_dish",
+      "difficulty": "Kolay",
+      "time": "75 dk",
+      "calories": 490,
+      "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Kuzu kuşbaşı",
+          "amount": "600g"
+        },
+        {
+          "item": "Patlıcan",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Arpacık soğan",
+          "amount": "15 adet"
+        },
+        {
+          "item": "Sarımsak",
+          "amount": "1 baş"
+        },
+        {
+          "item": "Domates ve Biber",
+          "amount": "3 adet"
+        }
+      ],
+      "steps": [
+        "Toprak güveç kabına sırasıyla et, soğan, sarımsak ve sebzeleri kat kat dizin.",
+        "Salçalı sıcak suyu üzerine gezdirin, tereyağı parçaları ekleyin.",
+        "Güveci folyo ile kapatıp 190 derece fırında 75 dakika pişirin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 175,
+      "servings": 4,
+      "timeMinutes": 75,
+      "videoId": "B4m2K9v1X8Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "ana yemekler",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "56",
+      "cuisine": "Türk Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "56",
+        "sourceUrl": "https://cookly.app/recipes/56",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 57,
+      "name": "Etli Kuru Fasulye",
+      "category": "main_dish",
+      "difficulty": "Orta",
+      "time": "60 dk",
+      "calories": 420,
+      "image": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Kuru fasulye",
+          "amount": "2 su bardağı geceden ıslatılmış"
+        },
+        {
+          "item": "Kuşbaşı dana eti",
+          "amount": "300g"
+        },
+        {
+          "item": "Soğan",
+          "amount": "1 adet"
+        },
+        {
+          "item": "Biber salçası",
+          "amount": "1 yemek kaşığı"
+        },
+        {
+          "item": "Tereyağı",
+          "amount": "2 yemek kaşığı"
+        }
+      ],
+      "steps": [
+        "Etleri tencerede soteleyin, doğranmış soğan ve salçayı ekleyip kavurun.",
+        "Islatılmış fasulyeleri ilave edin, üzerini 3 parmak geçecek kadar sıcak su dökün.",
+        "Kısık ateşte fasulyeler lokum gibi olana kadar pişirin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 180,
+      "servings": 4,
+      "timeMinutes": 60,
+      "videoId": "D8v1K3m9X2Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "ana yemekler",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "57",
+      "cuisine": "Türk Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "57",
+        "sourceUrl": "https://cookly.app/recipes/57",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 58,
+      "name": "Fırında İzmir Köfte",
+      "category": "main_dish",
+      "difficulty": "Kolay",
+      "time": "45 dk",
+      "calories": 440,
+      "image": "https://images.unsplash.com/photo-1529042410759-befb1204b468?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Kıyma",
+          "amount": "500g"
+        },
+        {
+          "item": "Patates",
+          "amount": "3 adet elma dilim"
+        },
+        {
+          "item": "Domates ve Biber",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Ekmek içi ve Soğan",
+          "amount": "1 çay bardağı"
+        },
+        {
+          "item": "Salçalı sos",
+          "amount": "1 su bardağı"
+        }
+      ],
+      "steps": [
+        "Kıymayı soğan, ekmek içi ve baharatlarla yoğurup parmak şeklinde köfteler yapın.",
+        "Köfteleri ve patatesleri fırın tepsisine sırayla dizin.",
+        "Aralara domates ve biber dilimleri yerleştirin, salçalı sosu dökün.",
+        "200 derece fırında 40 dakika pişirin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 185,
+      "servings": 4,
+      "timeMinutes": 45,
+      "videoId": "F1v9K2m3X8Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "ana yemekler",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1529042410759-befb1204b468?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "58",
+      "cuisine": "Ege Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "58",
+        "sourceUrl": "https://cookly.app/recipes/58",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 59,
+      "name": "Kadınbudu Köfte",
+      "category": "main_dish",
+      "difficulty": "Orta",
+      "time": "45 dk",
+      "calories": 390,
+      "image": "https://images.unsplash.com/photo-1529042410759-befb1204b468?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Kıyma",
+          "amount": "500g"
+        },
+        {
+          "item": "Pirinç",
+          "amount": "1/2 çay bardağı haşlanmış"
+        },
+        {
+          "item": "Yumurta ve Un",
+          "amount": "2 adet bulamak için"
+        },
+        {
+          "item": "Soğan",
+          "amount": "1 adet kavrulmuş"
+        }
+      ],
+      "steps": [
+        "Kıymanın yarısını soğanla kavurun, kalan çiğ kıyma ve haşlanmış pirinçle yoğurun.",
+        "Oval yassı köfteler şekillendirin.",
+        "Önce una sonra çırpılmış yumurtaya bulayarak kızgın yağda altın sarısı kızartın."
+      ],
+      "rating": 4.8,
+      "reviewCount": 190,
+      "servings": 4,
+      "timeMinutes": 45,
+      "videoId": "G4v2K9m1X3Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "ana yemekler",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1529042410759-befb1204b468?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "59",
+      "cuisine": "Geleneksel Türk",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "59",
+        "sourceUrl": "https://cookly.app/recipes/59",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 60,
+      "name": "İçli Köfte",
+      "category": "main_dish",
+      "difficulty": "Zor",
+      "time": "60 dk",
+      "calories": 480,
+      "image": "https://images.unsplash.com/photo-1628294895950-9805252327bc?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "İnce bulgur",
+          "amount": "2 su bardağı"
+        },
+        {
+          "item": "Kıyma harcı",
+          "amount": "400g cevizli ve soğanlı"
+        },
+        {
+          "item": "İrmik ve Salça",
+          "amount": "2 yemek kaşığı"
+        }
+      ],
+      "steps": [
+        "Bulguru sıcak suyla ıslatıp irmik ve salçayla sakız kıvamına gelene kadar yoğurun.",
+        "Ceviz büyüklüğünde parçalar alıp parmağınızla incecik oyun.",
+        "İçerisine soğumuş kıymalı harçtan doldurup ağzını kapatın.",
+        "Bol kızgın yağda kızartın veya kaynar suda haşlayın."
+      ],
+      "rating": 4.8,
+      "reviewCount": 195,
+      "servings": 4,
+      "timeMinutes": 60,
+      "videoId": "H7v3K1m2X9Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "ana yemekler",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1628294895950-9805252327bc?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "60",
+      "cuisine": "Güneydoğu Anadolu",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "60",
+        "sourceUrl": "https://cookly.app/recipes/60",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 61,
+      "name": "Kayseri Mantısı",
+      "category": "pastry",
+      "difficulty": "Zor",
+      "time": "75 dk",
+      "calories": 450,
+      "image": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Un ve Yumurta",
+          "amount": "3 su bardağı un, 1 yumurta"
+        },
+        {
+          "item": "Kıyma harcı",
+          "amount": "250g soğanlı kıyma"
+        },
+        {
+          "item": "Sarımsaklı yoğurt",
+          "amount": "1 kase"
+        },
+        {
+          "item": "Sumak ve Tereyağı sosu",
+          "amount": "2 yemek kaşığı"
+        }
+      ],
+      "steps": [
+        "Sert bir hamur yoğurup ince açın, küçük kareler kesin.",
+        "Karelerin ortasına kıyma koyup bohça şeklinde kapatın.",
+        "Kaynayan tuzlu suda 10 dakika haşlayın.",
+        "Sarımsaklı yoğurt ve kızdırılmış sumaklı tereyağı ile servis yapın."
+      ],
+      "rating": 4.8,
+      "reviewCount": 200,
+      "servings": 4,
+      "timeMinutes": 75,
+      "videoId": "J1v8K3m4X5Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "makarna & hamur i̇şleri",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "61",
+      "cuisine": "Kayseri Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "61",
+        "sourceUrl": "https://cookly.app/recipes/61",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 62,
+      "name": "Gözleme (Patatesli ve Peynirli)",
+      "category": "pastry",
+      "difficulty": "Kolay",
+      "time": "30 dk",
+      "calories": 360,
+      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Yufka",
+          "amount": "3 adet el açması veya hazır"
+        },
+        {
+          "item": "Haşlanmış patates",
+          "amount": "2 adet ezilmiş"
+        },
+        {
+          "item": "Beyaz peynir veya Lor",
+          "amount": "150g"
+        },
+        {
+          "item": "Tereyağı",
+          "amount": "Üzerine sürmek için"
+        }
+      ],
+      "steps": [
+        "Ezilmiş patates ile peyniri, pul biber ve maydanozla karıştırın.",
+        "Yufkanın ortasına harcı koyup zarf şeklinde katlayın.",
+        "Yağsız tavada veya sac üzerinde iki tarafı da kızarana kadar pişirin.",
+        "Sıcakken üzerine bol tereyağı sürüp servis edin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 205,
+      "servings": 4,
+      "timeMinutes": 30,
+      "videoId": "K2v9K1m4X6Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "makarna & hamur i̇şleri",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "62",
+      "cuisine": "Anadolu / Geleneksel",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "62",
+        "sourceUrl": "https://cookly.app/recipes/62",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 63,
+      "name": "Kıymalı Kol Böreği",
+      "category": "pastry",
+      "difficulty": "Orta",
+      "time": "50 dk",
+      "calories": 440,
+      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Yufka",
+          "amount": "4 adet"
+        },
+        {
+          "item": "Kıyma harcı",
+          "amount": "350g soğanlı ve karabiberli"
+        },
+        {
+          "item": "Süt ve Sıvı yağ sosu",
+          "amount": "1 su bardağı"
+        }
+      ],
+      "steps": [
+        "Yufkaları soslayıp kenarına kıymalı harçtan koyarak rulo sarın.",
+        "Tepsinin ortasından başlayarak spiral şeklinde dizin.",
+        "Üzerine yumurta sarısı sürüp 180 derecede pişirin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 210,
+      "servings": 4,
+      "timeMinutes": 50,
+      "videoId": "L3v1K8m2X7Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "makarna & hamur i̇şleri",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "63",
+      "cuisine": "Balkan / Türk Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "63",
+        "sourceUrl": "https://cookly.app/recipes/63",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 64,
+      "name": "Eskişehir Çiğ Börek",
+      "category": "pastry",
+      "difficulty": "Kolay",
+      "time": "35 dk",
+      "calories": 380,
+      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Un ve Sirke",
+          "amount": "3 su bardağı un, 1 tatlı kaşığı sirke"
+        },
+        {
+          "item": "Sulu kıyma harcı",
+          "amount": "300g kıyma, rendelenmiş soğan, 1/2 çay bardağı su"
+        }
+      ],
+      "steps": [
+        "Hamuru yoğurup tabak büyüklüğünde açın.",
+        "Yarısına sulu kıymalı harçtan sürüp yarım ay kapatın, kenarlarını ruletle kesin.",
+        "Bol kızgın yağda puf puf kabarana kadar kızartın."
+      ],
+      "rating": 4.8,
+      "reviewCount": 215,
+      "servings": 4,
+      "timeMinutes": 35,
+      "videoId": "M4v2K9m3X8Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "makarna & hamur i̇şleri",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "64",
+      "cuisine": "Kırım / Eskişehir",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "64",
+        "sourceUrl": "https://cookly.app/recipes/64",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 65,
+      "name": "Paçanga Böreği",
+      "category": "snack",
+      "difficulty": "Kolay",
+      "time": "25 dk",
+      "calories": 340,
+      "image": "https://images.unsplash.com/photo-1541544741938-0af808871cc0?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Yufka",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Pastırma",
+          "amount": "100g doğranmış"
+        },
+        {
+          "item": "Kaşar peyniri",
+          "amount": "150g dilimlenmiş"
+        },
+        {
+          "item": "Domates ve Biber",
+          "amount": "1 adet küp doğranmış"
+        }
+      ],
+      "steps": [
+        "Yufkaları üçgen kesin, geniş kısmına pastırma, kaşar ve sebze koyun.",
+        "Yassı sigara böreği gibi sarın.",
+        "Sıcak yağda dışı çıtır olana kadar kızartıp sıcak servis yapın."
+      ],
+      "rating": 4.8,
+      "reviewCount": 220,
+      "servings": 4,
+      "timeMinutes": 25,
+      "videoId": "N5v3K1m4X9Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "aperatifler & atıştırmalıklar",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1541544741938-0af808871cc0?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "65",
+      "cuisine": "İstanbul Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "65",
+        "sourceUrl": "https://cookly.app/recipes/65",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 66,
+      "name": "Zeytinyağlı Enginar",
+      "category": "olive_oil",
+      "difficulty": "Kolay",
+      "time": "35 dk",
+      "calories": 190,
+      "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Çanak enginar",
+          "amount": "4 adet"
+        },
+        {
+          "item": "Garnitür",
+          "amount": "1 su bardağı havuç, patates, bezelye"
+        },
+        {
+          "item": "Sızma zeytinyağı ve Limon",
+          "amount": "1/2 çay bardağı zeytinyağı, 1 limon suyu"
+        },
+        {
+          "item": "Dereotu",
+          "amount": "1/2 demet"
+        }
+      ],
+      "steps": [
+        "Enginar çanaklarını tencereye dizin, üzerlerine garnitürü doldurun.",
+        "Zeytinyağı, limon suyu, şeker ve tuzu çırpıp üzerine dökün.",
+        "Kapağı kapalı olarak kısık ateşte 30 dakika pişirin, soğuk servis edin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 225,
+      "servings": 4,
+      "timeMinutes": 35,
+      "videoId": "P6v4K2m5X1Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "zeytinyağlılar",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "66",
+      "cuisine": "Ege Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "66",
+        "sourceUrl": "https://cookly.app/recipes/66",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 67,
+      "name": "Zeytinyağlı Kereviz",
+      "category": "olive_oil",
+      "difficulty": "Kolay",
+      "time": "35 dk",
+      "calories": 170,
+      "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Kereviz",
+          "amount": "2 adet küp doğranmış"
+        },
+        {
+          "item": "Havuç ve Portakal suyu",
+          "amount": "1 havuç, 1 su bardağı taze portakal suyu"
+        },
+        {
+          "item": "Sızma zeytinyağı",
+          "amount": "1/2 çay bardağı"
+        }
+      ],
+      "steps": [
+        "Zeytinyağında soğan ve havuçları soteleyin.",
+        "Kerevizleri ekleyin, portakal suyu ve tuz ilave edin.",
+        "Kerevizler yumuşayana kadar pişirip kereviz yapraklarıyla süsleyin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 230,
+      "servings": 4,
+      "timeMinutes": 35,
+      "videoId": "Q7v5K3m6X2Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "zeytinyağlılar",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "67",
+      "cuisine": "Ege / Akdeniz",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "67",
+        "sourceUrl": "https://cookly.app/recipes/67",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 68,
+      "name": "Zeytinyağlı Pırasa",
+      "category": "olive_oil",
+      "difficulty": "Kolay",
+      "time": "30 dk",
+      "calories": 160,
+      "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Pırasa",
+          "amount": "1 kg verev doğranmış"
+        },
+        {
+          "item": "Havuç ve Pirinç",
+          "amount": "2 havuç, 2 yemek kaşığı pirinç"
+        },
+        {
+          "item": "Zeytinyağı ve Limon",
+          "amount": "1/2 çay bardağı"
+        }
+      ],
+      "steps": [
+        "Pırasa ve havuçları zeytinyağında soteleyin.",
+        "Yıkanmış pirinçleri serpiştirin, limon suyu ve 1 su bardağı sıcak su ekleyin.",
+        "Kısık ateşte pirinçler şişene kadar pişirin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 235,
+      "servings": 4,
+      "timeMinutes": 30,
+      "videoId": "R8v6K4m7X3Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "zeytinyağlılar",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "68",
+      "cuisine": "Türk Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "68",
+        "sourceUrl": "https://cookly.app/recipes/68",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 69,
+      "name": "Zeytinyağlı Biber Dolması",
+      "category": "olive_oil",
+      "difficulty": "Orta",
+      "time": "45 dk",
+      "calories": 290,
+      "image": "https://images.unsplash.com/photo-1541544741938-0af808871cc0?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Dolmalık biber",
+          "amount": "10 adet"
+        },
+        {
+          "item": "Pirinç harcı",
+          "amount": "1.5 su bardağı pirinç, fıstık, kuş üzümü, nane, yenibahar"
+        },
+        {
+          "item": "Sızma zeytinyağı",
+          "amount": "1/2 çay bardağı"
+        }
+      ],
+      "steps": [
+        "Dolmalık biberlerin çekirdeklerini çıkarıp yıkayın.",
+        "Soğan, fıstık ve baharatlarla hafifçe sotelenmiş pirinç harcını biberlere doldurun.",
+        "Tencereye dizip zeytinyağlı sıcak su ekleyerek kısık ateşte 40 dakika pişirin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 240,
+      "servings": 4,
+      "timeMinutes": 45,
+      "videoId": "S9v7K5m8X4Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "zeytinyağlılar",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1541544741938-0af808871cc0?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "69",
+      "cuisine": "Geleneksel Türk",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "69",
+        "sourceUrl": "https://cookly.app/recipes/69",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 70,
+      "name": "İmam Bayıldı",
+      "category": "olive_oil",
+      "difficulty": "Orta",
+      "time": "45 dk",
+      "calories": 250,
+      "image": "https://images.unsplash.com/photo-1625938145744-e380515399b7?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Patlıcan",
+          "amount": "4 adet alacalı soyulmuş"
+        },
+        {
+          "item": "Soğan ve Sarımsak",
+          "amount": "3 soğan piyazlık, 5 diş sarımsak"
+        },
+        {
+          "item": "Domates ve Zeytinyağı",
+          "amount": "2 domates, 1/2 çay bardağı zeytinyağı"
+        }
+      ],
+      "steps": [
+        "Patlıcanları hafifçe kızartıp ortalarını yarın.",
+        "Piyazlık soğan, sarımsak ve domatesi zeytinyağında karamelize olana kadar kavurun.",
+        "Harcı patlıcanların ortasına doldurup tencerede az suyla 25 dakika pişirin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 245,
+      "servings": 4,
+      "timeMinutes": 45,
+      "videoId": "T1v8K6m9X5Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "zeytinyağlılar",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1625938145744-e380515399b7?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "70",
+      "cuisine": "Osmanlı / Ege Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "70",
+        "sourceUrl": "https://cookly.app/recipes/70",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 71,
+      "name": "Şakşuka",
+      "category": "meze",
+      "difficulty": "Kolay",
+      "time": "30 dk",
+      "calories": 210,
+      "image": "https://images.unsplash.com/photo-1628294895950-9805252327bc?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Patlıcan ve Kabak",
+          "amount": "2 patlıcan, 2 kabak küp doğranmış"
+        },
+        {
+          "item": "Kırmızı biber",
+          "amount": "2 adet"
+        },
+        {
+          "item": "Sarımsaklı domates sosu",
+          "amount": "2 su bardağı"
+        }
+      ],
+      "steps": [
+        "Sebzeleri küp küp doğrayıp bol yağda kızartın ve süzün.",
+        "Ayrı tavada sarımsak, domates, sirke ve tuzu pişirip sos haline getirin.",
+        "Sos ile kızarmış sebzeleri harmanlayıp soğuk servis edin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 250,
+      "servings": 4,
+      "timeMinutes": 30,
+      "videoId": "U2v9K7m1X6Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "salatalar & mezeler",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1628294895950-9805252327bc?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "71",
+      "cuisine": "Akdeniz / Ege",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "71",
+        "sourceUrl": "https://cookly.app/recipes/71",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 72,
+      "name": "Haydari",
+      "category": "meze",
+      "difficulty": "Kolay",
+      "time": "15 dk",
+      "calories": 180,
+      "image": "https://images.unsplash.com/photo-1628294895950-9805252327bc?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Süzme yoğurt",
+          "amount": "400g"
+        },
+        {
+          "item": "Beyaz peynir",
+          "amount": "100g ezilmiş"
+        },
+        {
+          "item": "Tereyağı ve Nane",
+          "amount": "2 yemek kaşığı tereyağı, 1 tatlı kaşığı kuru nane"
+        },
+        {
+          "item": "Sarımsak",
+          "amount": "2 diş ezilmiş"
+        }
+      ],
+      "steps": [
+        "Süzme yoğurt, ezilmiş beyaz peynir ve sarımsağı homojen olana kadar karıştırın.",
+        "Tereyağında kuru naneyi kokusu çıkana kadar kızdırıp yoğurda ekleyin.",
+        "Buzdolabında 1 saat dinlendirip servis edin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 255,
+      "servings": 4,
+      "timeMinutes": 15,
+      "videoId": "V3v1K8m2X7Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "salatalar & mezeler",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1628294895950-9805252327bc?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "72",
+      "cuisine": "Geleneksel Türk Mezesi",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "72",
+        "sourceUrl": "https://cookly.app/recipes/72",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 73,
+      "name": "Atom Mezesi",
+      "category": "meze",
+      "difficulty": "Kolay",
+      "time": "15 dk",
+      "calories": 220,
+      "image": "https://images.unsplash.com/photo-1628294895950-9805252327bc?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Süzme yoğurt",
+          "amount": "1 kase"
+        },
+        {
+          "item": "Kuru arnavut biberi",
+          "amount": "8 adet"
+        },
+        {
+          "item": "Tereyağı",
+          "amount": "3 yemek kaşığı"
+        },
+        {
+          "item": "Sarımsak",
+          "amount": "2 diş"
+        }
+      ],
+      "steps": [
+        "Süzme yoğurt ile ezilmiş sarımsağı karıştırıp servis tabağına yayın.",
+        "Kuru biberleri tereyağında hafifçe çıtırdayana kadar çevirin.",
+        "Kızgın acı biberli yağı yoğurdun üzerine dökerek servis edin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 260,
+      "servings": 4,
+      "timeMinutes": 15,
+      "videoId": "W4v2K9m3X8Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "salatalar & mezeler",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1628294895950-9805252327bc?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "73",
+      "cuisine": "Ege / Akdeniz",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "73",
+        "sourceUrl": "https://cookly.app/recipes/73",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 74,
+      "name": "Muhammara (Cevizli Biber)",
+      "category": "meze",
+      "difficulty": "Kolay",
+      "time": "20 dk",
+      "calories": 260,
+      "image": "https://images.unsplash.com/photo-1628294895950-9805252327bc?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Ceviz içi",
+          "amount": "1.5 su bardağı çekilmiş"
+        },
+        {
+          "item": "Biber salçası ve Ekmek içi",
+          "amount": "2 yemek kaşığı salça, 1 dilim ekmek"
+        },
+        {
+          "item": "Nar ekşisi ve Zeytinyağı",
+          "amount": "2 yemek kaşığı nar ekşisi, 1/2 çay bardağı zeytinyağı"
+        },
+        {
+          "item": "Kimyon ve Sarımsak",
+          "amount": "1 tatlı kaşığı"
+        }
+      ],
+      "steps": [
+        "Tüm malzemeleri mutfak robotunda pürüzsüz macun kıvamına gelene kadar çekin.",
+        "Zeytinyağı ve ceviz taneleriyle süsleyerek servis yapın."
+      ],
+      "rating": 4.8,
+      "reviewCount": 265,
+      "servings": 4,
+      "timeMinutes": 20,
+      "videoId": "X5v3K1m4X9Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "salatalar & mezeler",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1628294895950-9805252327bc?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "74",
+      "cuisine": "Hatay / Gaziantep",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "74",
+        "sourceUrl": "https://cookly.app/recipes/74",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 75,
+      "name": "Fava (Bakla Ezmesi)",
+      "category": "meze",
+      "difficulty": "Kolay",
+      "time": "40 dk",
+      "calories": 240,
+      "image": "https://images.unsplash.com/photo-1628294895950-9805252327bc?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Kuru iç bakla",
+          "amount": "2 su bardağı"
+        },
+        {
+          "item": "Kuru soğan ve Şeker",
+          "amount": "1 soğan, 1 tatlı kaşığı şeker"
+        },
+        {
+          "item": "Sızma zeytinyağı ve Dereotu",
+          "amount": "1/2 çay bardağı zeytinyağı"
+        }
+      ],
+      "steps": [
+        "Baklayı soğan, su, tuz ve şekerle yumuşayana kadar haşlayın.",
+        "Blenderdan püre yapıp zeytinyağı ekleyin.",
+        "Kalıba döküp soğutun, dilimleyip kırmızı soğan ve dereotuyla servis yapın."
+      ],
+      "rating": 4.8,
+      "reviewCount": 270,
+      "servings": 4,
+      "timeMinutes": 40,
+      "videoId": "Y6v4K2m5X1Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "salatalar & mezeler",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1628294895950-9805252327bc?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "75",
+      "cuisine": "Ege Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "75",
+        "sourceUrl": "https://cookly.app/recipes/75",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 76,
+      "name": "Tarator Soslu Havuç",
+      "category": "meze",
+      "difficulty": "Kolay",
+      "time": "20 dk",
+      "calories": 190,
+      "image": "https://images.unsplash.com/photo-1628294895950-9805252327bc?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Havuç",
+          "amount": "4 adet rendelenmiş"
+        },
+        {
+          "item": "Süzme yoğurt ve Ceviz",
+          "amount": "1 su bardağı yoğurt, 1/2 çay bardağı ceviz"
+        },
+        {
+          "item": "Zeytinyağı ve Sarımsak",
+          "amount": "2 yemek kaşığı"
+        }
+      ],
+      "steps": [
+        "Rendelenmiş havuçları zeytinyağında yumuşayana kadar soteleyip soğutun.",
+        "Sarımsaklı süzme yoğurt ve cevizle harmanlayarak servis tabağına alın."
+      ],
+      "rating": 4.8,
+      "reviewCount": 275,
+      "servings": 4,
+      "timeMinutes": 20,
+      "videoId": "Z7v5K3m6X2Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "salatalar & mezeler",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1628294895950-9805252327bc?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "76",
+      "cuisine": "Türk Mezesi",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "76",
+        "sourceUrl": "https://cookly.app/recipes/76",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 77,
+      "name": "Yayla Çorbası",
+      "category": "soup",
+      "difficulty": "Kolay",
+      "time": "30 dk",
+      "calories": 180,
+      "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Yoğurt",
+          "amount": "2 su bardağı"
+        },
+        {
+          "item": "Pirinç",
+          "amount": "1/2 çay bardağı"
+        },
+        {
+          "item": "Un ve Yumurta sarısı",
+          "amount": "1 yemek kaşığı un, 1 yumurta"
+        },
+        {
+          "item": "Tereyağı ve Nane",
+          "amount": "2 yemek kaşığı tereyağı, 1 tatlı kaşığı nane"
+        }
+      ],
+      "steps": [
+        "Pirinci suda yumuşayana kadar haşlayın.",
+        "Yoğurt, un ve yumurta sarısını çırpıp çorbanın suyundan ekleyerek ılıtın.",
+        "Terbiyeyi tencereye azar azar döküp sürekli karıştırarak kaynatın.",
+        "Üzerine naneli kızdırılmış tereyağı dökün."
+      ],
+      "rating": 4.8,
+      "reviewCount": 280,
+      "servings": 4,
+      "timeMinutes": 30,
+      "videoId": "A8v6K4m7X3Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "çorbalar",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "77",
+      "cuisine": "Türk Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "77",
+        "sourceUrl": "https://cookly.app/recipes/77",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 78,
+      "name": "Lebeniye Çorbası",
+      "category": "soup",
+      "difficulty": "Orta",
+      "time": "40 dk",
+      "calories": 220,
+      "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Nohut ve Kırık pirinç",
+          "amount": "1 su bardağı haşlanmış nohut, 2 kaşık pirinç"
+        },
+        {
+          "item": "Misket köfte",
+          "amount": "150g kıymadan minik köfteler"
+        },
+        {
+          "item": "Süzme yoğurt ve Un",
+          "amount": "1.5 su bardağı yoğurt, 1 kaşık un"
+        },
+        {
+          "item": "Tereyağı ve Kuru nane",
+          "amount": "2 yemek kaşığı"
+        }
+      ],
+      "steps": [
+        "Pirinci haşlayın, haşlanmış nohutları ekleyin.",
+        "Yoğurt, yumurta ve un ile terbiye hazırlayıp çorbaya ekleyin.",
+        "Minik misket köfteleri tereyağında nane ile kızartın.",
+        "Kızaran köfteli naneli sosu çorbanın üzerine dökerek servis yapın."
+      ],
+      "rating": 4.8,
+      "reviewCount": 285,
+      "servings": 4,
+      "timeMinutes": 40,
+      "videoId": "B9v7K5m8X4Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "çorbalar",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "78",
+      "cuisine": "Gaziantep / Saray Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "78",
+        "sourceUrl": "https://cookly.app/recipes/78",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 79,
+      "name": "Kaşarlı Domates Çorbası",
+      "category": "soup",
+      "difficulty": "Kolay",
+      "time": "25 dk",
+      "calories": 190,
+      "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Domates",
+          "amount": "5 adet olgun rendelenmiş"
+        },
+        {
+          "item": "Un ve Tereyağı",
+          "amount": "2 yemek kaşığı un, 2 yemek kaşığı tereyağı"
+        },
+        {
+          "item": "Süt",
+          "amount": "1/2 su bardağı"
+        },
+        {
+          "item": "Kaşar peyniri",
+          "amount": "1/2 su bardağı rendelenmiş"
+        }
+      ],
+      "steps": [
+        "Tereyağında unu kavurun, rendelenmiş domates ve salçayı ekleyin.",
+        "Sıcak su ve süt ekleyip kaynayana kadar karıştırın.",
+        "Üzerine rendelenmiş kaşar peyniri serperek sıcak servis edin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 290,
+      "servings": 4,
+      "timeMinutes": 25,
+      "videoId": "C1v8K6m9X5Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "çorbalar",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "79",
+      "cuisine": "Türk Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "79",
+        "sourceUrl": "https://cookly.app/recipes/79",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 80,
+      "name": "Düğün Çorbası",
+      "category": "soup",
+      "difficulty": "Orta",
+      "time": "50 dk",
+      "calories": 230,
+      "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Kuzu gerdan eti",
+          "amount": "350g haşlanmış ve didiklenmiş"
+        },
+        {
+          "item": "Yoğurt ve Un terbiyesi",
+          "amount": "1 su bardağı yoğurt, 2 kaşık un, 1 yumurta"
+        },
+        {
+          "item": "Pul biberli tereyağı",
+          "amount": "2 yemek kaşığı"
+        }
+      ],
+      "steps": [
+        "Eti haşlayıp suyunu süzün ve etleri didikleyin.",
+        "Et suyunu kaynatın, hazırlanan yoğurtlu unlu terbiyeyi ılıtarak ekleyin.",
+        "Didiklenmiş etleri ilave edip 10 dakika pişirin.",
+        "Üzerine kızdırılmış kırmızı biberli tereyağı gezdirin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 295,
+      "servings": 4,
+      "timeMinutes": 50,
+      "videoId": "D2v9K7m1X6Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "çorbalar",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "80",
+      "cuisine": "Osmanlı / Saray Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "80",
+        "sourceUrl": "https://cookly.app/recipes/80",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 81,
+      "name": "Geleneksel Ezogelin Çorbası",
+      "category": "soup",
+      "difficulty": "Kolay",
+      "time": "35 dk",
+      "calories": 195,
+      "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Kırmızı mercimek",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Bulgur ve Pirinç",
+          "amount": "1 yemek kaşığı bulgur, 1 yemek kaşığı pirinç"
+        },
+        {
+          "item": "Biber salçası ve Nane",
+          "amount": "1 yemek kaşığı salça, 1 tatlı kaşığı nane"
+        }
+      ],
+      "steps": [
+        "Mercimek, bulgur ve pirinci tencerede haşlayın.",
+        "Ayrı tavada tereyağı, soğan, sarımsak, salça ve naneyi kavurun.",
+        "Sosu çorbaya ilave edip kısık ateşte 15 dakika özleşene kadar pişirin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 300,
+      "servings": 4,
+      "timeMinutes": 35,
+      "videoId": "E3v1K8m2X7Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "çorbalar",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "81",
+      "cuisine": "Gaziantep / Türk",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "81",
+        "sourceUrl": "https://cookly.app/recipes/81",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 82,
+      "name": "Şehriyeli Tavuk Suyu Çorba",
+      "category": "soup",
+      "difficulty": "Kolay",
+      "time": "30 dk",
+      "calories": 170,
+      "image": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Didiklenmiş tavuk eti",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Tel şehriye",
+          "amount": "1/2 çay bardağı"
+        },
+        {
+          "item": "Tavuk suyu",
+          "amount": "4 su bardağı"
+        },
+        {
+          "item": "Limon ve Maydanoz",
+          "amount": "Yarım limon suyu"
+        }
+      ],
+      "steps": [
+        "Tavuk suyunu kaynatıp tel şehriyeyi ekleyin.",
+        "Şehriyeler yumuşayınca didiklenmiş tavuk etlerini ilave edin.",
+        "Limon suyu ve ince kıyılmış maydanozla tatlandırıp servis yapın."
+      ],
+      "rating": 4.8,
+      "reviewCount": 305,
+      "servings": 4,
+      "timeMinutes": 30,
+      "videoId": "F4v2K9m3X8Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "çorbalar",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "82",
+      "cuisine": "Türk Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "82",
+        "sourceUrl": "https://cookly.app/recipes/82",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 83,
+      "name": "Gavurdağı Salatası",
+      "category": "meze",
+      "difficulty": "Kolay",
+      "time": "15 dk",
+      "calories": 210,
+      "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Domates ve Salatalık",
+          "amount": "3 domates, 2 salatalık minik küp doğranmış"
+        },
+        {
+          "item": "İri dövülmüş ceviz",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Nar ekşisi ve Zeytinyağı",
+          "amount": "2 yemek kaşığı nar ekşisi, 1/2 çay bardağı zeytinyağı"
+        },
+        {
+          "item": "Sumak ve Taze soğan",
+          "amount": "1 tatlı kaşığı sumak, 3 sap yeşil soğan"
+        }
+      ],
+      "steps": [
+        "Tüm sebzeleri tavla zarı büyüklüğünde incecik doğrayın.",
+        "Nar ekşisi, zeytinyağı ve sumakla sos hazırlayın.",
+        "Sosla sebzeleri karıştırıp üzerine bol ceviz serpin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 310,
+      "servings": 4,
+      "timeMinutes": 15,
+      "videoId": "G5v3K1m4X9Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "salatalar & mezeler",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "83",
+      "cuisine": "Gaziantep Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "83",
+        "sourceUrl": "https://cookly.app/recipes/83",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 84,
+      "name": "Antalya Usulü Piyaz",
+      "category": "meze",
+      "difficulty": "Kolay",
+      "time": "20 dk",
+      "calories": 280,
+      "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Haşlanmış kuru fasulye",
+          "amount": "2 su bardağı küçük taneli"
+        },
+        {
+          "item": "Tahin tarator sosu",
+          "amount": "1/2 çay bardağı tahin, limon suyu, sarımsak, sirke"
+        },
+        {
+          "item": "Haşlanmış yumurta",
+          "amount": "2 adet dilimlenmiş"
+        }
+      ],
+      "steps": [
+        "Haşlanmış ılık fasulyeleri tabağa alın.",
+        "Tahin, limon suyu, sirke ve sarımsakla tarator sos hazırlayıp üzerine gezdirin.",
+        "Domates, soğan, maydanoz ve haşlanmış yumurta dilimleriyle süsleyin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 315,
+      "servings": 4,
+      "timeMinutes": 20,
+      "videoId": "H6v4K2m5X1Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "salatalar & mezeler",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "84",
+      "cuisine": "Antalya Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "84",
+        "sourceUrl": "https://cookly.app/recipes/84",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 85,
+      "name": "Cevizli Roka Salatası",
+      "category": "meze",
+      "difficulty": "Kolay",
+      "time": "10 dk",
+      "calories": 170,
+      "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Taze roka",
+          "amount": "1 demet"
+        },
+        {
+          "item": "Tulum peyniri veya Parmesan",
+          "amount": "50g"
+        },
+        {
+          "item": "Ceviz içi ve Nar ekşisi",
+          "amount": "1/2 çay bardağı ceviz, 1 kaşık nar ekşisi"
+        },
+        {
+          "item": "Sızma zeytinyağı",
+          "amount": "2 yemek kaşığı"
+        }
+      ],
+      "steps": [
+        "Rokaları yıkayıp elinizle iri parçalara bölün.",
+        "Zeytinyağı, limon suyu ve nar ekşisiyle harmanlayın.",
+        "Üzerine tulum peyniri ve ceviz parçaları ekleyerek servis edin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 320,
+      "servings": 4,
+      "timeMinutes": 10,
+      "videoId": "J7v5K3m6X2Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "salatalar & mezeler",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "85",
+      "cuisine": "Akdeniz Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "85",
+        "sourceUrl": "https://cookly.app/recipes/85",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 86,
+      "name": "Yoğurtlu Semizotu Salatası",
+      "category": "meze",
+      "difficulty": "Kolay",
+      "time": "10 dk",
+      "calories": 140,
+      "image": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Semizotu",
+          "amount": "1 demet ayıklanmış"
+        },
+        {
+          "item": "Süzme yoğurt",
+          "amount": "1 kase"
+        },
+        {
+          "item": "Sarımsak ve Zeytinyağı",
+          "amount": "2 diş sarımsak, 2 yemek kaşığı zeytinyağı"
+        }
+      ],
+      "steps": [
+        "Semizotunu yıkayıp suyunu iyice süzdürün.",
+        "Sarımsaklı süzme yoğurtla nazikçe karıştırın.",
+        "Üzerine sızma zeytinyağı ve pul biber gezdirin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 325,
+      "servings": 4,
+      "timeMinutes": 10,
+      "videoId": "K8v6K4m7X3Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "salatalar & mezeler",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "86",
+      "cuisine": "Ege / Akdeniz",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "86",
+        "sourceUrl": "https://cookly.app/recipes/86",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 87,
+      "name": "Hatay Usulü Künefe",
+      "category": "dessert",
+      "difficulty": "Orta",
+      "time": "25 dk",
+      "calories": 480,
+      "image": "https://images.unsplash.com/photo-1519869325930-281384150729?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Tel kadayıf",
+          "amount": "250g ince kıyılmış"
+        },
+        {
+          "item": "Tuzsuz künefe peyniri",
+          "amount": "150g"
+        },
+        {
+          "item": "Tereyağı",
+          "amount": "100g eritilmiş"
+        },
+        {
+          "item": "Şerbet",
+          "amount": "1.5 su bardağı şeker, 1.5 su bardağı su"
+        }
+      ],
+      "steps": [
+        "Kadayıfı tereyağıyla iyice harmanlayıp yarısını yağlanmış tavaya bastırın.",
+        "Ortasına künefe peynirini yayın, kalan kadayıfla üzerini kapatıp sıkıca bastırın.",
+        "Ocakta iki tarafı da altın sarısı olana kadar çevirerek pişirin.",
+        "Sıcak künefeye ılık şerbeti döküp antep fıstığıyla süsleyin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 330,
+      "servings": 4,
+      "timeMinutes": 25,
+      "videoId": "L9v7K5m8X4Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "tatlılar",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1519869325930-281384150729?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "87",
+      "cuisine": "Hatay Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "87",
+        "sourceUrl": "https://cookly.app/recipes/87",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 88,
+      "name": "Geleneksel Kazandibi",
+      "category": "dessert",
+      "difficulty": "Orta",
+      "time": "45 dk",
+      "calories": 310,
+      "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Süt",
+          "amount": "1 litre"
+        },
+        {
+          "item": "Pirinç unu ve Nişasta",
+          "amount": "1/2 su bardağı pirinç unu, 2 kaşık nişasta"
+        },
+        {
+          "item": "Şeker",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Pudra şekeri ve Tereyağı",
+          "amount": "Tepsi tabanını karamelize etmek için"
+        }
+      ],
+      "steps": [
+        "Süt, şeker, pirinç unu ve nişastayı muhallebi kıvamına gelene kadar pişirin.",
+        "Tepsiye tereyağı sürüp pudra şekeri serpin, muhallebinin bir kısmını döküp ocakta tabanını yakın.",
+        "Kalan muhallebiyi ekleyip soğutun, rulo şeklinde sararak servis yapın."
+      ],
+      "rating": 4.8,
+      "reviewCount": 335,
+      "servings": 4,
+      "timeMinutes": 45,
+      "videoId": "M1v8K6m9X5Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "tatlılar",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "88",
+      "cuisine": "Osmanlı / Türk Tatlısı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "88",
+        "sourceUrl": "https://cookly.app/recipes/88",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 89,
+      "name": "Fırın Sütlaç",
+      "category": "dessert",
+      "difficulty": "Kolay",
+      "time": "40 dk",
+      "calories": 280,
+      "image": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Süt",
+          "amount": "1 litre"
+        },
+        {
+          "item": "Pirinç",
+          "amount": "1/2 çay bardağı haşlanmış"
+        },
+        {
+          "item": "Şeker ve Nişasta",
+          "amount": "1 su bardağı şeker, 2 kaşık nişasta"
+        },
+        {
+          "item": "Yumurta sarısı",
+          "amount": "1 adet üzeri için"
+        }
+      ],
+      "steps": [
+        "Pirinçleri haşlayıp süt ve şekerle kaynatın.",
+        "Nişastayı az suyla açıp ekleyin ve koyulaştırın.",
+        "Güveç kaplarına paylaştırıp fırın tepsisine su koyarak 200 derece fırının üst ızgarasında kızartın."
+      ],
+      "rating": 4.8,
+      "reviewCount": 340,
+      "servings": 4,
+      "timeMinutes": 40,
+      "videoId": "N2v9K7m1X6Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "tatlılar",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "89",
+      "cuisine": "Geleneksel Türk",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "89",
+        "sourceUrl": "https://cookly.app/recipes/89",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 90,
+      "name": "Şekerpare",
+      "category": "dessert",
+      "difficulty": "Kolay",
+      "time": "40 dk",
+      "calories": 360,
+      "image": "https://images.unsplash.com/photo-1519869325930-281384150729?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Tereyağı",
+          "amount": "125g oda sıcaklığında"
+        },
+        {
+          "item": "İrmik ve Un",
+          "amount": "1 çay bardağı irmik, 2.5 su bardağı un"
+        },
+        {
+          "item": "Fındık",
+          "amount": "Üzerleri için"
+        },
+        {
+          "item": "Şerbet",
+          "amount": "3 su bardağı şeker, 3 su bardağı su"
+        }
+      ],
+      "steps": [
+        "Tereyağı, pudra şekeri, yumurta ve irmiği karıştırıp unla yumuşak hamur yapın.",
+        "Yuvarlak şekil verip ortalarına fındık batırın.",
+        "180 derecede kızarana kadar pişirip sıcak tatlıya soğuk şerbet dökün."
+      ],
+      "rating": 4.8,
+      "reviewCount": 345,
+      "servings": 4,
+      "timeMinutes": 40,
+      "videoId": "P3v1K8m2X7Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "tatlılar",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1519869325930-281384150729?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "90",
+      "cuisine": "Türk Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "90",
+        "sourceUrl": "https://cookly.app/recipes/90",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 91,
+      "name": "Revani",
+      "category": "dessert",
+      "difficulty": "Kolay",
+      "time": "40 dk",
+      "calories": 350,
+      "image": "https://images.unsplash.com/photo-1519869325930-281384150729?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "İrmik",
+          "amount": "1 su bardağı"
+        },
+        {
+          "item": "Yumurta ve Yoğurt",
+          "amount": "3 yumurta, 1 su bardağı yoğurt"
+        },
+        {
+          "item": "Şerbet",
+          "amount": "3 su bardağı şeker, 3 su bardağı su"
+        },
+        {
+          "item": "Limon kabuğu rendesi",
+          "amount": "1 tatlı kaşığı"
+        }
+      ],
+      "steps": [
+        "Yumurta ve şekeri köpürene kadar çırpın, yoğurt, irmik ve unu ekleyin.",
+        "Tepsiye döküp 180 derecede altın sarısı olana kadar pişirin.",
+        "Fırından çıkan sıcak keke ılık şerbeti dökün, hindistan ceviziyle süsleyin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 350,
+      "servings": 4,
+      "timeMinutes": 40,
+      "videoId": "Q4v2K9m3X8Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "tatlılar",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1519869325930-281384150729?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "91",
+      "cuisine": "Osmanlı / Türk Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "91",
+        "sourceUrl": "https://cookly.app/recipes/91",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 92,
+      "name": "Fıstıklı İrmik Helvası",
+      "category": "dessert",
+      "difficulty": "Kolay",
+      "time": "25 dk",
+      "calories": 370,
+      "image": "https://images.unsplash.com/photo-1519869325930-281384150729?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "İrmik",
+          "amount": "2 su bardağı"
+        },
+        {
+          "item": "Dolmalık fıstık",
+          "amount": "2 yemek kaşığı"
+        },
+        {
+          "item": "Tereyağı",
+          "amount": "100g"
+        },
+        {
+          "item": "Sütlü şerbet",
+          "amount": "2 su bardağı süt, 1.5 su bardağı şeker"
+        }
+      ],
+      "steps": [
+        "Tereyağında fıstıkları ve irmiği rengi dönene kadar sabırla kavurun.",
+        "Sıcak sütlü şerbeti dikkatlice ilave edip kapağını kapatın.",
+        "Kısık ateşte suyunu çekene kadar pişirip 15 dakika demlendirin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 355,
+      "servings": 4,
+      "timeMinutes": 25,
+      "videoId": "R5v3K1m4X9Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "tatlılar",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1519869325930-281384150729?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "92",
+      "cuisine": "Geleneksel Türk",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "92",
+        "sourceUrl": "https://cookly.app/recipes/92",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 93,
+      "name": "Geleneksel Güllaç",
+      "category": "dessert",
+      "difficulty": "Kolay",
+      "time": "20 dk",
+      "calories": 270,
+      "image": "https://images.unsplash.com/photo-1519869325930-281384150729?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Güllaç yaprağı",
+          "amount": "10 adet"
+        },
+        {
+          "item": "Süt ve Şeker",
+          "amount": "1.5 litre süt, 2 su bardağı şeker"
+        },
+        {
+          "item": "Ceviz ve Nar taneleri",
+          "amount": "1 su bardağı ceviz, 1/2 nar"
+        },
+        {
+          "item": "Gül suyu",
+          "amount": "1 yemek kaşığı"
+        }
+      ],
+      "steps": [
+        "Ilık şekerli sütle güllaç yapraklarını tek tek ıslatarak tepsiye dizin.",
+        "Orta kata bol ceviz serpiştirin.",
+        "Kalan yaprakları da sütle ıslatarak üst üste dizin, buzdolabında soğutup nar taneleriyle süsleyin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 360,
+      "servings": 4,
+      "timeMinutes": 20,
+      "videoId": "S6v4K2m5X1Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "tatlılar",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1519869325930-281384150729?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "93",
+      "cuisine": "Ramazan / Osmanlı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "93",
+        "sourceUrl": "https://cookly.app/recipes/93",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 94,
+      "name": "Karadeniz Kuymak (Muhlama)",
+      "category": "breakfast",
+      "difficulty": "Kolay",
+      "time": "15 dk",
+      "calories": 420,
+      "image": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Mısır unu",
+          "amount": "3 yemek kaşığı"
+        },
+        {
+          "item": "Trabzon tereyağı",
+          "amount": "3 yemek kaşığı"
+        },
+        {
+          "item": "Kolot / Kaşar peyniri",
+          "amount": "200g tellenen peynir"
+        },
+        {
+          "item": "Sıcak su",
+          "amount": "1.5 su bardağı"
+        }
+      ],
+      "steps": [
+        "Tereyağını tavada eritip mısır ununu pembeleşene kadar kavurun.",
+        "Sıcak suyu azar azar ekleyip unun suyu çekmesini sağlayın.",
+        "Telli peyniri ekleyip tereyağı üzerine çıkana kadar kısık ateşte eritip sıcak servis yapın."
+      ],
+      "rating": 4.8,
+      "reviewCount": 365,
+      "servings": 4,
+      "timeMinutes": 15,
+      "videoId": "T7v5K3m6X2Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "kahvaltılıklar",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1541592106381-b31e9677c0e5?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "94",
+      "cuisine": "Karadeniz Mutfağı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "94",
+        "sourceUrl": "https://cookly.app/recipes/94",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 95,
+      "name": "Çılbır (Yoğurtlu Yumurta)",
+      "category": "breakfast",
+      "difficulty": "Kolay",
+      "time": "15 dk",
+      "calories": 260,
+      "image": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Yumurta",
+          "amount": "3 adet"
+        },
+        {
+          "item": "Sarımsaklı süzme yoğurt",
+          "amount": "1 kase"
+        },
+        {
+          "item": "Tereyağı ve Pul biber",
+          "amount": "2 yemek kaşığı tereyağı, 1 tatlı kaşığı pul biber"
+        }
+      ],
+      "steps": [
+        "Sirkeli kaynayan suda yumurtaları poşe tekniğiyle 3 dakika pişirin.",
+        "Servis tabağına sarımsaklı yoğurdu yayın.",
+        "Poşe yumurtaları yoğurdun üzerine yerleştirin, kızdırılmış kırmızı biberli tereyağı dökün."
+      ],
+      "rating": 4.8,
+      "reviewCount": 370,
+      "servings": 4,
+      "timeMinutes": 15,
+      "videoId": "U8v6K4m7X3Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "kahvaltılıklar",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "95",
+      "cuisine": "Osmanlı / Türk Kahvaltısı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "95",
+        "sourceUrl": "https://cookly.app/recipes/95",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 96,
+      "name": "Sucuklu Yumurta",
+      "category": "breakfast",
+      "difficulty": "Kolay",
+      "time": "10 dk",
+      "calories": 340,
+      "image": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Kangal sucuk",
+          "amount": "150g dilimlenmiş"
+        },
+        {
+          "item": "Köy yumurtası",
+          "amount": "3 adet"
+        },
+        {
+          "item": "Tereyağı",
+          "amount": "1 tatlı kaşığı"
+        }
+      ],
+      "steps": [
+        "Sucuk dilimlerini sahanda hafifçe kızartın.",
+        "Aralarına yumurtaları kırın, sarılarını patlatmadan beyazları pişene kadar kapağı kapalı tutun."
+      ],
+      "rating": 4.8,
+      "reviewCount": 375,
+      "servings": 4,
+      "timeMinutes": 10,
+      "videoId": "V9v7K5m8X4Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "kahvaltılıklar",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "96",
+      "cuisine": "Türk Kahvaltısı",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "96",
+        "sourceUrl": "https://cookly.app/recipes/96",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 97,
+      "name": "Fırında Somon Balığı",
+      "category": "main_dish",
+      "difficulty": "Kolay",
+      "time": "25 dk",
+      "calories": 380,
+      "image": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Somon fileto",
+          "amount": "2 dilim"
+        },
+        {
+          "item": "Limon ve Sarımsak",
+          "amount": "1 limon dilimli, 2 diş sarımsak"
+        },
+        {
+          "item": "Zeytinyağı ve Biberiye",
+          "amount": "2 yemek kaşığı zeytinyağı, taze biberiye"
+        }
+      ],
+      "steps": [
+        "Somonları yağlı kağıt serili tepsiye yerleştirin.",
+        "Zeytinyağı, ezilmiş sarımsak, limon suyu ve baharatlarla soslayın.",
+        "200 derece fırında 20 dakika pişirip sıcak servis edin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 380,
+      "servings": 4,
+      "timeMinutes": 25,
+      "videoId": "W1v8K6m9X5Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "deniz ürünleri",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "97",
+      "cuisine": "Akdeniz",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "97",
+        "sourceUrl": "https://cookly.app/recipes/97",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 98,
+      "name": "Levrek Buğulama",
+      "category": "main_dish",
+      "difficulty": "Orta",
+      "time": "35 dk",
+      "calories": 310,
+      "image": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Taze levrek",
+          "amount": "2 adet temizlenmiş"
+        },
+        {
+          "item": "Domates ve Soğan",
+          "amount": "2 domates, 1 soğan halka doğranmış"
+        },
+        {
+          "item": "Defne yaprağı ve Limon",
+          "amount": "2 defne yaprağı, 1 limon"
+        },
+        {
+          "item": "Zeytinyağı",
+          "amount": "3 yemek kaşığı"
+        }
+      ],
+      "steps": [
+        "Tepsiye soğan ve domates halkalarını dizin, üzerine levrekleri yerleştirin.",
+        "Defne yaprağı, limon dilimleri ve zeytinyağını ekleyin.",
+        "190 derece fırında 30 dakika buğulama usulü pişirin."
+      ],
+      "rating": 4.8,
+      "reviewCount": 385,
+      "servings": 4,
+      "timeMinutes": 35,
+      "videoId": "X2v9K7m1X6Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "deniz ürünleri",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "98",
+      "cuisine": "Ege / Akdeniz",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "98",
+        "sourceUrl": "https://cookly.app/recipes/98",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 99,
+      "name": "Karides Güveç",
+      "category": "main_dish",
+      "difficulty": "Kolay",
+      "time": "25 dk",
+      "calories": 290,
+      "image": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Çimçim karides",
+          "amount": "400g temizlenmiş"
+        },
+        {
+          "item": "Mantar ve Sarımsak",
+          "amount": "150g mantar, 4 diş sarımsak"
+        },
+        {
+          "item": "Kaşar peyniri",
+          "amount": "1 su bardağı rendelenmiş"
+        },
+        {
+          "item": "Tereyağı ve Pul biber",
+          "amount": "2 yemek kaşığı tereyağı"
+        }
+      ],
+      "steps": [
+        "Tereyağında sarımsak, mantar ve biberleri soteleyin.",
+        "Karidesleri ekleyip 3 dakika soteledikten sonra güveç kaplarına paylaştırın.",
+        "Üzerine bol kaşar peyniri serpip fırında peynir eriyene kadar fırınlayın."
+      ],
+      "rating": 4.8,
+      "reviewCount": 390,
+      "servings": 4,
+      "timeMinutes": 25,
+      "videoId": "Y3v1K8m2X7Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "deniz ürünleri",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "99",
+      "cuisine": "Ege / Akdeniz",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "99",
+        "sourceUrl": "https://cookly.app/recipes/99",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
+    },
+    {
+      "id": 100,
+      "name": "Çıtır Kalamar Tava",
+      "category": "main_dish",
+      "difficulty": "Orta",
+      "time": "25 dk",
+      "calories": 350,
+      "image": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=800&auto=format&fit=crop",
+      "ingredients": [
+        {
+          "item": "Kalamar halkaları",
+          "amount": "500g"
+        },
+        {
+          "item": "Maden suyu ve Karbonat",
+          "amount": "1 şişe maden suyu, 1 çay kaşığı karbonat (marine için)"
+        },
+        {
+          "item": "Un ve Mısır unu",
+          "amount": "1 su bardağı bulamak için"
+        },
+        {
+          "item": "Tarator sos",
+          "amount": "Yanında servis için"
+        }
+      ],
+      "steps": [
+        "Kalamarları maden suyu, karbonat ve şekerle 1 saat marine edip süzün.",
+        "Unlu karışıma bulayıp bol kızgın yağda 2-3 dakika çıtırdayana kadar kızartın.",
+        "Tarator sos ve limonla sıcak servis yapın."
+      ],
+      "rating": 4.8,
+      "reviewCount": 395,
+      "servings": 4,
+      "timeMinutes": 25,
+      "videoId": "Z4v2K9m3X8Y",
+      "isPremium": false,
+      "isFeatured": true,
+      "tags": [
+        "deniz ürünleri",
+        "geleneksel",
+        "nefis",
+        "ev yemeği"
+      ],
+      "chef": {
+        "name": "Cookly Usta Şef",
+        "verified": true
+      },
+      "imageUrl": "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=800&auto=format&fit=crop",
+      "source": "curated_turkish_kitchen",
+      "sourceId": "100",
+      "cuisine": "Ege / Akdeniz",
+      "provenance": {
+        "source": "curated_turkish_kitchen",
+        "sourceId": "100",
+        "sourceUrl": "https://cookly.app/recipes/100",
+        "importedAt": "2026-09-06T01:44:32.499Z",
+        "providerVersion": "1.0.0",
+        "pipelineVersion": "15.0.0",
+        "transformations": [
+          "normalized",
+          "ingredients_parsed",
+          "image_matched",
+          "video_matched",
+          "taxonomy_mapped",
+          "eligibility_evaluated"
+        ]
+      }
     }
   ],
   "schema": {

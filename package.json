@@ -24,7 +24,9 @@
     "recipe:staging:test": "node scripts/recipe_staging_test.cjs",
     "recipe:staging:export": "node scripts/recipe_staging_export.cjs",
     "recipe:expand:dry-run": "node scripts/recipe_expand_dry_run.cjs",
-    "recipe:expand": "node scripts/recipe_expand.cjs"
+    "recipe:expand": "node scripts/recipe_expand.cjs",
+    "recipe:production:dry-run": "node scripts/recipe_production_dry_run.cjs",
+    "recipe:production:import": "node scripts/recipe_production_import.cjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.115.0",

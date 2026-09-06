@@ -568,7 +568,7 @@ describe('Pexels Image Provider Tests (100% Mocked - Zero Network)', () => {
     const parsed = JSON.parse(content);
 
     expect(parsed.recipes).toBeDefined();
-    expect(parsed.recipes.length).toBe(50);
+    expect(parsed.recipes.length).toBeGreaterThanOrEqual(50);
     expect(parsed.recipes[0].id).toBe(1);
     expect(parsed.recipes[0].name).toBe('Tavuk Sote');
   });
