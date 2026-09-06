@@ -18,17 +18,7 @@ export const StorageService = {
   getPantry(): PantryItem[] {
     try {
       const data = localStorage.getItem(KEYS.PANTRY);
-      if (!data) {
-        // Initial seed with common kitchen ingredients
-        const initial: PantryItem[] = [
-          { id: '1', name: 'Tavuk', addedDate: new Date().toISOString(), daysLeft: 3, isUrgent: false },
-          { id: '2', name: 'Patates', addedDate: new Date().toISOString(), daysLeft: 12, isUrgent: false },
-          { id: '3', name: 'Soğan', addedDate: new Date().toISOString(), daysLeft: 10, isUrgent: false },
-          { id: '4', name: 'Domates', addedDate: new Date().toISOString(), daysLeft: 2, isUrgent: true },
-        ];
-        this.savePantry(initial);
-        return initial;
-      }
+      if (!data) return [];
       const parsed = JSON.parse(data);
       if (!Array.isArray(parsed)) return [];
       return parsed.filter(item => item && typeof item === 'object' && typeof item.id === 'string' && typeof item.name === 'string' && item.name.trim().length > 0);
@@ -47,11 +37,11 @@ export const StorageService = {
   getFavorites(): string[] {
     try {
       const data = localStorage.getItem(KEYS.FAVORITES);
-      if (!data) return ['1', '5']; // Default Tavuk Sote & Menemen
+      if (!data) return [];
       const parsed = JSON.parse(data);
-      return Array.isArray(parsed) ? parsed.filter(id => typeof id === 'string') : ['1', '5'];
+      return Array.isArray(parsed) ? parsed.filter(id => typeof id === 'string') : [];
     } catch {
-      return ['1', '5'];
+      return [];
     }
   },
 
@@ -173,10 +163,12 @@ export const StorageService = {
   // GAMIFICATION (XP & Streak)
   getXP(): number {
     try {
-      const parsed = parseInt(localStorage.getItem(KEYS.CHEF_XP) || '150', 10);
-      return isNaN(parsed) || parsed < 0 ? 150 : parsed;
+      const val = localStorage.getItem(KEYS.CHEF_XP);
+      if (val === null) return 0;
+      const parsed = parseInt(val, 10);
+      return isNaN(parsed) || parsed < 0 ? 0 : parsed;
     } catch {
-      return 150;
+      return 0;
     }
   },
 
@@ -192,11 +184,11 @@ export const StorageService = {
   getStreak(): number {
     try {
       const val = localStorage.getItem(KEYS.CHEF_STREAK);
-      if (val === null) return 2;
+      if (val === null) return 0;
       const parsed = parseInt(val, 10);
       return isNaN(parsed) || parsed < 0 ? 0 : parsed;
     } catch {
-      return 2;
+      return 0;
     }
   },
 

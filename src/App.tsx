@@ -157,19 +157,36 @@ export function App() {
     const updated = ShoppingService.addMissingFromRecipe(shoppingList, missing, recipeTitle);
     setShoppingList(updated);
     StorageService.saveShoppingList(updated);
+    if (user?.id) {
+      // Sync each newly added shopping item to cloud
+      missing.forEach(m => {
+        const found = updated.find(u => u.name.toLowerCase() === m.name.toLowerCase());
+        if (found) {
+          cloudSync.syncShoppingChange(user.id, found, 'add');
+        }
+      });
+    }
     showToast(`${missing.length} eksik malzeme alışveriş listesine eklendi! 🛒`);
   };
 
   const handleToggleShoppingItem = (id: string) => {
-    const updated = shoppingList.map(item => item.id === id ? { ...item, checked: !item.checked } : item);
+    const item = shoppingList.find(i => i.id === id);
+    const updated = shoppingList.map(i => i.id === id ? { ...i, checked: !i.checked } : i);
     setShoppingList(updated);
     StorageService.saveShoppingList(updated);
+    if (user?.id && item) {
+      cloudSync.syncShoppingChange(user.id, { ...item, checked: !item.checked }, 'update');
+    }
   };
 
   const handleRemoveShoppingItem = (id: string) => {
+    const item = shoppingList.find(i => i.id === id);
     const updated = shoppingList.filter(item => item.id !== id);
     setShoppingList(updated);
     StorageService.saveShoppingList(updated);
+    if (user?.id && item) {
+      cloudSync.syncShoppingChange(user.id, item, 'remove');
+    }
   };
 
   const handleAddCustomShoppingItem = (name: string, amount: string) => {
@@ -183,19 +200,34 @@ export function App() {
     const updated = [newItem, ...shoppingList];
     setShoppingList(updated);
     StorageService.saveShoppingList(updated);
+    if (user?.id) {
+      cloudSync.syncShoppingChange(user.id, newItem, 'add');
+    }
     showToast(`"${name}" listeye eklendi!`);
   };
 
   const handleClearCheckedShopping = () => {
+    const checkedItems = shoppingList.filter(i => i.checked);
     const updated = shoppingList.filter(i => !i.checked);
     setShoppingList(updated);
     StorageService.saveShoppingList(updated);
+    if (user?.id) {
+      checkedItems.forEach(item => {
+        cloudSync.syncShoppingChange(user.id, item, 'remove');
+      });
+    }
     showToast('Alınan malzemeler temizlendi.');
   };
 
   const handleClearAllShopping = () => {
+    const allItems = [...shoppingList];
     setShoppingList([]);
     StorageService.saveShoppingList([]);
+    if (user?.id) {
+      allItems.forEach(item => {
+        cloudSync.syncShoppingChange(user.id, item, 'remove');
+      });
+    }
     showToast('Alışveriş listesi temizlendi.');
   };
 
@@ -203,8 +235,13 @@ export function App() {
   const handleMarkAsCooked = (recipe: Recipe) => {
     const updatedHistory = StorageService.addCookedRecipe(recipe.id, recipe.title);
     setCookedHistory(updatedHistory);
-    setStreak(StorageService.getStreak());
-    setXp(StorageService.getXP());
+    const newStreak = StorageService.getStreak();
+    const newXp = StorageService.getXP();
+    setStreak(newStreak);
+    setXp(newXp);
+    if (user?.id) {
+      cloudSync.syncUserStats(user.id, newXp, newStreak);
+    }
     showToast(`Tebrikler! "${recipe.title}" pişirildi (+50 XP) 🏆`);
   };
 

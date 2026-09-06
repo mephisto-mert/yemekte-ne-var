@@ -152,10 +152,10 @@ describe('ROUND 3 — RED TEAM ADVERSARIAL AUDIT SUITE', () => {
 
     it('handles negative, NaN, and string XP safely', () => {
       localStorage.setItem('chef_xp_v2', 'NaN');
-      expect(StorageService.getXP()).toBe(150);
+      expect(StorageService.getXP()).toBe(0);
 
       localStorage.setItem('chef_xp_v2', '-99999');
-      expect(StorageService.getXP()).toBe(150);
+      expect(StorageService.getXP()).toBe(0);
 
       localStorage.setItem('chef_xp_v2', '500');
       expect(StorageService.getXP()).toBe(500);

@@ -56,7 +56,61 @@ export const RecipeDetailModal: React.FC<RecipeDetailModalProps> = ({
       setCopiedLink(false);
       setIsCookedDone(false);
       setIsShoppingAdded(false);
+
+      // Dynamic Schema.org Recipe JSON-LD injection
+      const scriptId = 'recipe-structured-data';
+      let script = document.getElementById(scriptId) as HTMLScriptElement | null;
+      if (!script) {
+        script = document.createElement('script');
+        script.id = scriptId;
+        script.type = 'application/ld+json';
+        document.head.appendChild(script);
+      }
+
+      const recipeSchema: Record<string, any> = {
+        '@context': 'https://schema.org',
+        '@type': 'Recipe',
+        name: recipe.title,
+        image: recipe.image ? [recipe.image] : [],
+        description: recipe.description,
+        recipeCuisine: recipe.cuisine || 'Türk Mutfağı',
+        recipeCategory: recipe.category || 'Ana Yemek',
+        recipeYield: `${recipe.servings || 4} porsiyon`,
+        prepTime: 'PT15M',
+        cookTime: recipe.cookingTime ? `PT${parseInt(recipe.cookingTime, 10) || 30}M` : 'PT30M',
+        recipeIngredient: recipe.ingredients.map(i => `${i.amount ? i.amount + ' ' : ''}${i.name}`.trim()),
+        recipeInstructions: recipe.instructions.map((step, idx) => ({
+          '@type': 'HowToStep',
+          position: idx + 1,
+          text: step
+        })),
+        nutrition: {
+          '@type': 'NutritionInformation',
+          calories: `${recipe.calories} kcal`,
+          servingSize: '1 porsiyon (Tahmini Değer)'
+        }
+      };
+
+      if (recipe.videoId) {
+        recipeSchema.video = {
+          '@type': 'VideoObject',
+          name: recipe.videoTitle || recipe.title,
+          description: `${recipe.title} video tarifi ve hazırlanış adımları`,
+          thumbnailUrl: recipe.image ? [recipe.image] : [],
+          embedUrl: `https://www.youtube-nocookie.com/embed/${recipe.videoId}`,
+          uploadDate: '2025-01-01T00:00:00+03:00'
+        };
+      }
+
+      script.textContent = JSON.stringify(recipeSchema);
     }
+
+    return () => {
+      const existing = document.getElementById('recipe-structured-data');
+      if (existing) {
+        existing.remove();
+      }
+    };
   }, [recipe?.id]);
 
   if (!recipe) return null;
@@ -78,13 +132,13 @@ export const RecipeDetailModal: React.FC<RecipeDetailModalProps> = ({
   });
 
   const handleShare = async () => {
-    const shareText = `🍳 ${recipe.title}\n⏱️ ${recipe.cookingTime} | ${recipe.difficulty}\n🔥 ${recipe.calories} kcal\n\nCookly ile keşfet: https://mutfakkurtarici.app/recipe/${recipe.id}`;
+    const shareText = `🍳 ${recipe.title}\n⏱️ ${recipe.cookingTime} | ${recipe.difficulty}\n🔥 ${recipe.calories} kcal (Tahmini)\n\nCookly ile keşfet: https://yemektenevar-seven.vercel.app/#recipe-${recipe.id}`;
     if (navigator.share) {
       try {
         await navigator.share({
           title: recipe.title,
           text: shareText,
-          url: window.location.href,
+          url: `https://yemektenevar-seven.vercel.app/#recipe-${recipe.id}`,
         });
         return;
       } catch {}
@@ -167,9 +221,9 @@ export const RecipeDetailModal: React.FC<RecipeDetailModalProps> = ({
                 <Clock className="w-3.5 h-3.5 text-orange-400" />
                 {recipe.cookingTime}
               </span>
-              <span className="flex items-center gap-1 bg-slate-900/90 px-2.5 py-1 rounded-lg border border-slate-700/60">
+              <span className="flex items-center gap-1 bg-slate-900/90 px-2.5 py-1 rounded-lg border border-slate-700/60" title="Porsiyon başına tahmini kalori">
                 <Flame className="w-3.5 h-3.5 text-amber-400" />
-                {recipe.calories} kcal
+                {recipe.calories} kcal <span className="text-[10px] text-slate-400 font-normal">(Tahmini)</span>
               </span>
               <span className="px-2.5 py-1 rounded-lg bg-slate-900/90 border border-slate-700/60 text-slate-300">
                 {recipe.difficulty}

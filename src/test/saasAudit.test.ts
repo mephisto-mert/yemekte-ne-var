@@ -196,7 +196,7 @@ describe('Zero-Trust SaaS Certification Suite', () => {
       localStorage.setItem('favorite_recipes_v2', 'undefined');
       const favs = StorageService.getFavorites();
       expect(Array.isArray(favs)).toBe(true);
-      expect(favs).toEqual(['1', '5']);
+      expect(favs).toEqual([]);
     });
 
     it('streak increment is idempotent on the same day', () => {
@@ -311,10 +311,10 @@ describe('Zero-Trust SaaS Certification Suite', () => {
 
     it('safely handles corrupted/hostile LocalStorage for XP and streak', () => {
       localStorage.setItem('chef_xp_v2', 'not_a_number');
-      expect(StorageService.getXP()).toBe(150);
+      expect(StorageService.getXP()).toBe(0);
 
       localStorage.setItem('chef_xp_v2', '-500');
-      expect(StorageService.getXP()).toBe(150);
+      expect(StorageService.getXP()).toBe(0);
 
       localStorage.setItem('chef_streak_v2', 'corrupt_streak');
       expect(StorageService.getStreak()).toBe(0);
