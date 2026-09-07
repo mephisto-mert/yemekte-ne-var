@@ -1,6 +1,7 @@
 import rawData from './raw_recipes.json';
 import recipeVideos from './recipeVideos.json';
 import { Recipe, RecipeIngredient } from '../types';
+import { resolveRecipeVideo } from './videoLibrary';
 
 // Curated high quality food photos
 const RECIPE_IMAGE_MAP: Record<string, string> = {
@@ -59,51 +60,43 @@ export const RECIPES_DATABASE: Recipe[] = (rawData.recipes || []).map((r: any, i
 
   const cal = typeof r.calories === 'number' ? r.calories : parseInt(String(r.calories)) || 350;
 
-    const videoData = (recipeVideos as Record<string, any>)[idStr];
-    const categoryVideoFallback: Record<string, { id: string; title: string; author: string }> = {
-      drink: { id: 'S8pIn_XYib8', title: `${r.name || 'İçecek'} Tarifi ve Hazırlanışı`, author: 'Cookly İçecek Atölyesi' },
-      dessert: { id: 'Ehf8igYTJVk', title: `${r.name || 'Tatlı'} Yapımı | Püf Noktaları`, author: 'Nefis Yemek Tarifleri' },
-      breakfast: { id: '3wo7qr6PIU4', title: `${r.name || 'Kahvaltılık'} Nasıl Yapılır?`, author: 'Cookly Kahvaltı Şefi' },
-      pastry: { id: 'Ehf8igYTJVk', title: `${r.name || 'Börek ve Hamur İşi'} Tarifi`, author: 'Nefis Yemek Tarifleri' },
-      soup: { id: 'fCos8xZE900', title: `${r.name || 'Çorba'} Lokanta Usulü Yapımı`, author: 'Ramazan Bingöl' },
-      meze: { id: '3wo7qr6PIU4', title: `${r.name || 'Meze ve Salata'} Sunumu`, author: 'Cookly Meze Mutfağı' },
-      world: { id: 'S8pIn_XYib8', title: `${r.name || 'Dünya Mutfağı'} Özel Tarifi`, author: 'Cookly Dünya Mutfağı' },
-      main_dish: { id: '3wo7qr6PIU4', title: `${r.name || 'Ana Yemek'} Ustasından Tarif`, author: 'Nefis Yemek Tarifleri' }
-    };
-    const defaultVid = categoryVideoFallback[r.category] || categoryVideoFallback.main_dish;
+  const videoMeta = resolveRecipeVideo({
+    title: r.name,
+    category: r.category,
+    videoId: r.videoId,
+    videoTitle: r.videoTitle,
+    videoAuthor: r.chef?.name
+  });
 
-    const rawVideoId = r.videoId && !r.videoId.startsWith('search_') && r.videoId.length >= 5 ? r.videoId : undefined;
-    const videoId = videoData?.videoId || rawVideoId || defaultVid.id;
-
-    return {
-      id: idStr,
-      title: r.name || 'Lezzetli Tarif',
-      description: r.description || `${r.name} - Evinizdeki malzemelerle hazırlayabileceğiniz nefis ve pratik bir lezzet.`,
-      image,
-      imageUrl: image,
-      ingredients,
-      instructions: Array.isArray(r.steps) ? r.steps : ['Gerekli tüm malzemeleri tezgahta özenle hazırlayın.', 'Tencerede veya tavada uygun ısıda pişirin.', 'Sıcak olarak sevdiklerinizle birlikte servis edin.'],
-      cookingTime: r.time || '30 dk',
-      timeMinutes: r.timeMinutes || parseInt(String(r.time)) || 30,
-      preparationTime: '15 dk',
-      difficulty: (r.difficulty === 'Zor' || r.difficulty === 'Kolay' ? r.difficulty : 'Orta'),
-      servings: r.servings || 4,
-      category: r.category || 'main_dish',
-      tags: Array.isArray(r.tags) ? r.tags : ['lezzetli', 'pratik', 'ev yemeği'],
-      cuisine: r.cuisine || 'Türk Mutfağı',
-      calories: cal,
-      macros: {
-        protein: Math.round(cal * 0.25 / 4),
-        carbs: Math.round(cal * 0.50 / 4),
-        fat: Math.round(cal * 0.25 / 9)
-      },
-      videoId,
-      videoTitle: videoData?.videoTitle || r.videoTitle || defaultVid.title,
-      videoAuthor: videoData?.videoAuthor || r.chef?.name || defaultVid.author,
-      videoLanguage: videoData?.language || 'tr',
-      rating: r.rating ? Number(String(r.rating).replace(',', '.')) : 4.8,
-      reviewCount: r.reviewCount || 150,
-      chef: r.chef?.name || 'Mutfak Şefi',
-      tips: r.tips || ['Yemeği kısık ateşte pişirirseniz lezzeti daha dengeli dağılacaktır.']
-    };
+  return {
+    id: idStr,
+    title: r.name || 'Lezzetli Tarif',
+    description: r.description || `${r.name} - Evinizdeki malzemelerle hazırlayabileceğiniz nefis ve pratik bir lezzet.`,
+    image,
+    imageUrl: image,
+    ingredients,
+    instructions: Array.isArray(r.steps) ? r.steps : ['Gerekli tüm malzemeleri tezgahta özenle hazırlayın.', 'Tencerede veya tavada uygun ısıda pişirin.', 'Sıcak olarak sevdiklerinizle birlikte servis edin.'],
+    cookingTime: r.time || '30 dk',
+    timeMinutes: r.timeMinutes || parseInt(String(r.time)) || 30,
+    preparationTime: '15 dk',
+    difficulty: (r.difficulty === 'Zor' || r.difficulty === 'Kolay' ? r.difficulty : 'Orta'),
+    servings: r.servings || 4,
+    category: r.category || 'main_dish',
+    tags: Array.isArray(r.tags) ? r.tags : ['lezzetli', 'pratik', 'ev yemeği'],
+    cuisine: r.cuisine || 'Türk Mutfağı',
+    calories: cal,
+    macros: {
+      protein: Math.round(cal * 0.25 / 4),
+      carbs: Math.round(cal * 0.50 / 4),
+      fat: Math.round(cal * 0.25 / 9)
+    },
+    videoId: videoMeta.videoId,
+    videoTitle: videoMeta.videoTitle,
+    videoAuthor: videoMeta.videoAuthor,
+    videoLanguage: videoMeta.language,
+    rating: r.rating ? Number(String(r.rating).replace(',', '.')) : 4.8,
+    reviewCount: r.reviewCount || 150,
+    chef: r.chef?.name || videoMeta.videoAuthor,
+    tips: r.tips || ['Yemeği kısık ateşte pişirirseniz lezzeti daha dengeli dağılacaktır.']
+  };
 });

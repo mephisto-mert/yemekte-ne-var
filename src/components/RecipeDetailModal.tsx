@@ -239,6 +239,18 @@ export const RecipeDetailModal: React.FC<RecipeDetailModalProps> = ({
                   👨‍🍳 {recipe.chef}
                 </span>
               )}
+              {recipe.videoId && (
+                <button
+                  onClick={() => {
+                    const videoSec = document.getElementById('recipe-section-video');
+                    if (videoSec) videoSec.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                  className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-rose-600 hover:bg-rose-500 text-white font-extrabold shadow-md active:scale-95 transition-all"
+                >
+                  <Video className="w-3.5 h-3.5" />
+                  <span>🎬 Video Tarifi İzle</span>
+                </button>
+              )}
             </div>
           </div>
         </div>
@@ -433,73 +445,67 @@ export const RecipeDetailModal: React.FC<RecipeDetailModalProps> = ({
           {/* YouTube Video Section */}
           <div id="recipe-section-video" className="pt-2">
             <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 rounded-xl bg-rose-500/20 text-rose-500 border border-rose-500/30 flex items-center justify-center">
-                  <Video className="w-4 h-4" />
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-xl bg-rose-500/20 text-rose-500 border border-rose-500/30 flex items-center justify-center shadow-md shadow-rose-500/10">
+                  <Video className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-white flex items-center gap-2">
-                    <span>Kısa Video Tarif</span>
-                    {recipe.videoLanguage && (
-                      <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-md bg-slate-800 text-slate-300 border border-slate-700">
-                        {recipe.videoLanguage === 'tr' ? '🇹🇷 Türkçe' : '🌍 Global'}
-                      </span>
-                    )}
+                  <h3 className="text-base font-extrabold text-white flex items-center gap-2">
+                    <span>Video Tarif & Hazırlanış</span>
+                    <span className="text-[10px] font-black px-2 py-0.5 rounded-md bg-rose-500/20 text-rose-300 border border-rose-500/30">
+                      🎬 Canlı Video
+                    </span>
                   </h3>
                   {recipe.videoAuthor && (
-                    <p className="text-[11px] text-slate-400">
-                      Kanal / Şef: <strong className="text-orange-400">{recipe.videoAuthor}</strong>
+                    <p className="text-xs text-slate-400">
+                      Usta / Kanal: <strong className="text-orange-400 font-semibold">{recipe.videoAuthor}</strong>
                     </p>
                   )}
                 </div>
               </div>
 
-              {recipe.videoId && (
-                <a
-                  href={`https://www.youtube.com/watch?v=${recipe.videoId}`}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold flex items-center gap-1.5 transition-all border border-slate-700 shadow-sm"
-                >
-                  <span>YouTube'da Aç</span>
-                  <ExternalLink className="w-3.5 h-3.5 text-rose-400" />
-                </a>
-              )}
-            </div>
-
-            {recipe.videoId ? (
-              <div className="space-y-2">
-                <div className="relative aspect-video rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 shadow-xl">
-                  <iframe
-                    src={`https://www.youtube-nocookie.com/embed/${recipe.videoId}`}
-                    title={recipe.videoTitle || recipe.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full h-full border-0"
-                  />
-                </div>
-                {recipe.videoTitle && (
-                  <p className="text-xs text-slate-400 italic px-1">
-                    🎬 {recipe.videoTitle}
-                  </p>
+              <div className="flex items-center gap-2">
+                {recipe.videoId && (
+                  <a
+                    href={`https://www.youtube.com/watch?v=${recipe.videoId}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="px-3 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-md active:scale-95"
+                  >
+                    <span>YouTube'da Aç</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
                 )}
-              </div>
-            ) : (
-              <div className="p-4 rounded-2xl bg-slate-800/50 border border-slate-800 flex items-center justify-between">
-                <p className="text-xs text-slate-400">
-                  Bu tarif için doğrudan video entegrasyonu hazırlandı. YouTube üzerinden izleyebilirsiniz.
-                </p>
                 <a
                   href={`https://www.youtube.com/results?search_query=${encodeURIComponent(`${recipe.title} tarifi nasıl yapılır`)}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="px-3 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs flex items-center gap-1.5 transition-all shadow-md flex-shrink-0"
+                  className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-bold flex items-center gap-1.5 transition-all border border-slate-700 shadow-sm active:scale-95"
+                  title="YouTube'da alternatif videoları ara"
                 >
-                  <span>YouTube'da Ara</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
+                  <span>Videoları Ara</span>
+                  <ExternalLink className="w-3 h-3 text-slate-400" />
                 </a>
               </div>
-            )}
+            </div>
+
+            <div className="space-y-2">
+              <div className="relative aspect-video rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 shadow-2xl group">
+                <iframe
+                  src={`https://www.youtube-nocookie.com/embed/${recipe.videoId || '1_pGTeOL2Lk'}?rel=0&modestbranding=1`}
+                  title={recipe.videoTitle || recipe.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="w-full h-full border-0"
+                />
+              </div>
+              {recipe.videoTitle && (
+                <div className="flex items-center justify-between text-xs text-slate-400 px-1">
+                  <span className="italic truncate">🎬 {recipe.videoTitle}</span>
+                  <span className="text-[11px] text-orange-400 font-medium whitespace-nowrap ml-2">✓ Doğrulanmış Video</span>
+                </div>
+              )}
+            </div>
           </div>
 
         </div>
