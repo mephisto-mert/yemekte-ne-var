@@ -1,48 +1,70 @@
 // ==============================================================================
-// COOKLY — SERVICE WORKER FOR PROGRESSIVE WEB APP (PWA)
-// Cache Strategy: Cache-First for static assets, Network-First for API calls
+// COOKLY — SERVICE WORKER (PWA)
+// Strategy: Network-First for Navigation / HTML, Cache-First for Immutable Hashed Assets
 // ==============================================================================
 
-const CACHE_NAME = 'cookly-static-v1';
+const CACHE_VERSION = 'cookly-v16.0.0';
 const STATIC_ASSETS = [
-  './',
-  './index.html',
-  './manifest.json',
+  './manifest.json'
 ];
 
-// Install Event
+// Install Event — activate immediately
 self.addEventListener('install', (event) => {
+  self.skipWaiting();
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => {
+    caches.open(CACHE_VERSION).then((cache) => {
       return cache.addAll(STATIC_ASSETS);
     })
   );
-  self.skipWaiting();
 });
 
-// Activate Event
+// Activate Event — delete all old caches immediately and take control of all clients
 self.addEventListener('activate', (event) => {
   event.waitUntil(
     caches.keys().then((cacheNames) => {
       return Promise.all(
         cacheNames
-          .filter((name) => name !== CACHE_NAME)
-          .map((name) => caches.delete(name))
+          .filter((name) => name !== CACHE_VERSION)
+          .map((name) => {
+            console.log('[SW] Deleting old cache:', name);
+            return caches.delete(name);
+          })
       );
+    }).then(() => {
+      return self.clients.claim();
     })
   );
-  self.clients.claim();
 });
 
 // Fetch Event
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
 
-  // Skip non-GET requests and cross-origin external API calls
+  // Skip non-GET requests
   if (event.request.method !== 'GET') return;
   if (url.protocol.startsWith('chrome-extension')) return;
 
-  // For Supabase, YouTube, or analytics requests: network only or network-first
+  // 1. Navigation requests (HTML / page load): ALWAYS Network-First
+  if (event.request.mode === 'navigate' || event.request.headers.get('accept')?.includes('text/html')) {
+    event.respondWith(
+      fetch(event.request, { cache: 'no-cache' })
+        .then((networkResponse) => {
+          if (networkResponse && networkResponse.status === 200) {
+            const copy = networkResponse.clone();
+            caches.open(CACHE_VERSION).then((cache) => {
+              cache.put(event.request, copy);
+            });
+          }
+          return networkResponse;
+        })
+        .catch(() => {
+          return caches.match(event.request).then((cached) => cached || caches.match('./index.html'));
+        })
+    );
+    return;
+  }
+
+  // 2. API / Supabase / External requests: Network-Only or Network-First
   if (
     url.hostname.includes('supabase') ||
     url.hostname.includes('youtube.com') ||
@@ -50,34 +72,25 @@ self.addEventListener('fetch', (event) => {
     url.pathname.startsWith('/api')
   ) {
     event.respondWith(
-      fetch(event.request).catch(() => {
-        return caches.match(event.request);
-      })
+      fetch(event.request).catch(() => caches.match(event.request))
     );
     return;
   }
 
-  // Cache-First with Network Fallback for static assets
+  // 3. Static assets with hashes (e.g. /assets/*.js, *.css): Stale-While-Revalidate
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        return cachedResponse;
-      }
-      return fetch(event.request).then((networkResponse) => {
-        if (!networkResponse || networkResponse.status !== 200 || networkResponse.type !== 'basic') {
-          return networkResponse;
+      const fetchPromise = fetch(event.request).then((networkResponse) => {
+        if (networkResponse && networkResponse.status === 200) {
+          const responseToCache = networkResponse.clone();
+          caches.open(CACHE_VERSION).then((cache) => {
+            cache.put(event.request, responseToCache);
+          });
         }
-        const responseToCache = networkResponse.clone();
-        caches.open(CACHE_NAME).then((cache) => {
-          cache.put(event.request, responseToCache);
-        });
         return networkResponse;
-      }).catch(() => {
-        // Offline fallback to root
-        if (event.request.mode === 'navigate') {
-          return caches.match('./index.html');
-        }
-      });
+      }).catch(() => null);
+
+      return cachedResponse || fetchPromise;
     })
   );
 });
