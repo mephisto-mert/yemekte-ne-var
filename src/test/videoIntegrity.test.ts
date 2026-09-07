@@ -29,4 +29,27 @@ describe('Universal YouTube Video Integrity Suite', () => {
       expect(r.videoAuthor, `Missing videoAuthor for ${r.title}`).toBeDefined();
     });
   });
+
+  it('guarantees key Turkish dishes map to authentic matching videos and never mismatch', () => {
+    const ayran = RECIPES_DATABASE.find(r => r.title.toLowerCase() === 'ayran');
+    expect(ayran).toBeDefined();
+    expect(ayran!.videoId).toBe('h4KFSrPPhk8'); // Authentic Ayran video, NOT Tavuk Sote
+    expect(ayran!.videoTitle).toContain('Ayran');
+
+    const menemen = RECIPES_DATABASE.find(r => r.title.toLowerCase() === 'menemen');
+    expect(menemen).toBeDefined();
+    expect(menemen!.videoId).toBe('kUt0flbXXcw'); // Authentic Menemen video
+
+    const humus = RECIPES_DATABASE.find(r => r.title.toLowerCase() === 'humus');
+    expect(humus).toBeDefined();
+    expect(humus!.videoId).toBe('XD8hWdGCCWc'); // Authentic Humus video
+
+    const mercimek = RECIPES_DATABASE.find(r => r.title.toLowerCase().includes('mercimek'));
+    expect(mercimek).toBeDefined();
+    expect(mercimek!.videoId).toBe('Hm-sZJdy0lA'); // Authentic Mercimek video
+
+    const baklava = RECIPES_DATABASE.find(r => r.title.toLowerCase().includes('baklava'));
+    expect(baklava).toBeDefined();
+    expect(baklava!.videoId).toBe('vpX0YM5V5S8'); // Authentic Baklava video
+  });
 });
