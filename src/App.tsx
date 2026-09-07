@@ -13,6 +13,7 @@ import { AddRecipeModal } from './components/AddRecipeModal';
 import { UserHistoryModal } from './components/UserHistoryModal';
 import { RecipeSwiperModal } from './components/RecipeSwiperModal';
 import { MultiTimerDock, ActiveTimer } from './components/MultiTimerDock';
+import { CategoryShowcaseSection } from './components/CategoryShowcaseSection';
 
 import { Recipe, PantryItem, ShoppingItem, DailyMealPlan, CookedHistoryEntry, RecipeIngredient } from './types';
 import { RECIPES_DATABASE } from './data/recipesData';
@@ -275,6 +276,16 @@ export function App() {
                 onStartCooking={(_, r) => setCookingRecipe(r)}
                 onOpenRoulette={() => setIsRouletteOpen(true)}
                 hasPantryItems={pantryItems.length > 0}
+              />
+
+              {/* 2,218+ Recipes Showcase & Direct Search with Animated Category Rails */}
+              <CategoryShowcaseSection
+                recipes={recipes}
+                pantryItems={pantryNames}
+                favorites={favorites}
+                onToggleFavorite={handleToggleFavorite}
+                onSelectRecipe={(r) => setDetailRecipe(r)}
+                onStartCooking={(_, r) => setCookingRecipe(r)}
               />
             </>
           )}
