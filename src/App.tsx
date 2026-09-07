@@ -255,6 +255,16 @@ export function App() {
         <div key={activeTab} className="animate-tab-enter">
           {activeTab === 'explore' && (
             <>
+              {/* 2,218+ Recipes Showcase & Direct Search with Animated Category Rails */}
+              <CategoryShowcaseSection
+                recipes={recipes}
+                pantryItems={pantryNames}
+                favorites={favorites}
+                onToggleFavorite={handleToggleFavorite}
+                onSelectRecipe={(r) => setDetailRecipe(r)}
+                onStartCooking={(_, r) => setCookingRecipe(r)}
+              />
+
               {/* Kitchen Pantry Section */}
               <KitchenPantrySection
                 pantryItems={pantryItems}
@@ -276,16 +286,6 @@ export function App() {
                 onStartCooking={(_, r) => setCookingRecipe(r)}
                 onOpenRoulette={() => setIsRouletteOpen(true)}
                 hasPantryItems={pantryItems.length > 0}
-              />
-
-              {/* 2,218+ Recipes Showcase & Direct Search with Animated Category Rails */}
-              <CategoryShowcaseSection
-                recipes={recipes}
-                pantryItems={pantryNames}
-                favorites={favorites}
-                onToggleFavorite={handleToggleFavorite}
-                onSelectRecipe={(r) => setDetailRecipe(r)}
-                onStartCooking={(_, r) => setCookingRecipe(r)}
               />
             </>
           )}

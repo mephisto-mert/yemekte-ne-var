@@ -10,7 +10,9 @@ import {
   Sun, 
   Moon, 
   Compass, 
-  ChevronDown 
+  ChevronDown,
+  Search,
+  Sparkles
 } from 'lucide-react';
 
 interface NavbarProps {
@@ -80,12 +82,12 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={() => setActiveTab('explore')}
             className={`px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all flex items-center gap-1.5 magnetic-spring ${
               activeTab === 'explore'
-                ? 'bg-orange-500/15 text-orange-600 dark:text-orange-400 border border-orange-500/30 shadow-sm'
+                ? 'bg-orange-500 text-white shadow-md shadow-orange-500/20'
                 : 'text-stone-600 dark:text-slate-300 hover:text-stone-900 dark:hover:text-white hover:bg-stone-100 dark:hover:bg-slate-800/60'
             }`}
           >
-            <UtensilsCrossed className="w-4 h-4" />
-            Ne Pişirebilirim?
+            <Search className="w-4 h-4" />
+            <span>2.218+ Tarif Reyonu & Arama</span>
           </button>
 
           {/* Consolidated Discovery Tools Dropdown (Swiper + Roulette) */}
