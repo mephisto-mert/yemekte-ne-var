@@ -25,6 +25,7 @@ import {
   RecipeStoryRings, 
   RecipeDetailNavTabs 
 } from './recipe-detail';
+import { resolveRecipeVideo } from '../data/videoLibrary';
 
 interface RecipeDetailModalProps {
   recipe: Recipe | null;
@@ -120,6 +121,12 @@ export const RecipeDetailModal: React.FC<RecipeDetailModalProps> = ({
   }, [recipe?.id]);
 
   if (!recipe) return null;
+
+  // Dynamic verified video resolution
+  const resolvedVideo = resolveRecipeVideo(recipe);
+  const activeVideoId = recipe.videoId || resolvedVideo.videoId;
+  const activeVideoTitle = recipe.videoTitle || resolvedVideo.videoTitle;
+  const activeVideoAuthor = recipe.videoAuthor || resolvedVideo.videoAuthor;
 
   // Scaled ingredients
   const scaledIngredients = calculatePortions(recipe.ingredients, recipe.servings || 4, servings);
@@ -456,18 +463,18 @@ export const RecipeDetailModal: React.FC<RecipeDetailModalProps> = ({
                       🎬 Canlı Video
                     </span>
                   </h3>
-                  {recipe.videoAuthor && (
+                  {activeVideoAuthor && (
                     <p className="text-xs text-slate-400">
-                      Usta / Kanal: <strong className="text-orange-400 font-semibold">{recipe.videoAuthor}</strong>
+                      Usta / Kanal: <strong className="text-orange-400 font-semibold">{activeVideoAuthor}</strong>
                     </p>
                   )}
                 </div>
               </div>
 
               <div className="flex items-center gap-2">
-                {recipe.videoId && (
+                {activeVideoId && (
                   <a
-                    href={`https://www.youtube.com/watch?v=${recipe.videoId}`}
+                    href={`https://www.youtube.com/watch?v=${activeVideoId}`}
                     target="_blank"
                     rel="noreferrer"
                     className="px-3 py-1.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold flex items-center gap-1.5 transition-all shadow-md active:scale-95"
@@ -492,16 +499,16 @@ export const RecipeDetailModal: React.FC<RecipeDetailModalProps> = ({
             <div className="space-y-2">
               <div className="relative aspect-video rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 shadow-2xl group">
                 <iframe
-                  src={`https://www.youtube-nocookie.com/embed/${recipe.videoId || '1_pGTeOL2Lk'}?rel=0&modestbranding=1`}
-                  title={recipe.videoTitle || recipe.title}
+                  src={`https://www.youtube-nocookie.com/embed/${activeVideoId}?rel=0&modestbranding=1`}
+                  title={activeVideoTitle || recipe.title}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                   className="w-full h-full border-0"
                 />
               </div>
-              {recipe.videoTitle && (
+              {activeVideoTitle && (
                 <div className="flex items-center justify-between text-xs text-slate-400 px-1">
-                  <span className="italic truncate">🎬 {recipe.videoTitle}</span>
+                  <span className="italic truncate">🎬 {activeVideoTitle}</span>
                   <span className="text-[11px] text-orange-400 font-medium whitespace-nowrap ml-2">✓ Doğrulanmış Video</span>
                 </div>
               )}

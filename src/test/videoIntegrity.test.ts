@@ -33,7 +33,7 @@ describe('Universal YouTube Video Integrity Suite', () => {
   it('guarantees key Turkish dishes map to authentic matching videos and never mismatch', () => {
     const ayran = RECIPES_DATABASE.find(r => r.title.toLowerCase() === 'ayran');
     expect(ayran).toBeDefined();
-    expect(ayran!.videoId).toBe('h4KFSrPPhk8'); // Authentic Ayran video, NOT Tavuk Sote
+    expect(ayran!.videoId).toBe('h4KFSrPPhk8'); // Authentic Ayran video
     expect(ayran!.videoTitle).toContain('Ayran');
 
     const menemen = RECIPES_DATABASE.find(r => r.title.toLowerCase() === 'menemen');
@@ -51,5 +51,25 @@ describe('Universal YouTube Video Integrity Suite', () => {
     const baklava = RECIPES_DATABASE.find(r => r.title.toLowerCase().includes('baklava'));
     expect(baklava).toBeDefined();
     expect(baklava!.videoId).toBe('vpX0YM5V5S8'); // Authentic Baklava video
+
+    const pizza = RECIPES_DATABASE.find(r => r.title.toLowerCase().includes('pizza'));
+    expect(pizza).toBeDefined();
+    expect(pizza!.videoId).toBe('TdTq7eg1ITI'); // Pizza video, NOT Hamburger
+    expect(pizza!.videoTitle?.toLowerCase()).toContain('pizza');
+
+    const hamsi = RECIPES_DATABASE.find(r => r.title.toLowerCase().includes('hamsi'));
+    expect(hamsi).toBeDefined();
+    expect(hamsi!.videoId).toBe('dIWhkPiFw24'); // Hamsi Tava video
+    expect(hamsi!.videoTitle?.toLowerCase()).toContain('hamsi');
+
+    const sarma = RECIPES_DATABASE.find(r => r.title.toLowerCase().includes('sarma'));
+    expect(sarma).toBeDefined();
+    expect(sarma!.videoId).toBe('w9Z6fUBYWJM'); // Yaprak Sarma video
+    expect(sarma!.videoTitle?.toLowerCase()).toContain('sarma');
+
+    const pilav = RECIPES_DATABASE.find(r => r.title.toLowerCase().includes('pilav'));
+    expect(pilav).toBeDefined();
+    expect(pilav!.videoId).toBe('8eUFgKsstwQ'); // Pirinç/Bulgur Pilavı video
+    expect(pilav!.videoTitle?.toLowerCase()).toContain('pilav');
   });
 });
