@@ -112,21 +112,62 @@ export const CategoryShowcaseSection: React.FC<CategoryShowcaseSectionProps> = (
   // Quick suggestions for search
   const POPULAR_SEARCHES = ['Çilekli Limonata', 'Cheesecake', 'Menemen', 'Mercimek Çorbası', 'Kıymalı Börek', 'İzmir Köfte', 'Humus', 'Tantuni'];
 
-  // Global search matching across all 2,218+ recipes
+  // Global search matching across all 2,218+ recipes with token matching & relevance ranking
   const searchResults = useMemo(() => {
     const query = searchQuery.trim();
     if (!query) return [];
 
     const normQuery = normalizeText(query);
-    return recipes.filter(r => {
-      const matchTitle = normalizeText(r.title).includes(normQuery);
-      const matchCategory = normalizeText(r.category).includes(normQuery);
-      const matchCuisine = normalizeText(r.cuisine || '').includes(normQuery);
-      const matchTags = Array.isArray(r.tags) && r.tags.some(t => normalizeText(t).includes(normQuery));
-      const matchIngredients = r.ingredients.some(i => normalizeText(i.name).includes(normQuery));
+    const queryTokens = normQuery.split(/[\s,+/&]+/).filter(t => t.length > 1);
 
-      return matchTitle || matchCategory || matchCuisine || matchTags || matchIngredients;
+    if (queryTokens.length === 0) return [];
+
+    const scored = recipes.map(r => {
+      const normTitle = normalizeText(r.title);
+      const normCategory = normalizeText(r.category);
+      const normCuisine = normalizeText(r.cuisine || '');
+      const normTags = (Array.isArray(r.tags) ? r.tags : []).map(t => normalizeText(t)).join(' ');
+      const normIngredients = (r.ingredients || []).map(i => normalizeText(i.name)).join(' ');
+      const allText = `${normTitle} ${normCategory} ${normCuisine} ${normTags} ${normIngredients}`;
+
+      let score = 0;
+
+      // Exact phrase match in title
+      if (normTitle.includes(normQuery)) {
+        score += 100;
+      } else if (allText.includes(normQuery)) {
+        score += 50;
+      }
+
+      // Check tokens
+      let matchedTokens = 0;
+      for (const token of queryTokens) {
+        // Stem match (e.g. cilek matches cilekli, limon matches limonata, borek matches boregi)
+        const stem = token.length > 4 ? token.slice(0, 4) : token;
+        if (normTitle.includes(token)) {
+          score += 30;
+          matchedTokens++;
+        } else if (normTitle.includes(stem)) {
+          score += 20;
+          matchedTokens++;
+        } else if (normIngredients.includes(token) || normIngredients.includes(stem)) {
+          score += 15;
+          matchedTokens++;
+        } else if (allText.includes(token) || allText.includes(stem)) {
+          score += 10;
+          matchedTokens++;
+        }
+      }
+
+      // Require at least all tokens matched or score > 0
+      const isMatch = matchedTokens >= Math.min(queryTokens.length, 2) || score >= 20;
+      return { recipe: r, score, isMatch };
     });
+
+    return scored
+      .filter(item => item.isMatch)
+      .sort((a, b) => b.score - a.score)
+      .map(item => item.recipe);
   }, [recipes, searchQuery]);
 
   // Group recipes by category rails
