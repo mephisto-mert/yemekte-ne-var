@@ -48,6 +48,7 @@ export const CategoryShowcaseSection: React.FC<CategoryShowcaseSectionProps> = (
 }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeCategoryTab, setActiveCategoryTab] = useState<string>('all');
+  const [visibleSearchCount, setVisibleSearchCount] = useState<number>(24);
 
   // Category rail definitions
   const CATEGORIES: CategoryRailConfig[] = useMemo(() => [
@@ -170,6 +171,11 @@ export const CategoryShowcaseSection: React.FC<CategoryShowcaseSectionProps> = (
       .map(item => item.recipe);
   }, [recipes, searchQuery]);
 
+  const handleSearchChange = (val: string) => {
+    setSearchQuery(val);
+    setVisibleSearchCount(24);
+  };
+
   // Group recipes by category rails
   const categoryRailData = useMemo(() => {
     return CATEGORIES.map(cat => {
@@ -212,13 +218,13 @@ export const CategoryShowcaseSection: React.FC<CategoryShowcaseSectionProps> = (
               <input
                 type="text"
                 value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
+                onChange={(e) => handleSearchChange(e.target.value)}
                 placeholder="Yemek, içecek, tatlı veya malzeme ara... (örn: Çilekli Limonata, Mantı, Köfte)"
                 className="w-full pl-12 pr-12 py-3.5 sm:py-4 rounded-2xl bg-white/10 dark:bg-slate-900/60 backdrop-blur-xl border-2 border-white/20 focus:border-orange-500 text-white placeholder-stone-400 text-sm sm:text-base font-medium outline-none transition-all shadow-inner"
               />
               {searchQuery && (
                 <button
-                  onClick={() => setSearchQuery('')}
+                  onClick={() => handleSearchChange('')}
                   className="absolute right-3.5 p-1.5 rounded-xl bg-white/20 hover:bg-white/30 text-stone-200 transition-all active:scale-90"
                 >
                   <X className="w-4 h-4" />
@@ -232,7 +238,7 @@ export const CategoryShowcaseSection: React.FC<CategoryShowcaseSectionProps> = (
               {POPULAR_SEARCHES.map(tag => (
                 <button
                   key={tag}
-                  onClick={() => setSearchQuery(tag)}
+                  onClick={() => handleSearchChange(tag)}
                   className="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 border border-white/15 text-stone-200 text-[11px] font-semibold transition-all active:scale-95"
                 >
                   {tag}
@@ -253,7 +259,7 @@ export const CategoryShowcaseSection: React.FC<CategoryShowcaseSectionProps> = (
                 <span>Arama Sonuçları: "{searchQuery}"</span>
               </h3>
               <p className="text-xs sm:text-sm text-stone-500 dark:text-slate-400 mt-0.5">
-                2.218 tarif veritabanından filtrelendi
+                2.218 tarif veritabanından filtrelendi ({searchResults.length} eşleşme)
               </p>
             </div>
             <span className="px-3 py-1 rounded-full text-xs font-black bg-orange-500/15 text-orange-600 dark:text-orange-400 border border-orange-500/30">
@@ -262,18 +268,31 @@ export const CategoryShowcaseSection: React.FC<CategoryShowcaseSectionProps> = (
           </div>
 
           {searchResults.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-              {searchResults.map(recipe => (
-                <ShowcaseRecipeCard
-                  key={recipe.id}
-                  recipe={recipe}
-                  pantryItems={pantryItems}
-                  isFavorite={favorites.includes(recipe.id)}
-                  onToggleFavorite={onToggleFavorite}
-                  onSelectRecipe={onSelectRecipe}
-                />
-              ))}
-            </div>
+            <>
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+                {searchResults.slice(0, visibleSearchCount).map(recipe => (
+                  <ShowcaseRecipeCard
+                    key={recipe.id}
+                    recipe={recipe}
+                    pantryItems={pantryItems}
+                    isFavorite={favorites.includes(recipe.id)}
+                    onToggleFavorite={onToggleFavorite}
+                    onSelectRecipe={onSelectRecipe}
+                  />
+                ))}
+              </div>
+
+              {searchResults.length > visibleSearchCount && (
+                <div className="mt-8 text-center">
+                  <button
+                    onClick={() => setVisibleSearchCount(prev => prev + 24)}
+                    className="px-6 py-3 rounded-2xl bg-orange-500 hover:bg-orange-600 text-white font-bold text-sm shadow-lg shadow-orange-500/25 active:scale-95 transition-all"
+                  >
+                    Daha Fazla Sonuç Göster (+24) — Kalan: {searchResults.length - visibleSearchCount}
+                  </button>
+                </div>
+              )}
+            </>
           ) : (
             <div className="p-12 text-center rounded-3xl bg-white dark:bg-slate-900 border border-dashed border-stone-200 dark:border-slate-800 shadow-sm">
               <Compass className="w-12 h-12 text-stone-300 dark:text-slate-600 mx-auto mb-3 animate-pulse" />
@@ -284,7 +303,7 @@ export const CategoryShowcaseSection: React.FC<CategoryShowcaseSectionProps> = (
                 Farklı bir kelime deneyebilir veya aşağıdaki kategori reyonlarından lezzetleri inceleyebilirsiniz.
               </p>
               <button
-                onClick={() => setSearchQuery('')}
+                onClick={() => handleSearchChange('')}
                 className="px-4 py-2 rounded-xl bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold active:scale-95 transition-all"
               >
                 Aramayı Temizle ve Reyonları Göster
@@ -341,6 +360,8 @@ export const CategoryShowcaseSection: React.FC<CategoryShowcaseSectionProps> = (
                 favorites={favorites}
                 onToggleFavorite={onToggleFavorite}
                 onSelectRecipe={onSelectRecipe}
+                onOpenCategoryTab={() => setActiveCategoryTab(cat.id)}
+                isSingleCategoryView={activeCategoryTab === cat.id}
               />
             ))}
         </div>
@@ -358,6 +379,8 @@ interface CategoryRailProps {
   favorites: string[];
   onToggleFavorite: (e: React.MouseEvent, id: string) => void;
   onSelectRecipe: (recipe: Recipe) => void;
+  onOpenCategoryTab: () => void;
+  isSingleCategoryView?: boolean;
 }
 
 const CategoryRail: React.FC<CategoryRailProps> = ({
@@ -366,9 +389,12 @@ const CategoryRail: React.FC<CategoryRailProps> = ({
   pantryItems,
   favorites,
   onToggleFavorite,
-  onSelectRecipe
+  onSelectRecipe,
+  onOpenCategoryTab,
+  isSingleCategoryView
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [showAllInRail, setShowAllInRail] = useState(false);
 
   const handleScroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
@@ -377,8 +403,11 @@ const CategoryRail: React.FC<CategoryRailProps> = ({
     }
   };
 
+  // When rendering in 'all' view, slice to 24 for ultra-smooth 60fps scrolling
+  const displayedRecipes = isSingleCategoryView || showAllInRail ? recipes : recipes.slice(0, 24);
+
   return (
-    <div className="bg-white/60 dark:bg-slate-900/60 backdrop-blur-md rounded-3xl p-5 sm:p-6 border border-stone-200/80 dark:border-slate-800/80 shadow-sm relative group">
+    <div className="bg-white/60 dark:bg-slate-900/60 backdrop-blur-md rounded-3xl p-5 sm:p-6 border border-stone-200/80 dark:border-slate-800/80 shadow-sm relative group transition-colors">
       
       {/* Rail Header */}
       <div className="flex items-center justify-between gap-3 mb-4">
@@ -423,9 +452,10 @@ const CategoryRail: React.FC<CategoryRailProps> = ({
       {/* Horizontal Carousel Track */}
       <div
         ref={scrollRef}
-        className="flex items-stretch gap-4 overflow-x-auto pb-3 pt-1 scroll-smooth snap-x snap-mandatory scrollbar-none"
+        className="flex items-stretch gap-4 overflow-x-auto pb-3 pt-1 scroll-smooth snap-x snap-mandatory scrollbar-none will-change-scroll transform-gpu"
+        style={{ contentVisibility: 'auto' }}
       >
-        {recipes.map(recipe => (
+        {displayedRecipes.map(recipe => (
           <div key={recipe.id} className="w-[230px] sm:w-[260px] flex-shrink-0 snap-start">
             <ShowcaseRecipeCard
               recipe={recipe}
@@ -436,6 +466,28 @@ const CategoryRail: React.FC<CategoryRailProps> = ({
             />
           </div>
         ))}
+
+        {/* End of rail expand card */}
+        {!isSingleCategoryView && !showAllInRail && recipes.length > 24 && (
+          <div className="w-[200px] flex-shrink-0 snap-start flex flex-col items-center justify-center p-6 rounded-2xl bg-orange-500/10 dark:bg-orange-500/15 border-2 border-dashed border-orange-500/30 text-center">
+            <Sparkles className="w-8 h-8 text-orange-500 mb-2 animate-bounce" />
+            <span className="text-sm font-black text-stone-900 dark:text-white">
+              +{recipes.length - 24} Tarif Daha
+            </span>
+            <p className="text-xs text-stone-500 dark:text-slate-400 mt-1 mb-3">
+              Bu reyonun tüm çeşitlerini incele
+            </p>
+            <button
+              onClick={() => {
+                setShowAllInRail(true);
+                onOpenCategoryTab();
+              }}
+              className="px-3.5 py-1.5 rounded-xl bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold shadow-md shadow-orange-500/20 active:scale-95 transition-all"
+            >
+              Tümünü Aç →
+            </button>
+          </div>
+        )}
       </div>
 
     </div>
@@ -451,7 +503,7 @@ interface ShowcaseRecipeCardProps {
   onSelectRecipe: (recipe: Recipe) => void;
 }
 
-const ShowcaseRecipeCard: React.FC<ShowcaseRecipeCardProps> = ({
+const ShowcaseRecipeCardComponent: React.FC<ShowcaseRecipeCardProps> = ({
   recipe,
   pantryItems,
   isFavorite,
@@ -471,7 +523,11 @@ const ShowcaseRecipeCard: React.FC<ShowcaseRecipeCardProps> = ({
           src={recipe.image || recipe.imageUrl}
           alt={recipe.title}
           loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          onError={(e) => {
+            (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1498837167922-ddd27525d352?w=800&auto=format&fit=crop';
+          }}
         />
 
         {/* Gradient Overlay for Text Readability */}
@@ -553,3 +609,5 @@ const ShowcaseRecipeCard: React.FC<ShowcaseRecipeCardProps> = ({
     </div>
   );
 };
+
+export const ShowcaseRecipeCard = React.memo(ShowcaseRecipeCardComponent);

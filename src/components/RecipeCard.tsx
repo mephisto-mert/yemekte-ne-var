@@ -11,7 +11,7 @@ interface RecipeCardProps {
   onStartCooking: (e: React.MouseEvent, recipe: Recipe) => void;
 }
 
-export const RecipeCard: React.FC<RecipeCardProps> = ({
+const RecipeCardComponent: React.FC<RecipeCardProps> = ({
   recipe,
   match,
   isFavorite,
@@ -41,6 +41,7 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
           src={recipe.image}
           alt={recipe.title}
           loading="lazy"
+          decoding="async"
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
           onError={(e) => {
             // Fallback image if image fails
@@ -172,3 +173,5 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
     </article>
   );
 };
+
+export const RecipeCard = React.memo(RecipeCardComponent);

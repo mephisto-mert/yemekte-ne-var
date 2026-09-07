@@ -38,8 +38,24 @@ export const MealResultsSection: React.FC<MealResultsSectionProps> = ({
   const [activeTier, setActiveTier] = useState<MatchTier>('can_make_now');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchFilter, setSearchFilter] = useState<string>('');
+  const [visibleCount, setVisibleCount] = useState<number>(24);
 
   const totalDiscoveries = canMakeNow.length + almostThere.length;
+
+  const handleTierChange = (tier: MatchTier) => {
+    setActiveTier(tier);
+    setVisibleCount(24);
+  };
+
+  const handleCategoryChange = (catId: string) => {
+    setSelectedCategory(catId);
+    setVisibleCount(24);
+  };
+
+  const handleSearchChange = (val: string) => {
+    setSearchFilter(val);
+    setVisibleCount(24);
+  };
 
   // Decide current tier list
   let currentList: MatchResult[] = [];
@@ -58,15 +74,17 @@ export const MealResultsSection: React.FC<MealResultsSectionProps> = ({
       if (p < 25 && !/(tavuk|et|kiyma|balik|köfte|biftek)/i.test(r.title)) return false;
     }
     if (selectedCategory === 'low_calorie' && r.calories > 400) return false;
-    if (selectedCategory === 'vegetarian' && r.category !== 'vegetarian' && r.category !== 'salad') return false;
-    if (selectedCategory === 'drink') {
-      if (r.category !== 'drink' && r.category !== 'beverage' && !/içecek|serbet|şerbet|smoothie|kahve|cay|çay|limonata|ayran|kokteyl|salep|boza/i.test(r.category + ' ' + r.title)) return false;
-    } else if (selectedCategory === 'dessert') {
-      if (r.category !== 'dessert' && !/tatli|tatlı|pasta|kek|kurabiye|sütlaç|sutlac|baklava|helva|puding/i.test(r.category + ' ' + r.title)) return false;
+    if (selectedCategory === 'vegetarian' && !/sebze|salata|makarna|börek|zeytinyağlı|tatlı|çorba|pilav/i.test(r.category + ' ' + r.title)) return false;
+    if (selectedCategory === 'main_dish') {
+      if (r.category !== 'main_dish' && !/etli|tavuk|köfte|balık|güveç|kavurma|karnıyarık/i.test(r.category + ' ' + r.title)) return false;
     } else if (selectedCategory === 'soup') {
       if (r.category !== 'soup' && !/corba|çorba/i.test(r.category + ' ' + r.title)) return false;
+    } else if (selectedCategory === 'drink') {
+      if (r.category !== 'drink' && !/içecek|serbet|şerbet|smoothie|kahve|çay|cay|limonata/i.test(r.category + ' ' + r.title)) return false;
+    } else if (selectedCategory === 'dessert') {
+      if (r.category !== 'dessert' && !/tatli|tatlı|pasta|kek|kurabiye|sütlaç|baklava|helva/i.test(r.category + ' ' + r.title)) return false;
     } else if (selectedCategory === 'breakfast') {
-      if (r.category !== 'breakfast' && !/kahvalti|kahvaltı|omlet|menemen|yumurta|pankek|krep/i.test(r.category + ' ' + r.title)) return false;
+      if (r.category !== 'breakfast' && !/kahvalti|kahvaltı|omlet|menemen|yumurta|tost|gözleme/i.test(r.category + ' ' + r.title)) return false;
     } else if (selectedCategory === 'pastry') {
       if (r.category !== 'pastry' && r.category !== 'bakery' && !/borek|börek|pide|pizza|poğaça|pogaca|lahmacun|ekmek|hamur/i.test(r.category + ' ' + r.title)) return false;
     } else if (selectedCategory === 'appetizer') {
@@ -111,7 +129,7 @@ export const MealResultsSection: React.FC<MealResultsSectionProps> = ({
           <input
             type="text"
             value={searchFilter}
-            onChange={(e) => setSearchFilter(e.target.value)}
+            onChange={(e) => handleSearchChange(e.target.value)}
             placeholder="Tarif adı veya malzeme ara..."
             className="w-full px-3.5 py-2 pl-9 rounded-xl bg-white dark:bg-slate-900 border border-stone-200 dark:border-slate-800 text-xs font-medium text-stone-900 dark:text-white placeholder-stone-400 dark:placeholder-slate-500 focus:border-orange-500 outline-none shadow-sm transition-all"
           />
@@ -124,7 +142,7 @@ export const MealResultsSection: React.FC<MealResultsSectionProps> = ({
         
         {/* Tier 1: Can Make Now */}
         <button
-          onClick={() => setActiveTier('can_make_now')}
+          onClick={() => handleTierChange('can_make_now')}
           className={`flex-1 min-w-[140px] py-2.5 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center justify-center gap-2 magnetic-spring ${
             activeTier === 'can_make_now'
               ? 'bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border border-emerald-500/40 shadow-sm'
@@ -140,7 +158,7 @@ export const MealResultsSection: React.FC<MealResultsSectionProps> = ({
 
         {/* Tier 2: Almost There */}
         <button
-          onClick={() => setActiveTier('almost_there')}
+          onClick={() => handleTierChange('almost_there')}
           className={`flex-1 min-w-[140px] py-2.5 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center justify-center gap-2 magnetic-spring ${
             activeTier === 'almost_there'
               ? 'bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-500/40 shadow-sm'
@@ -156,7 +174,7 @@ export const MealResultsSection: React.FC<MealResultsSectionProps> = ({
 
         {/* Tier 3: Need More */}
         <button
-          onClick={() => setActiveTier('need_more')}
+          onClick={() => handleTierChange('need_more')}
           className={`flex-1 min-w-[140px] py-2.5 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center justify-center gap-2 magnetic-spring ${
             activeTier === 'need_more'
               ? 'bg-stone-200/80 dark:bg-slate-800 text-stone-900 dark:text-slate-200 border border-stone-300 dark:border-slate-700 shadow-sm'
@@ -195,7 +213,7 @@ export const MealResultsSection: React.FC<MealResultsSectionProps> = ({
         ].map(cat => (
           <button
             key={cat.id}
-            onClick={() => setSelectedCategory(cat.id)}
+            onClick={() => handleCategoryChange(cat.id)}
             className={`px-3 py-1.5 rounded-xl text-xs font-bold whitespace-nowrap transition-all magnetic-spring ${
               selectedCategory === cat.id
                 ? 'bg-gradient-to-r from-orange-500 to-amber-500 text-slate-950 font-black shadow-md shadow-orange-500/20'
@@ -209,21 +227,35 @@ export const MealResultsSection: React.FC<MealResultsSectionProps> = ({
 
       {/* Results Grid */}
       {filteredResults.length > 0 ? (
-        <div 
-          key={`${activeTier}-${selectedCategory}-${searchFilter}`}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 animate-tab-enter"
-        >
-          {filteredResults.map(item => (
-            <RecipeCard
-              key={item.recipe.id}
-              recipe={item.recipe}
-              match={item}
-              isFavorite={favorites.includes(item.recipe.id)}
-              onToggleFavorite={onToggleFavorite}
-              onSelectRecipe={onSelectRecipe}
-              onStartCooking={onStartCooking}
-            />
-          ))}
+        <div className="space-y-8 animate-tab-enter">
+          <div 
+            key={`${activeTier}-${selectedCategory}-${searchFilter}`}
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5"
+          >
+            {filteredResults.slice(0, visibleCount).map(item => (
+              <RecipeCard
+                key={item.recipe.id}
+                recipe={item.recipe}
+                match={item}
+                isFavorite={favorites.includes(item.recipe.id)}
+                onToggleFavorite={onToggleFavorite}
+                onSelectRecipe={onSelectRecipe}
+                onStartCooking={onStartCooking}
+              />
+            ))}
+          </div>
+
+          {/* Progressive Load More Button */}
+          {filteredResults.length > visibleCount && (
+            <div className="text-center pt-2">
+              <button
+                onClick={() => setVisibleCount(prev => prev + 24)}
+                className="px-6 py-3 rounded-2xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-slate-950 font-black text-sm shadow-lg shadow-orange-500/25 active:scale-95 transition-all"
+              >
+                Daha Fazla Tarif Göster (+24) — Kalan: {filteredResults.length - visibleCount}
+              </button>
+            </div>
+          )}
         </div>
       ) : (
         /* Rich Culinary Empty State with Custom SVG Illustration */
@@ -242,7 +274,7 @@ export const MealResultsSection: React.FC<MealResultsSectionProps> = ({
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <button
-              onClick={() => { setSelectedCategory('all'); setSearchFilter(''); }}
+              onClick={() => { setSelectedCategory('all'); setSearchFilter(''); setVisibleCount(24); }}
               className="px-5 py-2.5 rounded-xl text-xs font-bold bg-stone-100 hover:bg-stone-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-stone-800 dark:text-slate-200 border border-stone-200 dark:border-slate-700 transition-all magnetic-spring shadow-sm"
             >
               Filtreleri Sıfırla
