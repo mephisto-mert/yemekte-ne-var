@@ -27,10 +27,12 @@ describe('Accurate Dish-Matching Image Resolution Suite', () => {
       { name: 'Kilis Tava (Patlıcan Tabanlı)', expectedPattern: 'img.youtube.com' },
       { name: 'İmam Bayıldı', expectedPattern: 'img.youtube.com' },
       { name: 'Kayseri Yağlaması (Şebit)', expectedPattern: 'img.youtube.com' },
-      { name: 'Ayran', expectedPattern: 'images.unsplash.com' },
-      { name: 'Pizza Margherita', expectedPattern: 'images.unsplash.com' },
-      { name: 'Spaghetti Carbonara', expectedPattern: 'images.unsplash.com' },
-      { name: 'Falafel', expectedPattern: 'images.unsplash.com' }
+      { name: 'Ayran', expectedPattern: 'img.youtube.com' },
+      { name: 'Baklava', expectedPattern: 'img.youtube.com' },
+      { name: 'Sütlaç', expectedPattern: 'img.youtube.com' },
+      { name: 'Kabak Mücver', expectedPattern: 'img.youtube.com' },
+      { name: 'Pizza Margherita', expectedPattern: 'img.youtube.com' },
+      { name: 'Falafel', expectedPattern: 'img.youtube.com' }
     ];
 
     for (const testItem of dishesToVerify) {

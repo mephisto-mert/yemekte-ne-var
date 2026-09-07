@@ -1320,24 +1320,9 @@ export const DISH_VIDEO_MAP: DishVideoRule[] = [
     "key": "zeytinyagli_sebze",
     "keywords": [
       "taze fasulye",
-      "zeytinyağlı",
-      "zeytinyagli",
-      "enginar",
-      "kereviz",
-      "pırasa",
-      "pirasa",
-      "barbunya",
-      "zeytinyağlı barbunya",
-      "bamya",
-      "zeytinyağlı enginar",
-      "kabak mücver",
-      "mücver",
-      "mucver",
-      "şakşuka",
-      "imam bayıldı",
-      "imambayildi",
-      "karnabahar yemeği",
-      "ıspanak yemeği",
+      "zeytinyağlı taze fasulye",
+      "fasulye yemeği",
+      "zeytinyağlı fasulye",
       "kapuska"
     ],
     "videoId": "mXdrngQ1qfg",
@@ -1803,6 +1788,96 @@ export const DISH_VIDEO_MAP: DishVideoRule[] = [
     ],
     "videoId": "0w8dzjZ2umE",
     "videoTitle": "Fırında Pratik Sebzeli Kıymalı Ev Yemeği",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "kabak_mucveri",
+    "keywords": [
+      "kabak mücver",
+      "kabak mucveri",
+      "kabak mücveri",
+      "mücver",
+      "mucver",
+      "fırında mücver"
+    ],
+    "videoId": "3-gJpnJ76rU",
+    "videoTitle": "Kabak Mücver Tarifi | Nasıl Yapılır?",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "zeytinyagli_enginar",
+    "keywords": [
+      "zeytinyağlı enginar",
+      "enginar dolması",
+      "enginar yemeği",
+      "enginar",
+      "enginar kalbi"
+    ],
+    "videoId": "_of0hWu7VBg",
+    "videoTitle": "Zeytinyağlı Enginar Tarifi | Nasıl Yapılır?",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "zeytinyagli_barbunya",
+    "keywords": [
+      "barbunya pilaki",
+      "zeytinyağlı barbunya",
+      "barbunya yemeği",
+      "barbunya"
+    ],
+    "videoId": "Hi60sG4AbXs",
+    "videoTitle": "Zeytinyağlı Barbunya Pilaki Tarifi",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "zeytinyagli_bamya",
+    "keywords": [
+      "etli bamya",
+      "zeytinyağlı bamya",
+      "bamya yemeği",
+      "bamya"
+    ],
+    "videoId": "WJG0Sq2IOTQ",
+    "videoTitle": "En Pratik Zeytinyağlı Bamya Yemeği Tarifi",
+    "videoAuthor": "Nefise Yılmaz"
+  },
+  {
+    "key": "zeytinyagli_pirasa",
+    "keywords": [
+      "zeytinyağlı pırasa",
+      "pırasa yemeği",
+      "pirasa yemegi",
+      "pırasa",
+      "pirasa"
+    ],
+    "videoId": "_oWt5rkSzlo",
+    "videoTitle": "En Lezzetli Zeytinyağlı Pırasa Tarifi",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "zeytinyagli_kereviz",
+    "keywords": [
+      "portakallı kereviz",
+      "zeytinyağlı kereviz",
+      "kereviz yemeği",
+      "kereviz"
+    ],
+    "videoId": "IjRCYNzziio",
+    "videoTitle": "Portakallı Zeytinyağlı Kereviz Tarifi",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "ispanak_yemegi",
+    "keywords": [
+      "ıspanak yemeği",
+      "ispanak yemegi",
+      "kıymalı ıspanak",
+      "etli ıspanak",
+      "ıspanak",
+      "ispanak"
+    ],
+    "videoId": "OHIiqbvQVjg",
+    "videoTitle": "Pirinçli Ispanak Yemeği | Nasıl Yapılır?",
     "videoAuthor": "Nefis Yemek Tarifleri"
   }
 ];
