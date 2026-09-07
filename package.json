@@ -1,0 +1,51 @@
+{
+  "name": "pantry-hub",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "pipeline:dry-run": "node scripts/pipeline_dry_run.cjs",
+    "import:dry-run": "node scripts/import_dry_run.cjs",
+    "image:dry-run": "node scripts/image_dry_run.cjs",
+    "image:acquisition:dry-run": "node scripts/image_acquisition_dry_run.cjs",
+    "image:pexels:dry-run": "node scripts/image_pexels_dry_run.cjs",
+    "image:pexels:test": "node scripts/image_pexels_integration_test.cjs",
+    "image:download:dry-run": "node scripts/image_download_dry_run.cjs",
+    "image:download:test": "node scripts/image_download_test.cjs",
+    "recipe:import:dry-run": "node scripts/recipe_import_dry_run.cjs",
+    "recipe:import": "node scripts/recipe_import_cli.cjs",
+    "recipe:themealdb:test": "node scripts/recipe_themealdb_test.cjs",
+    "recipe:enrich:dry-run": "node scripts/recipe_enrich_dry_run.cjs",
+    "recipe:staging:dry-run": "node scripts/recipe_staging_dry_run.cjs",
+    "recipe:staging:test": "node scripts/recipe_staging_test.cjs",
+    "recipe:staging:export": "node scripts/recipe_staging_export.cjs",
+    "recipe:expand:dry-run": "node scripts/recipe_expand_dry_run.cjs",
+    "recipe:expand": "node scripts/recipe_expand.cjs",
+    "recipe:production:dry-run": "node scripts/recipe_production_dry_run.cjs",
+    "recipe:production:import": "node scripts/recipe_production_import.cjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.115.0",
+    "canvas-confetti": "^1.9.4",
+    "lucide-react": "^1.16.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/canvas-confetti": "^1.9.0",
+    "@types/node": "^26.4.1",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.7",
+    "vitest": "^2.1.8"
+  }
+}

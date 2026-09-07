@@ -1,0 +1,43 @@
+{
+  "name": "Cookly — Akıllı Mutfak Asistanı",
+  "short_name": "Cookly",
+  "description": "Evdeki malzemelerle harika yemekler keşfedin, yemek ruleti çevirin, akıllı alışveriş listesi ve haftalık menü planlayın.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#09090b",
+  "theme_color": "#10b981",
+  "categories": ["food", "lifestyle", "utilities"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍳</text></svg>",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Yemek Ruleti",
+      "short_name": "Rulet",
+      "description": "Rastgele lezzetli bir tarif önerisi al",
+      "url": "./#roulette",
+      "icons": [{ "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎲</text></svg>", "sizes": "96x96" }]
+    },
+    {
+      "name": "Kilerim",
+      "short_name": "Kiler",
+      "description": "Evdeki malzemeleri yönet",
+      "url": "./#pantry",
+      "icons": [{ "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🥗</text></svg>", "sizes": "96x96" }]
+    },
+    {
+      "name": "Haftalık Plan",
+      "short_name": "Plan",
+      "description": "Haftalık menünü görüntüle",
+      "url": "./#planner",
+      "icons": [{ "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📅</text></svg>", "sizes": "96x96" }]
+    }
+  ]
+}
