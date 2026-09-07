@@ -734,6 +734,21 @@ export const DISH_VIDEO_MAP: DishVideoRule[] = [
   {
     "key": "kebap_genel",
     "keywords": [
+      "adana kebap",
+      "adana kebabı",
+      "urfa kebap",
+      "urfa kebabı",
+      "iskender kebap",
+      "beyti kebap",
+      "patlıcan kebabı",
+      "tepsi kebabı",
+      "orman kebabı",
+      "tas kebabı",
+      "testi kebabı",
+      "şiş kebap",
+      "cağ kebabı",
+      "çökertme kebabı",
+      "ali nazik kebap",
       "kebap",
       "kebabı",
       "kebabi",
@@ -742,13 +757,7 @@ export const DISH_VIDEO_MAP: DishVideoRule[] = [
       "beyti",
       "iskender",
       "döner",
-      "doner",
-      "cağ kebabı",
-      "patlıcan kebabı",
-      "tepsi kebabı",
-      "testi kebabı",
-      "şiş kebap",
-      "ali paşa kebabı"
+      "doner"
     ],
     "videoId": "8_wS8QgwvvI",
     "videoTitle": "EVDE ADANA KEBAP HEM KOLAY HEM LEZZETLİ ❗️",
@@ -1436,6 +1445,364 @@ export const DISH_VIDEO_MAP: DishVideoRule[] = [
     ],
     "videoId": "nLEP-KIpUko",
     "videoTitle": "Domates Kabuğundan Salça 🥫 Kışlık Hazırlık Rekoru Kimde? Kaç Kavanoz? 😎",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "falafel",
+    "keywords": [
+      "falafel",
+      "nohut köftesi",
+      "nohut koftesi"
+    ],
+    "videoId": "5VpRVFksFIs",
+    "videoTitle": "Lezzeti Garanti Dışı Çıtır İçi Yumuşacık Falafel (Nohut Köftesi)",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "patates_kizartmasi",
+    "keywords": [
+      "patates kızartması",
+      "patates kizartmasi",
+      "patates kızartma",
+      "çıtır patates",
+      "elma dilim patates"
+    ],
+    "videoId": "uEfGRBUPbC4",
+    "videoTitle": "Az Bilinen Yöntemle Çıtır Çıtır Patates Kızartması",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "durum_wrap",
+    "keywords": [
+      "dürüm",
+      "dürümü",
+      "durum",
+      "durumu",
+      "wrap",
+      "lavaş dürüm"
+    ],
+    "videoId": "JC9bydB0zMw",
+    "videoTitle": "Evde Tavuk Dürüm | Nasıl Yapılır?",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "peynir_tabagi",
+    "keywords": [
+      "peynir tabağı",
+      "peynir tabagi",
+      "şarküteri tabağı",
+      "peynir tabaği"
+    ],
+    "videoId": "jc4L5HDBA8Q",
+    "videoTitle": "Sade ve Şık Peynir Zeytin Sunumu",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "sarimsakli_yogurt_sos",
+    "keywords": [
+      "sarımsaklı yoğurt",
+      "sarimsakli yogurt",
+      "dip sos",
+      "tarator",
+      "taratoru",
+      "meze sosu"
+    ],
+    "videoId": "LsLDEEeTU_A",
+    "videoTitle": "Sarımsak Mezesi ve Nefis Dip Soslar",
+    "videoAuthor": "Yemek.com"
+  },
+  {
+    "key": "imam_bayildi",
+    "keywords": [
+      "imam bayıldı",
+      "imambayıldı",
+      "imam bayildi",
+      "imambayildi"
+    ],
+    "videoId": "T7D7ui2tZz4",
+    "videoTitle": "Zeytinyağlı İmam Bayıldı Tarifi | Nasıl Yapılır?",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "kayseri_yaglamasi",
+    "keywords": [
+      "yağlama",
+      "yağlaması",
+      "yaglama",
+      "yaglamasi",
+      "şebit",
+      "sebit",
+      "kayseri yağlaması"
+    ],
+    "videoId": "flraj9tx9Ck",
+    "videoTitle": "Kayseri Yağlaması (Şebit) Tarifi 💯",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "sevketi_bostan",
+    "keywords": [
+      "şevketi bostan",
+      "sevketi bostan",
+      "şevketibostan",
+      "şevket-i bostan"
+    ],
+    "videoId": "AL4MF55i76A",
+    "videoTitle": "Ege Usulü Zeytinyağlı & Etli Şevketi Bostan Yemeği",
+    "videoAuthor": "Sebiha'nın Mutfağı"
+  },
+  {
+    "key": "tava_yemekleri",
+    "keywords": [
+      "kilis tava",
+      "belen tava",
+      "ankara tava",
+      "adıyaman tavası",
+      "adiyaman tavasi",
+      "niğde tavası",
+      "nigde tavasi",
+      "keskin tavası",
+      "keskin tavasi",
+      "aksaray tavası",
+      "aksaray tavasi",
+      "fırın tava",
+      "tava yemeği",
+      "tava"
+    ],
+    "videoId": "2TWubaqPFl4",
+    "videoTitle": "Lokanta Usulü Meşhur Fırın Tava Yemeği",
+    "videoAuthor": "Nefis Yemek Önerileri"
+  },
+  {
+    "key": "risotto",
+    "keywords": [
+      "risotto",
+      "mantarlı risotto",
+      "kremalı risotto",
+      "rizotto"
+    ],
+    "videoId": "rLGH4W7RCTM",
+    "videoTitle": "İtalyan Restoran Usulü Kremalı Mantarlı Risotto",
+    "videoAuthor": "Refika'nın Mutfağı"
+  },
+  {
+    "key": "tzatziki_cacik",
+    "keywords": [
+      "tzatziki",
+      "cacık",
+      "cacik",
+      "kuru cacık",
+      "salatalıklı yoğurt"
+    ],
+    "videoId": "92RROwvR1EY",
+    "videoTitle": "Tam Kıvamında Ferahlatıcı Cacık & Tzatziki Mezesi",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "katmer",
+    "keywords": [
+      "katmer",
+      "antep katmeri",
+      "fıstıklı katmer",
+      "tava katmeri"
+    ],
+    "videoId": "AILt8tDz_18",
+    "videoTitle": "En Basit Yöntemle Tavada Tel Tel Katmer Tarifi",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "yoresel_guvec_etli",
+    "keywords": [
+      "meftune",
+      "şiveydiz",
+      "siveydiz",
+      "analı kızlı",
+      "anali kizli",
+      "madımak",
+      "madimak",
+      "keledoş",
+      "keledos",
+      "mancar",
+      "banduma",
+      "pöç",
+      "poc",
+      "çebiç",
+      "cebic",
+      "güveç",
+      "güveci",
+      "guvec",
+      "guveci"
+    ],
+    "videoId": "QV1ZwlCnoYk",
+    "videoTitle": "Geleneksel Güveçte Sebzeli Et Yemeği",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "bibimbap",
+    "keywords": [
+      "bibimbap",
+      "kore usulü bibimbap",
+      "kore pilavı"
+    ],
+    "videoId": "FKKKnT7Raqw",
+    "videoTitle": "Kore Klasiği Sebzeli ve Dana Etli Bibimbap",
+    "videoAuthor": "Yemek.com"
+  },
+  {
+    "key": "boeuf_bourguignon",
+    "keywords": [
+      "boeuf bourguignon",
+      "bourguignon",
+      "osso buco",
+      "ossobuco",
+      "yahni",
+      "dana yahni",
+      "soğan yahnisi"
+    ],
+    "videoId": "vuKdBphwTUs",
+    "videoTitle": "Lokum Kıvamında Etli Soğan Yahnisi ve Güveç",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "kabak_siyirma_dible",
+    "keywords": [
+      "kabak sıyırma",
+      "kabak siyirma",
+      "dible",
+      "diblesi",
+      "karalahana diblesi",
+      "fasulye diblesi"
+    ],
+    "videoId": "PWYEpF628Qs",
+    "videoTitle": "Ege Usulü Hafif ve Lezzetli Zeytinyağlı Kabak Yemeği",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "gnocchi",
+    "keywords": [
+      "gnocchi",
+      "nyoki",
+      "gnocci",
+      "gnocchi alla sorrentina"
+    ],
+    "videoId": "9dukiTw2FaA",
+    "videoTitle": "İtalyan Usulü Ev Yapımı Patatesli Gnocchi",
+    "videoAuthor": "Yemek.com"
+  },
+  {
+    "key": "ratatouille",
+    "keywords": [
+      "ratatouille",
+      "ratatuy",
+      "fırında sebze dizme"
+    ],
+    "videoId": "aGs9U9NspCk",
+    "videoTitle": "Fransız Klasiği Fırında Sebzeli Ratatouille (Ratatuy)",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "sillik_zerde_tatlisi",
+    "keywords": [
+      "şıllık",
+      "sillik",
+      "zerde",
+      "cennet çamuru",
+      "cennet camuru",
+      "yöresel tatlı"
+    ],
+    "videoId": "38x8WvOu4ys",
+    "videoTitle": "Ağızda Dağılan Geleneksel Şerbetli Yöresel Tatlı",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "boyoz_nokul_corek",
+    "keywords": [
+      "boyoz",
+      "nokul",
+      "nokulu",
+      "çörek",
+      "çöreği",
+      "corek",
+      "coregi",
+      "haşhaşlı çörek",
+      "tahinli çörek"
+    ],
+    "videoId": "jAbfHsyMxu0",
+    "videoTitle": "Kat Kat Çıtır Boyoz ve Meşhur Çörek Tarifi",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "churros",
+    "keywords": [
+      "churros",
+      "çurros",
+      "curros",
+      "ispanyol tatlısı"
+    ],
+    "videoId": "013chRo6Owc",
+    "videoTitle": "Çıtır Çıtır Çikolata Soslu İspanyol Tatlısı Churros",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "chili_con_carne",
+    "keywords": [
+      "chili con carne",
+      "çili kon karne",
+      "meksika fasulyesi"
+    ],
+    "videoId": "Hzerda9t0q8",
+    "videoTitle": "Meksika Klasiği Kıymalı Chili Con Carne",
+    "videoAuthor": "Arda'nın Mutfağı"
+  },
+  {
+    "key": "tart_kis_crumble",
+    "keywords": [
+      "tart",
+      "tartı",
+      "tarto",
+      "kiş",
+      "kişi",
+      "quiche",
+      "kıtır",
+      "kıtırı",
+      "crumble",
+      "trifle",
+      "triflesı",
+      "triflesi"
+    ],
+    "videoId": "IZl3FNDO1oM",
+    "videoTitle": "Peynirli Sebzeli Fırında Pratik ve Lezzetli Kiş / Tart",
+    "videoAuthor": "Tarifim Şahane"
+  },
+  {
+    "key": "ekmek_sandvic",
+    "keywords": [
+      "ekmek",
+      "ekmeği",
+      "ekmegi",
+      "somun ekmek",
+      "bazlama",
+      "sandviç ekmeği"
+    ],
+    "videoId": "EqTf1sUGWTA",
+    "videoTitle": "Taş Fırın Tadında Evde Gerçek Ekmek Yapımı",
+    "videoAuthor": "Nefis Yemek Tarifleri"
+  },
+  {
+    "key": "kiyma_hindi_yemekleri",
+    "keywords": [
+      "fırında sebzeli kıyma",
+      "kremalı mantarlı kıyma",
+      "fırında kıyma",
+      "sebzeli kıyma",
+      "hindi eti",
+      "hindi göğsü",
+      "hindi sote",
+      "fırında hindi",
+      "kıymalı",
+      "kıyma"
+    ],
+    "videoId": "0w8dzjZ2umE",
+    "videoTitle": "Fırında Pratik Sebzeli Kıymalı Ev Yemeği",
     "videoAuthor": "Nefis Yemek Tarifleri"
   }
 ];
