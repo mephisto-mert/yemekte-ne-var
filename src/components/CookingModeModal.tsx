@@ -17,6 +17,7 @@ import confetti from 'canvas-confetti';
 import { Recipe } from '../types';
 import { playTimerAlarm } from '../utils/timerSound';
 import { useEscapeKey } from '../hooks/useEscapeKey';
+import { resolveRecipeVideo } from '../data/videoLibrary';
 
 interface CookingModeModalProps {
   recipe: Recipe | null;
@@ -217,31 +218,37 @@ export const CookingModeModal: React.FC<CookingModeModalProps> = ({
       </div>
 
       {/* Optional In-Cooking Video Player Drawer */}
-      {showVideoDrawer && recipe.videoId && (
-        <div className="w-full max-w-lg mx-auto mt-4 rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 shadow-2xl animate-in slide-in-from-top-4 flex-shrink-0">
-          <div className="flex items-center justify-between px-3 py-2 bg-slate-950 border-b border-slate-800 text-xs">
-            <span className="font-bold text-slate-300 flex items-center gap-1.5 truncate">
-              <Video className="w-3.5 h-3.5 text-rose-500 flex-shrink-0" />
-              <span className="truncate">{recipe.videoTitle || `${recipe.title} Kısa Video`}</span>
-            </span>
-            <button 
-              onClick={() => setShowVideoDrawer(false)}
-              className="p-1 text-slate-400 hover:text-white"
-            >
-              <X className="w-4 h-4" />
-            </button>
+      {showVideoDrawer && (() => {
+        const resolvedVideo = resolveRecipeVideo(recipe);
+        const activeVideoId = resolvedVideo.videoId;
+        const activeVideoTitle = resolvedVideo.videoTitle;
+        if (!activeVideoId) return null;
+        return (
+          <div className="w-full max-w-lg mx-auto mt-4 rounded-2xl overflow-hidden border border-slate-800 bg-slate-900 shadow-2xl animate-in slide-in-from-top-4 flex-shrink-0">
+            <div className="flex items-center justify-between px-3 py-2 bg-slate-950 border-b border-slate-800 text-xs">
+              <span className="font-bold text-slate-300 flex items-center gap-1.5 truncate">
+                <Video className="w-3.5 h-3.5 text-rose-500 flex-shrink-0" />
+                <span className="truncate">{activeVideoTitle || `${recipe.title} Kısa Video`}</span>
+              </span>
+              <button 
+                onClick={() => setShowVideoDrawer(false)}
+                className="p-1 text-slate-400 hover:text-white"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+            <div className="relative aspect-video w-full bg-black">
+              <iframe
+                src={`https://www.youtube-nocookie.com/embed/${activeVideoId}?autoplay=1`}
+                title={recipe.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full border-0"
+              />
+            </div>
           </div>
-          <div className="relative aspect-video w-full bg-black">
-            <iframe
-              src={`https://www.youtube-nocookie.com/embed/${recipe.videoId}?autoplay=1`}
-              title={recipe.title}
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              className="w-full h-full border-0"
-            />
-          </div>
-        </div>
-      )}
+        );
+      })()}
 
       {/* Main Content Area */}
       <div className="flex-1 flex flex-col items-center justify-center max-w-3xl mx-auto w-full py-8 text-center overflow-y-auto">

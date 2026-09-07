@@ -124,9 +124,9 @@ export const RecipeDetailModal: React.FC<RecipeDetailModalProps> = ({
 
   // Dynamic verified video resolution
   const resolvedVideo = resolveRecipeVideo(recipe);
-  const activeVideoId = recipe.videoId || resolvedVideo.videoId;
-  const activeVideoTitle = recipe.videoTitle || resolvedVideo.videoTitle;
-  const activeVideoAuthor = recipe.videoAuthor || resolvedVideo.videoAuthor;
+  const activeVideoId = resolvedVideo.videoId;
+  const activeVideoTitle = resolvedVideo.videoTitle;
+  const activeVideoAuthor = resolvedVideo.videoAuthor;
 
   // Scaled ingredients
   const scaledIngredients = calculatePortions(recipe.ingredients, recipe.servings || 4, servings);
